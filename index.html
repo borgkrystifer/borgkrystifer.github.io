@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BORG Academy</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="[BORG] Academy">
+    <meta property="og:description" content="[BORG] Academy">
+    <meta property="og:image" content="https://borg.support/images/og_image.jpg?v=3">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="308">
+    <meta property="og:image:alt" content="[BORG] Academy">
+    <meta property="og:url" content="https://borg.support">
+
+    <!-- Twitter/Discord -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="[BORG] Academy">
+    <meta name="twitter:description" content="[BORG] Academy">
+    <meta name="twitter:image" content="https://borg.support/images/og_image.jpg?v=3">
+
+    <!-- Apple Touch (iOS Home Screen) -->
+    <link rel="apple-touch-icon" href="https://borg.support/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="[BORG] Academy">
+
+    <!-- Favicon (single .ico file) -->
+    <link rel="icon" href="https://borg.support/images/favicon.ico?v=3">
+    <link rel="shortcut icon" href="https://borg.support/images/favicon.ico?v=3">
+    <link rel="apple-touch-icon-precomposed" href="https://borg.support/images/apple-touch-icon.png?v=3">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+                <h1 style="color: green; margin: 0; text-align: center;">[BORG] ACADEMY</h1>
+                <div class="marquee">
+                    <span>*** Tourney Store Closes Wed Dec 31st @ 10:30AM ***</span>
+                </div>
+            </div>
+        </div>
+        <div class="tabs-container">
+            <a href="#welcome" class="tab-button active" data-tab="welcome">Welcome!</a>
+            <a href="#tournaments" class="tab-button" data-tab="tournaments">Tourneys!</a>
+            <a href="#command" class="tab-button" data-tab="command">Command</a>
+            <a href="#roe" class="tab-button" data-tab="roe">RoE</a>
+            <a href="#diplo" class="tab-button" data-tab="diplo">Diplomacy</a>
+            <a href="#terminology" class="tab-button" data-tab="terminology">Terminology</a>
+            <a href="#battle" class="tab-button" data-tab="battle">Battle</a>
+            <a href="#icons" class="tab-button" data-tab="icons">Icons</a>
+            <a href="#away" class="tab-button" data-tab="away">Away Team Misions</a>
+            <a href="#tips" class="tab-button" data-tab="tips">Tips & Tricks</a>
+            <a href="#links" class="tab-button" data-tab="links">Links</a>
+            <a href="#map" class="tab-button" data-tab="map">Territory</a>
+        </div>
+        <div class="content">
+
+            <!-- Welcome Tab -->
+             <div class="tab-content active" id="welcome">
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/welcome.png" alt="borg welcome image">
+                    </div>
+                        <div class="content-text"><br>
+                            <p style="color: green;">Welcome to the [BORG] Alliance! This page was created to 
+                                help our team, both old and new players but primarily beginners. Start with the RoE tab
+                                above to learn what rules we follow on this server. Feel free to ask any questions in
+                                the AC (Alliance Chat) chat room which is found at the top, center of your screen.
+                            </p>
+                            <br><br><br><br>
+                            <p style="color: green;">We are a strong team and we try to help each other as much as
+                                possible. However, please keep in mind that at the end of the day, this is a game and IRL (In Real World)
+                                things come first. This means that your life outside of the game takes priority and we all understand
+                                this. So, don't feel pressured or forced to <i>have</i> to be on 24/7. If you can, that's awsome! But
+                                definately not required. Have fun and LLAP!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Tournaments Tab -->
+             <div class="tab-content" id="tournaments">
+                <h1 style="color: var(--accent-gold); text-align: center;">Alliance Tournaments!</h1>
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/tournaments.png" alt="tng command">
+                    </div>
+                        <div class="content-text">
+                            <p>The Tournament consists of completing tasks and the point reward goes to the
+                                alliance's total to score vs other alliances from many servers. The top 35% of alliances are
+                                promoted to next league. The bottom 35% are relegated to previous league. The alliance store
+                                will remain open for 2 days after the end of the tournament.</p><br>
+                            <p style="color: var(--accent-gold)"><b><u>Tasks</u></b></p>
+                            <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block;">
+                            <li>complete a maximum of 3 per day. Any unfinished tasks at the end of tournament day are failed
+                                and your max is reset to 0/3</li>
+                            <li>you can only have 1 active task at a time. Taking a task, not finishing, and taking another will fail the first task.</li>
+                            <li>the task pool is common to entire alliance; refreshing or taking a task prevents others from taking it.</li>
+                            <li>the armada tasks come in multiple versions:<br>
+                                --<b><i><span class="highlight">Defeat</span></i></b> FKR armada means you simply have to <i>participate</i> in the victory over a FKR faction armada<br>
+                                --<b><i><span class="highlight">Spend</span></i></b> FKR armada means you must be the one to spend the directives on that armada. Victory not required.</li>
+                            <li>some tasks require spending $$ to complete. Obviously do not take if you do not want to spend.</li>
+                        </ul>
+                        </div>
+                </div>
+            </div>
+
+            <!-- Command Tab -->
+             <div class="tab-content" id="command">
+                <h1 style="color: var(--accent-gold); text-align: center;">Chain of Command</h1>
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/chaincommand.jpg" alt="tng command">
+                    </div>
+                        <div class="content-text">
+                            <h3 class="rank-title" style="color: red;">Admiral:</h3>
+                            <p class="rank-name">YooperKirks</p><br>
+
+                            <h3 class="rank-title" style="color: gold;">Commodores:</h3>
+                            <p class="rank-name">TheRealDonkeyD | ShellbackCGN39</p><br>
+
+                            <h3 class="rank-title" style="color: rgb(30, 30, 221);">Premiers:</h3>
+                            <p class="rank-name">Paraparacelsus | Nullof98 | ColFubar | GamerDawg79</p>
+                        </div>
+                </div>
+            </div>
+
+            <!-- RoE Tab -->
+            <div class="tab-content" id="roe">
+                <h1 class="roe-title">717/BORG Rules of Engagement (RoE)</h1>
+                <p class="roe-subtitle">Server-wide RoE Est. 09/19/2025. Amended 12/17/2025</p>
+
+                <!-- Survey Ships -->
+                <div class="content-section">
+                    <div class="content-text">
+                        <p>
+                            <b>
+                                <span class="heading-number">1.</span>
+                                <span class="heading-text"> Survey Ships: Always protected while UPC. Exceptions:</span>
+                            </b>
+                        </p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block;">
+                            <li>No protection in a system where the same alliance is raiding a base.</li>
+                            <li>The survey ship is being used for attacking other ships or hostiles.</li>
+                            <li>The survey ship is zero node and no other nodes are available in the system.
+                                The attacker must immediately start mining the node just cleared.</li><br>
+                        </ul>
+                    </div>
+                    <div class="content-image">
+                        <img src="images/survey.png" alt="survey icon">
+                    </div>
+                </div>
+
+                <!-- Warships as Miners -->
+                <div class="content-section">
+                    <div class="content-text">
+                        <p>
+                            <b>
+                                <span class="heading-number">2.</span>
+                                <span class="heading-text"> Warships as Miners:</span>
+                            </b>
+                        </p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block;">
+                            <li>Specialty warships are protected (e.g. Discovery, NSEA, Voyager) <u>only</u> when actively
+                                mining for their loop materials.</li><br>
+                        </ul>
+                    </div>
+                    <div class="content-image battle-icons">
+                        <img src="images/battleship.png" alt="battleship icon">
+                        <img src="images/explorer.png" alt="explorer icon">
+                        <img src="images/interceptor.png" alt="interceptor icon">
+                    </div>
+                </div>
+
+                <!-- Token Space -->
+                <div class="content-section">
+                    <div class="content-text">
+                        <p>
+                            <b>
+                                <span class="heading-number">3.</span>
+                                <span class="heading-text">Token Space: Any system requiring you to spend something to enter.</span>
+                            </b>
+                        </p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block;">
+                            <li>Protected from attacks on any ship type. Any system requiring a special token
+                                (e.g. Borg, Mirror) is protected.</li><br>
+                        </ul>
+                    </div>
+                    <div class="content-image" style="display: flex; justify-content: flex-end; gap: 20px;">
+                        <img src="images/token.png" alt="transwarp token icon" style="width: 35%; cursor: pointer;" onclick="openLightboxImg(this)">
+                        <img src="images/toll.png" alt="cost to travel box" style="width: 55%; cursor: pointer;" onclick="openLightboxImg(this)">
+                    </div>
+                </div>
+
+                <!-- Armadas -->
+                <div class="content-section">
+                    <div class="content-text">
+                        <p>
+                            <b>
+                                <span class="heading-number">4.</span>
+                                <span class="heading-text"> Armadas:</span>
+                            </b>
+                        </p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block;">
+                            <li>Ships are protected when inside the armada circle except when using it as
+                                protection after initiating an attack on another player.</li><br>
+                        </ul>
+                    </div>
+                    <div class="content-image">
+                        <img src="images/armada3.png" alt="armada icons">
+                    </div>
+                </div>
+
+                <!-- Alliance Owned Territory -->
+                <div class="content-section">
+                    <div class="content-text">
+                        <p>
+                            <b>
+                                <span class="heading-number">5.</span>
+                                <span class="heading-text">Alliance Owned Territory:</span>
+                            </b>
+                        </p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block;">
+                            <li>Entering another alliance's territory provides no protection of any type.
+                                Enter at your own risk.</li><br>
+                        </ul><br>
+                        <p>
+                            <b>
+                                <span class="heading-number">6.</span>
+                                <span class="heading-text">Territory Capture or Defense:</span>
+                            </b>
+                        </p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block;">
+                            <li>RoE does not apply in contested territories.</li><br>
+                        </ul>
+                    </div>
+                    <div class="content-image">
+                        <img src="images/territory.png" alt="territory icon">
+                    </div>
+                </div>
+
+                <!-- Warships -->
+                <div class="content-section">
+                    <div class="content-text">
+                        <p>
+                            <b>
+                                <span class="heading-number">7.</span>
+                                <span class="heading-text">Warships:</span>
+                            </b>
+                        </p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block;">
+                            <li>Do not have any protections except as defined in 2 - 4 above.</li>
+                        </ul>
+                    </div>
+                    <div class="content-image">
+                        <img src="images/battleship.png" alt="battleship icon">
+                        <img src="images/explorer.png" alt="explorer icon">
+                        <img src="images/interceptor.png" alt="interceptor icon">
+                    </div>
+                </div>
+                <h2 style="text-align: center;">Rule of Thumb: <u>If you are unsure whether to hit someone, stay within RoE</u>.</h2>
+            </div>
+
+            <!-- Diplomacy Tab -->
+            <div class="tab-content" id="diplo">
+                <div class="content-section">
+                    <div class="content-text" style="text-align: center;">
+                        <h2>Diplomacy</h2>
+                        <img src="images/diplomacy.png" alt="diplomacy levels" style="display: block; margin: 0 auto;"><br>
+                        <div class="content-text">
+                            <p>In the STFC realm, there is Diplomacy. What does that mean?:
+                            <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block;">
+                                <li><i>the skill of managing international relations</i></li>
+                                <li><i>the art of dealing with people in a sensitive and effective way</i></li>
+                            </ul>
+                            </p><br>
+                            <p>But what does this mean in the game? It means that we all have a general respect
+                                for the game and the players. This game does have a <i>PvP</i> (Player vs Player) aspect
+                                and depending on other players' actions, sometimes things can get a bit heated. This
+                                is why we have and follow <b>RoE</b>. Should there be an issue, it needs to be brought
+                                up to a Commodore or the Admiral of the alliance. To be sure you CYA (Cover Your Ass),
+                                always try to take screenshots before you take someone out. This greatly helps your
+                                Admiral and Commodores should another player (regardless of their title) come crying.</p><br>
+                            <p>Do accidents happen? Yes. Will the game glitch and actually cause you to hit someone even
+                                though you did not intend to hit them? Also yes. Should this happen, just send that
+                                player a DM explaining what happened and apologize (and take a screenshot of said message
+                                including any replies). That's really all you can do. On the very outside chance things get
+                                very heated and become personal, don't go all postal on them. Take screenshots and reach out
+                                to your Commodores or Admiral.</p><br>
+                            <p>Rule of Thumb: <u>If you are unsure whether to hit someone, stay within RoE until you get clarification</u>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminology Tab -->
+            <div class="tab-content" id="terminology">
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/huh.png" alt="john c reilly image with a confused expression">
+                    </div>
+                    <div class="content-text">
+                        <h2>OPC? UPC? ABC? 123? Huh!?</h2>
+                        <p>You will see and hear all kinds of terms and acronyms. Below are some of the most common ones.</p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2;">
+                            <li><span class="highlight">RoE</span> | Rules of Engagment </li>
+                            <li><span class="highlight">UPC</span> | Under Protected Cargo</li>
+                            <li><span class="highlight">OPC</span> | Over Protected Cargo</li>
+                            <li><span class="highlight">Node</span> | What you mine resources from</li>
+                            <li><span class="highlight">Mada</span> | Short for Armada</li>
+                            <li><span class="highlight">FKR</span> | Federation, Klingon, Romulan</li>
+                            <li><span class="highlight">FED</span> | Federaction</li>
+                            <li><span class="highlight">KLN</span> | Klingon</li>
+                            <li><span class="highlight">ROM</span> | Romulan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Battle Tab -->
+            <div class="tab-content" id="battle">
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/battle_triangle.png" alt="stfc battle triangle">
+                    </div>
+                    <div class="content-text">
+                        <h2>Battleships</h2>
+                        <p>The battle triangle shows you which ships are best for fighting which ships. Is this written in
+                            stone? No. Virtually any ship that is strong enough and has a good enough crew can take on just about
+                            any other ship. Just about. Not all.</p>
+                        <p>Battleship triangle:</p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2;">
+                            <li><span class="highlight">Explorers</span> against <span class="highlight">Interceptors</span></li>
+                            <li><span class="highlight">Interceptors</span> against <span class="highlight">Battleships</span></li>
+                            <li><span class="highlight">Battleships</span> against <span class="highlight">Explorers</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Icons Tab -->
+            <div class="tab-content" id="icons">
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/parsteel.png" alt="parsteel icon">
+                    </div>
+                    <div class="content-text">
+                        <h2>Parsteel</h2>
+                        <p>Parsteel is used for many things in the game:</p><br>
+                        <li><span class="highlight">Used to build and level up buildings on your base</span></li><br>
+                        <li><span class="highlight">Repairing ships</span></li><br>
+                        <li><span class="highlight">Research</span></li><br>
+                        <li><span class="highlight">Alliance contributions</span></li><br>
+                        <li><span class="highlight">Ship upgrades</span></li>
+                    </div>
+                </div>
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/tritanium.png" alt="tritanium icon">
+                    </div>
+                    <div class="content-text">
+                        <h2>Tritanium</h2><br>
+                        <p>Tritanium is also used for many things in the game:</p><br>
+                        <li><span class="highlight">Upgrading buildings on your base</span></li><br>
+                        <li><span class="highlight">Upgrading ships and ship components</span></li><br>
+                        <li><span class="highlight">Research</span></li><br>
+                    </div>
+                </div>
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/dilithium.png" alt="dilithium icon">
+                    </div>
+                    <div class="content-text">
+                        <h2>Dilithium</h2><br>
+                        <p>Dilithium is also used for many things in the game:</p><br>
+                        <li><span class="highlight">Buy high-level space/ground equipment, reputation gear, and some ships</span></li><br>
+                        <li><span class="highlight">Donate to build/upgrade your Fleet's Starbase</span></li><br>
+                        <li><span class="highlight">Speed up R&D projects and upgrade equipment rarity/marks</span></li><br>
+                        <li><span class="highlight">Trade for other premium currency (ZEN) on the Dilithium Exchange</span></li>
+                    </div>
+                </div>
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/rawcrystal.png" alt="raw crystal icon">
+                    </div>
+                    <div class="content-text">
+                        <h2>Raw Crystal</h2><br>
+                        <p>Raw Crystal is used in the Refinery to produce other forms of Crystal: Common, Uncommon, Rare, and Epic.</p><br>
+                        <li><span class="highlight">Upgrading ships</span></li><br>
+                        <li><span class="highlight">Upgrading buildings in your base</span></li><br>
+                        <li><span class="highlight">Unlock crucial research, especially for some KLN aligned ships</span></li><br>
+                    </div>
+                </div>
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/rawgas.png" alt="raw gas icon">
+                    </div>
+                    <div class="content-text">
+                        <h2>Raw Gas</h2><br>
+                        <p>Raw Gas is also used in the Refinery to produce other forms of Gas: Common, Uncommon, Rare, and Epic.</p><br>
+                        <li><span class="highlight">Upgrading ships, especially Explorer-class ships</span></li><br>
+                        <li><span class="highlight">Upgrading buildings in your base</span></li><br>
+                        <li><span class="highlight">Used in R&D for various technologies</span></li><br>
+                    </div>
+                </div>
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/rawore.png" alt="raw ore icon">
+                    </div>
+                    <div class="content-text">
+                        <h2>Raw Ore</h2><br>
+                        <p>Raw Ore is also used in the Refinery to produce other forms of Ore: Common, Uncommon, Rare, and Epic.</p><br>
+                        <li><span class="highlight">Upgrading ships, especially Battleships and other speciality ships like the Vi'Dar</span></li><br>
+                        <li><span class="highlight">Upgrading buildings in your base</span></li><br>
+                        <li><span class="highlight">Used in R&D in the Station and Galaxy trees, which provide permanent buffs such as increased mining rates and reduced building costs</span></li><br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Away Teams Tab -->
+             <div class="tab-content" id="away">
+                <div class="content-section">
+                    <div class="content-text">
+                    <h2>Away Team Missions</h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips & Tricks -->
+             <div class="tab-content" id="tips">
+                <div class="content-section">
+                    <div class="content-text">
+                    <h2>Tips & Tricks</h2>
+                    </div>
+                </div><br>
+                <div class="content-text">
+                    <p style="color: green;">How to Stop a Tail</p>
+                </div>
+                <div class="youtube-container" style="position: relative; width: 640px; height: 400px;">
+                    <iframe 
+                        src="https://www.youtube.com/embed/lys8ZYz0vLc?rel=0&mute=1&rel=0&controls=0"
+                        width="800"
+                        height="500"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        style="position: absolute; top: 0; left: 0; z-index: 2;">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Territory Map -->
+             <div class="tab-content" id="map">
+                <div class="content-section">
+                    <div class="content-text">
+                    <img src="images/map.png" alt="territory map" height="900px" style="display: block; margin: 0 auto;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links -->
+             <div class="tab-content" id="links">
+                <div class="content-section">
+                    <div class="content-text">
+                        <h2>Useful Links</h2>
+                        <p><a href="https://home.startrekfleetcommand.com/store" target="_blank" rel="noopener noreferrer">Grab Your Daily Mission Key Here</a><br><br>
+                            <a href="https://startrekfleetcommand.com/" target="_blank" rel="noopener noreferrer">Office STFC Website - Very Indepth Information</a><br>
+                            <a href="https://startrekfleetcommand.com/star-trek-fleet-command-database/" target="_blank" rel="noopener noreferrer">STFC Database - Find Anything Game Related Here</a><br>
+                            <a href="https://stfc.2c.fyi/" target="_blank" rel="noopener noreferrer">Unofficial STFC Servers Status</a><br>
+                            <a href="https://stfc.pro" target="_blank" rel="noopener noreferrer">Live Stats Of The STFC Universe</a><br>
+                            <a href="https://stfc.pro/servers/717" target="_blank" rel="noopener noreferrer">Live Stats Of Our Server</a><br>
+                            <a href="https://www.pvptarget.com/" target="_blank" rel="noopener noreferrer">What Level Can I Shoot? Find Out Here</a><br>
+                            <a href="https://www.pvptarget.com/guide" target="_blank" rel="noopener noreferrer">VERY Indepth Players Guide</a><br>
+                            <a href="https://stfc.johnwsiskar.com/" target="_blank" rel="noopener noreferrer">John's Player's Guide</a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+        &copy; 2025 [BORG] Academy. All rights reserved.
+        </div>
+    </div>
+
+    <!-- lightbox modal -->
+    <div id="lightbox-modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
+    <img id="lightbox-image" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%; border-radius: 8px;">
+    <span style="position: fixed; top: 20px; right: 30px; font-size: 40px; font-weight: bold; color: white; cursor: pointer; z-index: 1001;" onclick="closeLightbox()">&times;</span>
+    </div>
+
+<div id="probe-layer">
+    <img src="images/borgprobe01.png" class="probe">
+    <img src="images/borgprobe02.png" class="probe">
+    <img src="images/borgcube.png" class="probe">
+</div>
+</body>
+</html>
