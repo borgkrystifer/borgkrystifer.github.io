@@ -44,16 +44,16 @@ body {
 }
 
 .header {
-  background-image: url('images/xmaslights.png');
+  /* background-image: url('images/xmaslights.png');
   background-repeat: repeat-x;
   background-position: top center;
-  background-size: auto 80px;
-  padding: 100px 45px 30px 45px;
+  background-size: auto 80px; */
+  padding: 50px 45px 30px 45px;
   border-bottom: 2px solid var(--accent-gold);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
+  /* gap: 20px; */
 }
 
 .header h1 {
