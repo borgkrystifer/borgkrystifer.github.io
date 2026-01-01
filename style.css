@@ -41,6 +41,8 @@ body {
     border-radius: 12px;
     box-shadow: 0 0 30px green, inset 0 0 20px green;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -143,7 +145,7 @@ body {
 
 .tab-button.active {
     background: green;
-    color: var(--accent-gold); /* text color */
+    color: var(--accent-gold);
     box-shadow: 0 0 20px var(--accent-gold);
 }
 
@@ -153,6 +155,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    flex: 1; /* added */
 }
 
 .tab-content {
@@ -320,7 +323,7 @@ body {
 .page-footer {
     text-align: center;
     color: var(--accent-gold);
-    margin-top: 20px;
+    margin-top: auto;
     padding-bottom: 10px;
     font-size: 0.9em;
 }
@@ -434,13 +437,13 @@ body {
 #probe-layer {
     position: fixed;
     inset: 0;
-    pointer-events: none; /* don’t block clicks */
+    pointer-events: none;
     z-index: 1;
 }
 
 .probe {
     position: absolute;
-    width: 125px; /* tweak per image */
+    width: 125px;
     height: auto;
 }
 
@@ -492,7 +495,6 @@ body {
         font-size: 0.9em;
     }
 
-    /* mobile-only header + marquee tweak */
     .header {
         padding: 80px 20px 20px 20px;
         flex-direction: column;
@@ -516,7 +518,6 @@ body {
         padding-left: 100%;
     }
 
-    /* shrink all images by 50% */
     .container img {
         max-width: 50%;
         height: auto;
