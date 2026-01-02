@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stfcstyle.css">
     <script src="main.js" defer></script>
 
     <meta charset="UTF-8">
@@ -58,6 +59,7 @@
             <a href="#tips" class="tab-button" data-tab="tips">Tips & Tricks</a>
             <a href="#links" class="tab-button" data-tab="links">Links</a>
             <a href="#map" class="tab-button" data-tab="map">Territory</a>
+            <a href="#roster" class="tab-button roster" data-tab="roster">Roster</a>
         </div>
         <div class="content">
 
@@ -572,7 +574,17 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <!-- Roster -->
+             <div class="tab-content" id="roster">
+                <div class="lcars-container">
+                <div class="lcars-header">BORG ROSTER</div>
+                    <div class="table-scroll">
+                        <div id="roster-inner"></div>
+                    </div>
+                </div>
+                <script src="stfcalliance.js"></script>
+            </div>
         <div class="page-footer">
             &copy; <script>document.write(new Date().getFullYear());</script> [BORG] Academy. All rights reserved.
         </div>
@@ -584,10 +596,10 @@
     <span style="position: fixed; top: 20px; right: 30px; font-size: 40px; font-weight: bold; color: white; cursor: pointer; z-index: 1001;" onclick="closeLightbox()">&times;</span>
     </div>
 
-<div id="probe-layer">
+<!-- <div id="probe-layer">
     <img src="images/borgprobe01.png" class="probe">
     <img src="images/borgprobe02.png" class="probe">
     <img src="images/borgcube.png" class="probe">
-</div>
+</div> -->
 </body>
 </html>

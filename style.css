@@ -138,6 +138,10 @@ body {
     text-decoration: none;
 }
 
+.tab-button.roster {
+    border-color: var(--accent-teal);
+}
+
 .tab-button:hover {
     background: rgb(71, 166, 185);
     box-shadow: 0 0 15px var(--accent-gold);
