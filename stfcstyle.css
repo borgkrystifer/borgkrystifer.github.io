@@ -1,0 +1,164 @@
+#roster {
+  background: #000;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+#roster .lcars-container {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  background: #111;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ffcc00;
+  overflow: hidden;
+}
+
+#roster .lcars-header {
+  background: #ff9900;
+  color: #000;
+  padding: 15px;
+  font-size: 2em;
+  font-weight: bold;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+}
+
+#roster #roster-container {
+  padding: 10px;
+}
+
+#roster table#roster {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#roster table#roster th, table#roster td {
+  padding: 10px;
+  text-align: left;
+}
+
+#roster table#roster tbody tr:nth-child(odd) {
+  background: #222;
+}
+
+#roster table#roster tbody tr:nth-child(even) {
+  background: #333;
+}
+
+#roster .stat-bar {
+  display: inline-block;
+  height: 10px;
+  border-radius: 5px;
+}
+
+#roster .stat-power { background: #ffcc00; }
+#roster .stat-helps { background: #00ccff; }
+
+#roster .lcars-container {
+  position: relative;
+}
+
+#roster .lcars-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 30px; height: 30px;
+  border-top: 3px solid #ff9900;
+  border-left: 3px solid #ff9900;
+  z-index: 1;
+}
+
+#roster .lcars-header {
+  position: relative;
+}
+
+#roster table#roster tbody tr:nth-child(odd) {
+  background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
+}
+
+#roster table#roster tbody tr:nth-child(even) {
+  background: linear-gradient(90deg, #0f3460 0%, #1a1a2e 100%);
+}
+
+#roster th[data-column="bracket"],
+#roster th[data-column="score"], 
+#roster th[data-column="tasks"],
+#roster th[data-column="activeTask"],
+#roster th[data-column="position"] {
+  border-left: 3px solid #ff9900 !important;
+  box-shadow: 
+    0 0 8px #ff9900,
+    inset 0 0 8px rgba(255, 153, 0, 0.3) !important;
+  background: transparent !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+#roster td[data-column="bracket"],
+#roster td[data-column="score"], 
+#roster td[data-column="tasks"],
+#roster td[data-column="activeTask"],
+#roster td[data-column="position"] {
+  border-left: 2px solid #ff6600 !important;
+  box-shadow: inset 0 0 6px rgba(255, 153, 0, 0.4) !important;
+  background: rgba(255, 153, 0, 0.05) !important;
+  color: #fff !important;
+}
+
+#roster .column-toggles label {
+  background: linear-gradient(145deg, #ff9900, #ffcc00);
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 2px solid #000;
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+#roster .column-toggles label:hover {
+  box-shadow: 0 0 15px #ffcc00;
+  transform: translateY(-1px);
+}
+
+#roster .lcars-container::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255,204,0,0.03) 2px,
+    rgba(255,204,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+#roster .tournament-score-bar {
+  display: inline-block;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #00ff88, #ffcc00, #ff6600);
+  box-shadow: 0 0 8px currentColor;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+#roster .table-scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+  width: 100%;
+}
+
+#roster .table-scroll table#roster {
+  min-width: 900px;
+}
