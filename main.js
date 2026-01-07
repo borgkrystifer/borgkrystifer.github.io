@@ -184,6 +184,52 @@ window.addEventListener('click', function(event) {
     }
 });
 
+// Terminology modal functionality for touch devices
+function initTerminologyModal() {
+    const modal = document.getElementById('termModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDefinition = document.getElementById('modalDefinition');
+    const closeBtn = document.querySelector('.modal-close');
+
+    if (modal && modalTitle && modalDefinition && closeBtn) {
+        // Use event delegation so it works even if terms are added later
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.term-tooltip')) {
+                const term = e.target.closest('.term-tooltip');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const abbrev = Array.from(term.childNodes)
+                    .filter(node => node.nodeType === 3)
+                    .map(node => node.textContent.trim())
+                    .join('')
+                    .trim();
+                const definition = term.querySelector('.tooltip-text').textContent.trim();
+                
+                modalTitle.textContent = abbrev;
+                modalDefinition.textContent = definition;
+                modal.classList.add('active');
+            }
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
+}
+
+// Initialize after DOM is ready
+document.addEventListener('DOMContentLoaded', initTerminologyModal);
+
+// Also initialize on load in case elements are created late
+window.addEventListener('load', initTerminologyModal);
+
 // borg probe animation
 // function initProbes() {
 //     const probes = Array.from(document.querySelectorAll('.probe'));

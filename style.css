@@ -492,7 +492,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     display: flex;
-    flex-direction: row;        /* LEFT TO RIGHT */
+    flex-direction: row;
     gap: 30px;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -516,6 +516,156 @@ body {
 
 .image-text-pair h3:nth-of-type(2) {
     margin-top: 45px;
+}
+
+/* terminology grid with tooltips */
+.terminology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.term-tooltip {
+    position: relative;
+    padding: 8px 12px;
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-base);
+    cursor: help;
+    font-weight: var(--font-weight-medium);
+    color: #00ff00;  /* GREEN */
+    text-align: center;
+    transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.term-tooltip:hover {
+    background-color: var(--color-secondary-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(19, 52, 59, 0.95);
+    color: var(--accent-gold);  /* GOLD TEXT */
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: var(--radius-base);
+    white-space: normal;
+    width: 250px;
+    font-size: var(--font-size-sm);
+    font-weight: normal;
+    transition: opacity var(--duration-normal) var(--ease-standard);
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--color-primary);
+}
+
+.term-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.term-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.term-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: rgba(19, 52, 59, 0.95);
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    max-width: 400px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    border: 2px solid var(--color-primary);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--accent-gold);
+}
+
+.modal-content p {
+    color: var(--accent-gold);
+    text-align: center;
+}
+
+.landscape-prompt {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(19, 52, 59, 0.95);
+    color: var(--color-btn-primary-text);
+    padding: 16px;
+    text-align: center;
+    z-index: 9999;
+    box-shadow: var(--shadow-lg);
+    border-bottom: 3px solid var(--color-primary);
+}
+
+.landscape-prompt.active {
+    display: block;
+}
+
+.landscape-prompt-content {
+    position: relative;
+}
+
+.landscape-prompt p {
+    margin: 0;
+    font-weight: var(--font-weight-medium);
+    color: var(--accent-gold);
+}
+
+.landscape-prompt-close {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--accent-gold);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}
+
+@media (orientation: landscape) {
+    .landscape-prompt.active {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -606,5 +756,18 @@ body {
         flex: 0 1 auto;
         text-align: center;
         width: 100%;
+    }
+}
+
+/* disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .term-tooltip:hover {
+        background-color: var(--color-secondary);
+        box-shadow: none;
+    }
+    
+    .term-tooltip:hover .tooltip-text {
+        visibility: hidden;
+        opacity: 0;
     }
 }

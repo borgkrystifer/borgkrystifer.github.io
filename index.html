@@ -37,12 +37,20 @@
 </head>
 
 <body>
+    <!-- Landscape orientation prompt -->
+<div id="landscapePrompt" class="landscape-prompt">
+    <div class="landscape-prompt-content">
+        <p>For the best experience, please rotate your device to landscape mode.</p>
+        <button id="dismissPrompt" class="landscape-prompt-close">✕</button>
+    </div>
+</div>
+
     <div class="container">
         <div class="header">
             <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
                 <h1 style="color: green; margin: 0; text-align: center;">[BORG] ACADEMY</h1>
                 <div class="marquee">
-                    <span>*** Maintenance Ended - Update Your Game Clients! ***</span>
+                    <span>*** STFC Server Maint Jan. 6th Starting @ 9 AM UTC / 4 AM EDT / Downtime ≅ 2 hours ***</span>
                 </div>
             </div>
         </div>
@@ -350,41 +358,65 @@
 
             <!-- Terminology Tab -->
              <div class="tab-content" id="terminology">
-                <div class="content-section" style="display: flex; flex-direction: column; align-items: center;">
-                    <div class="content-image clickable" onclick="openLightbox(this)" style="width: 100%; display: flex; justify-content: center; margin-bottom: 20px;">
-                        <img src="images/huh.png" alt="john c reilly image with a confused expression" style="max-width: 100%; height: auto;">
-                    </div>
-                    <div class="content-text" style="width: 100%; text-align: left;">
-                        <h2 style="text-align: center;">OPC? UPC? ABC? 123? Huh!?</h2>
-                        <p style="text-align: center; color: green;">
-                            You will see and hear all kinds of terms and acronyms. Below are some of the most common ones.
+                <div class="content-section">
+                    <div class="content-text">
+                        <h2>OPC? UPC? ABC? 123? Huh!?</h2>
+                        <p>You will see and hear all kinds of terms and acronyms.
+                            Below are some of the most common ones. Hover over any
+                            term to see its definition.
                         </p>
-                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left;">
-                            <li><span style="color: var(--accent-gold);">FKR</span> |
-                                <span style="color: green;">Federation, Klingon, Romulan</span></li>
-                            <li><span style="color: var(--accent-gold);">FED</span> |
-                                <span style="color: green;">Federaction</span></li>
-                            <li><span style="color: var(--accent-gold);">KLN</span> |
-                                <span style="color: green;">Klingon</span></li>
-                            <li><span style="color: var(--accent-gold);">ROM</span> |
-                                <span style="color: green;">Romulan</span></li><br>
-
-                            <li><span style="color: var(--accent-gold);">RoE</span> |
-                                <span style="color: green;">Rules of Engagment</span></li>
-                            <li><span style="color: var(--accent-gold);">OPC</span> |
-                                <span style="color: green;">Over Protected Cargo</span></li>
-                            <li><span style="color: var(--accent-gold);">UPC</span> |
-                                <span style="color: green;">Under Protected Cargo</span></li>
-                            <li><span style="color: var(--accent-gold);">Node</span> |
-                                <span style="color: green;">What you mine resources from</span></li>
-                            <li><span style="color: var(--accent-gold);">Ops</span> |
-                                <span style="color: green;">Operations Building</span></li>
-                            <li><span style="color: var(--accent-gold);">CarMada</span> |
-                                <span style="color: green;">Cardassian Armada</span></li>
-                            <li><span style="color: var(--accent-gold);">Mada</span> |
-                                <span style="color: green;">Short for Armada</span></li>
-                        </ul>
+                        
+                        <div class="terminology-grid">
+                            <span class="term-tooltip">ACC<span class="tooltip-text">Armada Control Center; opens @ OPS 23</span></span>
+                            <span class="term-tooltip">AFK<span class="tooltip-text">Away From Keyboard / device</span></span>
+                            <span class="term-tooltip">ALB<span class="tooltip-text">Alliance Leaderboard (competitive leaderboard against other Alliances)</span></span>
+                            <span class="term-tooltip">AMS<span class="tooltip-text">Alliance Milestone (noncompetitive with rewards at each milestone)</span></span>
+                            <span class="term-tooltip">BB<span class="tooltip-text">Botany Bay; data miner</span></span>
+                            <span class="term-tooltip">CarMada<span class="tooltip-text">Cardassian Armada</span></span>
+                            <span class="term-tooltip">CMA<span class="tooltip-text">Common Mining Agreement</span></span>
+                            <span class="term-tooltip">Dolphin<span class="tooltip-text">Moderate PTP player buys occasional packs</span></span>
+                            <span class="term-tooltip">DS<span class="tooltip-text">Deep space; opens @ level 38 ops</span></span>
+                            <span class="term-tooltip">FED<span class="tooltip-text">Federation</span></span>
+                            <span class="term-tooltip">FKR<span class="tooltip-text">Federation, Klingon, Romulan</span></span>
+                            <span class="term-tooltip">FTP<span class="tooltip-text">Free to play; player never/hardly ever spends on in game purchases</span></span>
+                            <span class="term-tooltip">KLN<span class="tooltip-text">Klingon</span></span>
+                            <span class="term-tooltip">KOS<span class="tooltip-text">Kill On Sight</span></span>
+                            <span class="term-tooltip">Mada<span class="tooltip-text">Short for Armada</span></span>
+                            <span class="term-tooltip">Mats<span class="tooltip-text">Materials; parsteel, dilithium, tritanium</span></span>
+                            <span class="term-tooltip">NAP<span class="tooltip-text">Non-Aggression Pact</span></span>
+                            <span class="term-tooltip">Node<span class="tooltip-text">What you mine resources from</span></span>
+                            <span class="term-tooltip">NS<span class="tooltip-text">North Star</span></span>
+                            <span class="term-tooltip">Ops<span class="tooltip-text">Operations Building</span></span>
+                            <span class="term-tooltip">OPC / OPL<span class="tooltip-text">Over Protected Cargo / Limit</span></span>
+                            <span class="term-tooltip">PC / PL<span class="tooltip-text">Protected cargo / limit; your hold is divided into 2 parts the Lower
+                                level is "Protected Cargo" when you exceed this limit you're open to attack but retain everything below it</span></span>
+                            <span class="term-tooltip">PTP<span class="tooltip-text">Pay to play; player spends RL $$ on in game purchases</span></span>
+                            <span class="term-tooltip">PVE<span class="tooltip-text">Player Vs Environment combat; hostile farming / rep grinding</span></span>
+                            <span class="term-tooltip">PVP<span class="tooltip-text">Player Vs Player combat</span></span>
+                            <span class="term-tooltip">RoE<span class="tooltip-text">Rules Of Engagement</span></span>
+                            <span class="term-tooltip">ROM<span class="tooltip-text">Romulan</span></span>
+                            <span class="term-tooltip">RSS<span class="tooltip-text">Resources; crystal, ore & gas</span></span>
+                            <span class="term-tooltip">S717<span class="tooltip-text">Server 717 Silver Blood; this server we all call home</span></span>
+                            <span class="term-tooltip">SLB<span class="tooltip-text">Solo Leaderboard (competitive leaderboard against other players)</span></span>
+                            <span class="term-tooltip">SMS<span class="tooltip-text">Solo Milestone (noncompetitive with rewards at every milestone)</span></span>
+                            <span class="term-tooltip">SOP<span class="tooltip-text">Standard Operating Procedure</span></span>
+                            <span class="term-tooltip">SS<span class="tooltip-text">Screen shot; used to prove OPC and other contentious ROE issues</span></span>
+                            <span class="term-tooltip">TC/TD<span class="tooltip-text">Territory Capture/Territory Defend; open to travel @ warp 20. Can refine ISO
+                                @ refinery level 25 (Capture - taking territory for first time or from another alliance, Defend - protecting ownership of already taken territory)</span></span>
+                            <span class="term-tooltip">UPC<span class="tooltip-text">Under Protected Cargo; protected under ROE</span></span>
+                            <span class="term-tooltip">Warships<span class="tooltip-text">All non-survey ships (battleships, interceptors, explorers)</span></span>
+                            <span class="term-tooltip">Zero Mine / Node<span class="tooltip-text">A mining node that is depleted to zero resources</span></span>
+                        </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- modal for mobile -->
+            <div id="termModal" class="term-modal">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDefinition"></p>
                 </div>
             </div>
 
@@ -566,10 +598,10 @@
                 <div class="content-section">
                     <div class="content-text">
                         <h2>Tips & Tricks</h2>
-                        <p style="color: green;">
+                        <p style="color: green; text-align: center;">
                             How to Stop a Tail
                         </p>
-                        <div style="width: 640px; margin: 20px 0 0 -20px;">
+                        <div style="width: 640px; margin: 20px auto 0;">
                             <iframe 
                                 src="https://www.youtube.com/embed/lys8ZYz0vLc?rel=0&mute=1&rel=0&controls=0"
                                 width="600"
@@ -577,14 +609,14 @@
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen
-                                style="display: block; border-radius: 8px;">
+                                style="display: block; border-radius: 8px; margin: 0 auto;">
                             </iframe>
                         </div>
                     </div>
                 </div>
                 <div class="content-section">
                     <div class="content-text">
-                        <p style="color: green;">
+                        <p style="color: green; text-align: center;">
                             * Faction <span style="color: var(--accent-gold);"><b>Survey</b></span> ships
                             give a "higher" negative hit to your reputation within that Faction than other ship types. If you have
                             to engage Faction ships where you have a good rep or are trying to build a good rep, avoid targeting
@@ -605,13 +637,56 @@
                 </div>
                 <div class="content-section">
                     <div class="content-text">
-                        <p style="color: green;">* <a href="#terminology" target="_blank" style="color: var(--accent-gold);">CarMadas</a> do not count
+                        <p style="color: green; text-align: center;">* <a href="#terminology" target="_blank" style="color: var(--accent-gold);">CarMadas</a> do not count
                             towards <a href="#terminology" target="_blank" style="color: var(--accent-gold);">FKR</a> Events
                         </p>
                     </div>
                 </div>
+                <div class="content-section">
+                    <div class="content-text">
+                        <h1 style="color: green; text-align: center;">Operations Levels Milestones</h1><br><br>
+                        <p style="color: green; text-align: center;">
+                            <span style="color: var(--accent-gold);">
+                                Rule of thumb:  Level <u>ALL</u> Buildings, Weapons Platforms, Drydocks & Research
+                                <u>before</u> raising Ops to the next level.
+                            </span>
+                            <br>
+                            The game kind of pushes you, hard, to level up Ops quickly but it is not benefical,
+                            at all. In fact, it can actually hinder your progress.
+                        </p>
+                        <br>
+                         <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; color: var(--accent-gold);">
+                            <li>Ops Lvl 05: <span style="color: green;">You are now open to PvP attacks while mining</span></li>
+                            <li>Ops Lvl 10: <span style="color: green;">You are now open to PvP attacks on Warships and Surveys, from players as high as Ops Lvl 12</span></li>
+                            <li>Ops Lvl 12: <span style="color: green;">This is your last chance to transfer to another server. The transfer token becomes inactive
+                                @ Ops Lvl 13</span></li>
+                            <li>Ops Lvl 13: <span style="color: green;">You are stuck on whatever server you're on.</span><br><br>
+                            <li>Ops Lvl 15: <span style="color: green;">Your base can now be attacked. A 7 day peace shield activates when you reach this level. Use
+                                this time to max out your Weapons, Platforms & Drydocks. Peace shields drop when you attack another player.
+                                If you complete your Dailys, you will receive 24 hours worth of shields. After the initial shield drops, it
+                                is now your responsibility to stay shielded when not online. Shield or share!</span></li><br>
+                            <li>Ops Lvl 18: <span style="color: green;">Franklin & Botany Bay ships become available</span></li>
+                            <li>Ops Lvl 19: <span style="color: green;">Court of Q Trials Building becomes available</span></li>
+                            <li>Ops Lvl 20: <span style="color: green;">3* or G3 refinery opens</span></li><br>
+                            <li>Ops Lvl 23: <span style="color: green;">Armada Control Center (ACC) research node opens, allowing access to construct the building.
+                                It takes 1000 tactical cores to complete the research. Once the ACC is built, you will be able to run Armadas!</span></li><br>
+                            <li>Ops Lvl 25: <span style="color: green;">While able to mine Isogen as soon as you can reach an Iso system, at Ops Lvl 25, you can now refine
+                                raw Isogen into Refined Isogen and Iso-Emulsion. Also, you'll be able to trade in Cardassian loot which is
+                                obtained from Cardassian Armadas, or "CarMadas". The Starbase and Territory Research Trees also become available</span></li><br>
+                            <li>Ops Lvl 26: <span style="color: green;">F/K/R ships unlock in the Faction Stores, dependent on your Faction Reputation</span></li>
+                            <li>Ops Lvl 28: <span style="color: green;">Rogue Faction Store opens</span></li>
+                            <li>Ops Lvl 30: <span style="color: green;">ACC 5-Seat Armadas, Sarcophagus Forge Buff, Voyager Refinery</span></li>
+                            <li>Ops Lvl 31: <span style="color: green;">Amalgam becomes available</span></li>
+                            <li>Ops Lvl 35: <span style="color: green;">Bajoran Faction & Defiant unlocked, Franklin-A available</span></li>
+                            <li>Ops Lvl 37: <span style="color: green;">Titan unlocked</span></li>
+                            <li>Ops Lvl 38: <span style="color: green;">Ex-Borg Faction unlocked, Cerritos unlocked</span></li>
+                            <li>Ops Lvl 39: <span style="color: green;">4* refining (Common), ACC 6-Seat Armadas, Ascension to Ops Lvl 40 available every Friday</span></li>
+                            <li>Ops Lvl 40: <span style="color: green;">4* refining (Uncommon)</span></li>
+                            <li>Ops Lvl 41: <span style="color: green;">4* refining (Rare)</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
             <!-- Territory Map -->
              <div class="tab-content" id="map">
                 <div class="content-section">
@@ -694,7 +769,7 @@
                     </p>
                 </div>
                 <div class="lcars-container">
-                <div class="lcars-header">BORG ROSTER</div>
+                    <div class="lcars-header">BORG ROSTER</div>
                     <div class="table-scroll">
                         <div id="roster-inner"></div>
                     </div>
@@ -709,8 +784,8 @@
 
     <!-- lightbox modal -->
     <div id="lightbox-modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);">
-    <img id="lightbox-image" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%; border-radius: 8px;">
-    <span style="position: fixed; top: 20px; right: 30px; font-size: 40px; font-weight: bold; color: white; cursor: pointer; z-index: 1001;" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-image" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%; border-radius: 8px;">
+        <span style="position: fixed; top: 20px; right: 30px; font-size: 40px; font-weight: bold; color: white; cursor: pointer; z-index: 1001;" onclick="closeLightbox()">&times;</span>
     </div>
 
 </body>
