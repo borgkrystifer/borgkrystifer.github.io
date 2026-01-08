@@ -1,6 +1,73 @@
 // GLOBAL VARIABLES
 let tabButtons, tabContents, activateTab;
 
+// ======================================
+// ALLIANCE DATA & COMMAND TAB MANAGEMENT
+// ======================================
+
+// Global store for alliance roster data
+let allianceRosterData = {
+  players: [],
+  lastUpdated: null
+};
+
+// Fetch alliance data from Cloudflare worker
+async function fetchAllianceRoster() {
+  try {
+    const response = await fetch('https://throbbing-night-83f1.gf9mkqbtwv.workers.dev/');
+    if (!response.ok) throw new Error('Failed to fetch roster');
+    
+    const data = await response.json();
+    allianceRosterData.players = data.players || [];
+    allianceRosterData.lastUpdated = new Date();
+    
+    console.log('Alliance roster updated:', allianceRosterData.players.length, 'players');
+    return true;
+  } catch (error) {
+    console.error('Error fetching alliance roster:', error);
+    return false;
+  }
+}
+
+// Update Command tab with live roster data
+function updateCommandTab() {
+  // Column names from your API
+  const nameColumn = 'Name';
+  const rankColumn = 'Rank';
+  
+  // Filter players by their rank from the API
+  const admirals = allianceRosterData.players.filter(p => 
+    p[rankColumn] === 'Admiral'
+  );
+  const commodores = allianceRosterData.players.filter(p => 
+    p[rankColumn] === 'Commodore'
+  );
+  const premiers = allianceRosterData.players.filter(p => 
+    p[rankColumn] === 'Premier'
+  );
+  
+  // Extract names and join with " | "
+  const admiralNames = admirals.map(p => p[nameColumn]).join(' | ') || 'TBD';
+  const commodoreNames = commodores.map(p => p[nameColumn]).join(' | ') || 'TBD';
+  const premierNames = premiers.map(p => p[nameColumn]).join(' | ') || 'TBD';
+  
+  // Update the DOM
+  const admiralElement = document.getElementById('command-admiral');
+  if (admiralElement) admiralElement.textContent = admiralNames;
+  
+  const commodoresElement = document.getElementById('command-commodores');
+  if (commodoresElement) commodoresElement.textContent = commodoreNames;
+  
+  const premiersElement = document.getElementById('command-premiers');
+  if (premiersElement) premiersElement.textContent = premierNames;
+  
+  console.log('Command tab updated:', { admiralNames, commodoreNames, premierNames });
+}
+
+// ============================
+// END ALLIANCE DATA MANAGEMENT
+// ============================
+
 // prevent scroll on hash navigation
 window.addEventListener('hashchange', function (e) {
     e.preventDefault();
@@ -62,6 +129,9 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         activateTab('welcome');
     }
+
+    // fetch alliance roster and update command tab on page load
+    fetchAllianceRoster().then(() => updateCommandTab());
 });
 
 // handle browser back/forward and direct hash links
@@ -229,83 +299,3 @@ document.addEventListener('DOMContentLoaded', initTerminologyModal);
 
 // Also initialize on load in case elements are created late
 window.addEventListener('load', initTerminologyModal);
-
-// borg probe animation
-// function initProbes() {
-//     const probes = Array.from(document.querySelectorAll('.probe'));
-//     const vpWidth = () => window.innerWidth;
-//     const vpHeight = () => window.innerHeight;
-
-//     const state = probes.map((img, idx) => {
-//         const w = vpWidth();
-//         const h = vpHeight();
-//         const startX = Math.random() * w;
-//         const startY = Math.random() * h;
-
-//         // pick an initial target at least half-screen away
-//         let targetX = Math.random() * w;
-//         let targetY = Math.random() * h;
-//         const minDist = Math.min(w, h) * 0.4;
-//         let dx = targetX - startX;
-//         let dy = targetY - startY;
-
-//         if (Math.hypot(dx, dy) < minDist) {
-//             dx = dx || 1;
-//             dy = dy || 1;
-//             targetX = startX + dx * 1.5;
-//             targetY = startY + dy * 1.5;
-//         }
-
-//         return {
-//             el: img,
-//             x: startX,
-//             y: startY,
-//             time: Math.random() * Math.PI * 2,
-//             targetX,
-//             targetY,
-//             pathTimer: Math.random() * 2000, // shorter initial progress
-//             pathDuration: Math.random() * 5000 + 6000  // 6-11s per path
-//         };
-//     });
-
-//     function tick() {
-//         const w = vpWidth();
-//         const h = vpHeight();
-//         const t = performance.now();
-
-//         state.forEach(p => {
-//             p.pathTimer += 16; // ~60fps
-
-//             // switch to new target when path is complete
-//             if (p.pathTimer > p.pathDuration) {
-//                 p.pathTimer = 0;
-//                 p.pathDuration = Math.random() * 4000 + 5000; // 5-9s
-//                 p.targetX = Math.random() * (w + 300) - 150;
-//                 p.targetY = Math.random() * (h + 300) - 150;
-//             }
-
-//             // gentle movement toward target with some organic wobble
-//             p.x += (p.targetX - p.x) * 0.025 + Math.sin(t * 0.001 + p.time) * 0.2;
-//             p.y += (p.targetY - p.y) * 0.025 + Math.cos(t * 0.0008 + p.time) * 0.2;
-
-//             // wrap around screen
-//             if (p.x > w + 100) p.x = -100;
-//             if (p.x < -100) p.x = w + 100;
-//             if (p.y > h + 100) p.y = -100;
-//             if (p.y < -100) p.y = h + 100;
-
-//             p.el.style.left = p.x + 'px';
-//             p.el.style.top = p.y + 'px';
-            
-//             // smooth banking based on direction
-//             const angle = Math.atan2(p.targetY - p.y, p.targetX - p.x) * (180 / Math.PI);
-//             p.el.style.transform = `rotate(${angle + Math.sin(t * 0.002 + p.time) * 5}deg)`;
-//         });
-
-//         requestAnimationFrame(tick);
-//     }
-
-//     tick();
-// }
-
-// window.addEventListener('load', initProbes);
