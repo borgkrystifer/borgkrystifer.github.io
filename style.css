@@ -246,7 +246,7 @@ body {
 .content-text .rank-name {
     color: green;
     margin-bottom: 20px;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .highlight {
@@ -264,7 +264,7 @@ body {
 }
 
 #links a {
-    color: green;
+    color: var(--accent-gold);
     text-decoration: none;
 }
 
@@ -273,7 +273,7 @@ body {
 }
 
 #links a:hover {
-    color: green;
+    color: var(--accent-teal);
     text-shadow: 0 0 15px rgb(242, 255, 0);
 }
 
