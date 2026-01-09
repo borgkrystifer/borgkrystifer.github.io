@@ -662,10 +662,33 @@ body {
     padding: 0;
 }
 
+.video-container {
+  width: 100%;
+  max-width: 640px;
+  margin: 20px auto 0;
+}
+
+.video-container iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 8px;
+}
+
 @media (orientation: landscape) {
     .landscape-prompt.active {
         display: none;
     }
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto 0;
+  }
 }
 
 @media (max-width: 768px) {
