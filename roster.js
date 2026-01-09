@@ -16,27 +16,76 @@ TOURNAMENT_COLUMNS.forEach(col => {
 // ==================================
 // use shared data or fetch if needed
 // ==================================
+
+// UPDATED: Use shared data or fetch if needed
 async function getAllianceData() {
-  // check if allianceRosterData is already populated by main.js
-  if (window.allianceRosterData && window.allianceRosterData.players && window.allianceRosterData.players.length > 0) {
+  // Check if allianceRosterData is already populated by main.js
+  if (window.allianceRosterData && 
+      window.allianceRosterData.players && 
+      window.allianceRosterData.players.length > 0) {
     console.log("Using shared allianceRosterData from main.js");
     return window.allianceRosterData;
   }
-  
-  // if ! available, fetch it
+
+  // If not available, fetch it
   console.log("allianceRosterData not available, fetching independently...");
   try {
     const res = await fetch(ALLIANCE_WORKER_URL);
-    if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
-    }
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    
     const data = await res.json();
+    
+    // NEW: Handle leavers from Worker
+    if (data.leavers && data.leavers.length > 0) {
+      console.log(`${data.leavers.length} leavers detected:`, data.leavers.map(p => p.name));
+      showLeaverAlert(data.leavers);
+    }
+    
     return data;
   } catch (err) {
-    console.error("Error fetching alliance ", err);
+    console.error("Error fetching alliance:", err);
     return { players: [], tournaments: [] };
   }
 }
+
+function showLeaverAlert(leavers) {
+  const names = leavers.map(p => p.name || p.Name || p.Player).join(', ');
+  console.log(`🚨 ${leavers.length} LEFT: ${names}`);
+  
+  // Simple on-screen alert
+  const alert = document.createElement('div');
+  alert.textContent = `${leavers.length} LEFT: ${names}`;
+  alert.style.cssText = `
+    position: fixed; top: 10px; right: 10px; 
+    background: #ff4444; color: white; padding: 15px; 
+    border-radius: 8px; z-index: 9999; font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  `;
+  document.body.appendChild(alert);
+  setTimeout(() => alert.remove(), 15000);
+}
+
+// async function getAllianceData() {
+//   // check if allianceRosterData is already populated by main.js
+//   if (window.allianceRosterData && window.allianceRosterData.players && window.allianceRosterData.players.length > 0) {
+//     console.log("Using shared allianceRosterData from main.js");
+//     return window.allianceRosterData;
+//   }
+  
+//   // if ! available, fetch it
+//   console.log("allianceRosterData not available, fetching independently...");
+//   try {
+//     const res = await fetch(ALLIANCE_WORKER_URL);
+//     if (!res.ok) {
+//       throw new Error(`HTTP error! status: ${res.status}`);
+//     }
+//     const data = await res.json();
+//     return data;
+//   } catch (err) {
+//     console.error("Error fetching alliance ", err);
+//     return { players: [], tournaments: [] };
+//   }
+// }
 
 async function loadAndRenderRoster() {
   try {
@@ -195,6 +244,12 @@ function renderRoster(players) {
   const tbody = document.createElement("tbody");
   players.forEach(player => {
     const row = document.createElement("tr");
+    // NEW: Highlight if leaver
+    if (window.allianceRosterData?.leavers?.some(leaver => 
+        (leaver.name || leaver.Name) === (player.name || player.Name || player.Player))) {
+      row.classList.add('leaver-row');
+    }
+
     Object.keys(players[0]).forEach(key => {
       const td = document.createElement("td");
       td.dataset.column = key;

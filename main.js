@@ -5,13 +5,13 @@ let tabButtons, tabContents, activateTab;
 // ALLIANCE DATA & COMMAND TAB MANAGEMENT
 // ======================================
 
-// Global store for alliance roster data
+// global store for alliance roster data
 let allianceRosterData = {
   players: [],
   lastUpdated: null
 };
 
-// Fetch alliance data from Cloudflare worker
+// fetch alliance data from worker
 async function fetchAllianceRoster() {
   try {
     const response = await fetch('https://throbbing-night-83f1.gf9mkqbtwv.workers.dev/');
@@ -29,13 +29,13 @@ async function fetchAllianceRoster() {
   }
 }
 
-// Update Command tab with live roster data
+// update Command tab with live roster data
 function updateCommandTab() {
   // Column names from your API
   const nameColumn = 'Name';
   const rankColumn = 'Rank';
   
-  // Filter players by their rank from the API
+  // filter players by their rank from the API
   const admirals = allianceRosterData.players.filter(p => 
     p[rankColumn] === 'Admiral'
   );
@@ -46,12 +46,12 @@ function updateCommandTab() {
     p[rankColumn] === 'Premier'
   );
   
-  // Extract names and join with " | "
+  // extract names and join with " | "
   const admiralNames = admirals.map(p => p[nameColumn]).join(' | ') || 'TBD';
   const commodoreNames = commodores.map(p => p[nameColumn]).join(' | ') || 'TBD';
   const premierNames = premiers.map(p => p[nameColumn]).join(' | ') || 'TBD';
   
-  // Update the DOM
+  // update DOM
   const admiralElement = document.getElementById('command-admiral');
   if (admiralElement) admiralElement.textContent = admiralNames;
   
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ESC key to close modal
+    // esc key to close modal
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
             closeTipsModal();
@@ -176,30 +176,6 @@ window.addEventListener('load', function () {
     }, 10);
 });
 
-// on page load, check if there's a hash and activate that tab
-window.addEventListener('load', function() {
-    const tabName = window.location.hash.slice(1);
-    
-    // reset scroll
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-
-    // activate tab only if it's not 'welcome'
-    if (tabName && tabName !== 'welcome' && activateTab) {
-        activateTab(tabName);
-    } else if (activeTab) {
-        activateTab('welcome');
-    }
-
-    // extra scroll reset
-    this.setTimeout(() => {
-        this.window.scrollTo(0, 0);
-        this.document.documentElement.scrollTop = 0;
-        this.document.body.scrollTop = 0;
-    }, 10);
-});
-
 // tips modal funcs
 function openTipsModal(title, box1Data, box2Data, box3Data, box4Data) {
     document.getElementById('modal-image').src = box1Data.image;
@@ -254,7 +230,7 @@ window.addEventListener('click', function(event) {
     }
 });
 
-// Terminology modal functionality for touch devices
+// terminology modal functionality for touch devices
 function initTerminologyModal() {
     const modal = document.getElementById('termModal');
     const modalTitle = document.getElementById('modalTitle');
@@ -262,7 +238,7 @@ function initTerminologyModal() {
     const closeBtn = document.querySelector('.modal-close');
 
     if (modal && modalTitle && modalDefinition && closeBtn) {
-        // Use event delegation so it works even if terms are added later
+        // use event delegation so it works even if terms are added later
         document.addEventListener('click', function(e) {
             if (e.target.closest('.term-tooltip')) {
                 const term = e.target.closest('.term-tooltip');
@@ -294,8 +270,8 @@ function initTerminologyModal() {
     }
 }
 
-// Initialize after DOM is ready
+// initialize after DOM is ready
 document.addEventListener('DOMContentLoaded', initTerminologyModal);
 
-// Also initialize on load in case elements are created late
+// also initialize on load in case elements are created late
 window.addEventListener('load', initTerminologyModal);

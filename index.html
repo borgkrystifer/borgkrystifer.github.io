@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <!-- Landscape orientation prompt -->
+    <!-- landscape orientation prompt -->
 <div id="landscapePrompt" class="landscape-prompt">
     <div class="landscape-prompt-content">
         <p>For the best experience, please rotate your device to landscape mode.</p>
@@ -50,7 +50,7 @@
             <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
                 <h1 style="color: green; margin: 0; text-align: center;">[BORG] ACADEMY</h1>
                 <div class="marquee">
-                    <span>*** Server Maint Completed - Update Your Game Clients! ***</span>
+                    <!-- <span>*** Server Maint Completed - Update Your Game Clients! ***</span> -->
                 </div>
             </div>
         </div>
@@ -170,7 +170,7 @@
                         </ul>
                     </div>
                     <div class="content-image">
-                        <img src="images/survey.png" alt="survey icon">
+                        <img src="images/survey.png" alt="survey icon" onclick="openLightboxImg(this)">
                     </div>
                 </div>
 
@@ -189,9 +189,9 @@
                         </ul>
                     </div>
                     <div class="content-image battle-icons">
-                        <img src="images/battleship.png" alt="battleship icon">
-                        <img src="images/explorer.png" alt="explorer icon">
-                        <img src="images/interceptor.png" alt="interceptor icon">
+                        <img src="images/battleship.png" alt="battleship icon" onclick="openLightboxImg(this)">
+                        <img src="images/explorer.png" alt="explorer icon" onclick="openLightboxImg(this)">
+                        <img src="images/interceptor.png" alt="interceptor icon" onclick="openLightboxImg(this)">
                     </div>
                 </div>
 
@@ -230,7 +230,7 @@
                         </ul>
                     </div>
                     <div class="content-image">
-                        <img src="images/armada3.png" alt="armada icons">
+                        <img src="images/armada3.png" alt="armada icons" onclick="openLightboxImg(this)">
                     </div>
                 </div>
 
@@ -258,7 +258,7 @@
                         </ul>
                     </div>
                     <div class="content-image">
-                        <img src="images/territory.png" alt="territory icon">
+                        <img src="images/territory.png" alt="territory icon" onclick="openLightboxImg(this)">
                     </div>
                 </div>
 
@@ -276,9 +276,9 @@
                         </ul>
                     </div>
                     <div class="content-image">
-                        <img src="images/battleship.png" alt="battleship icon">
-                        <img src="images/explorer.png" alt="explorer icon">
-                        <img src="images/interceptor.png" alt="interceptor icon">
+                        <img src="images/battleship.png" alt="battleship icon" onclick="openLightboxImg(this)">
+                        <img src="images/explorer.png" alt="explorer icon" onclick="openLightboxImg(this)">
+                        <img src="images/interceptor.png" alt="interceptor icon" onclick="openLightboxImg(this)">
                     </div>
                 </div>
 
@@ -287,24 +287,24 @@
                     <div class="image-text-pair">
                         <h3>UPC = Under Protected Cargo</h3>
                         <div class="content-image-native">
-                            <img src="images/roe01.png" alt="empty loot box upc example">
+                            <img src="images/roe01.png" alt="empty loot box upc example" onclick="openLightboxImg(this)">
                         </div>
 
                         <h3>As long as this bar is gray, you are UPC</h3>
                         <div class="content-image-native">
-                            <img src="images/upc.png" alt="under protected caro image" style="height: 500px; width: auto;">
+                            <img src="images/upc.png" alt="under protected caro image" style="height: 500px; width: auto;" onclick="openLightboxImg(this)">
                         </div>
                     </div>
 
                     <div class="image-text-pair">
                         <h3>OPC = Over Protected Cargo</h3>
                         <div class="content-image-native">
-                            <img src="images/loot.png" alt="full loot box opc example">
+                            <img src="images/loot.png" alt="full loot box opc example" onclick="openLightboxImg(this)">
                         </div>
 
                         <h3>When the bar turns green, you are OPC</h3>
                         <div class="content-image-native">
-                            <img src="images/opc.png" alt="over protected cargo image" style="height: 500px; width: auto;">
+                            <img src="images/opc.png" alt="over protected cargo image" style="height: 500px; width: auto;" onclick="openLightboxImg(this)">
                         </div>
                     </div>
                 </div>
@@ -444,8 +444,8 @@
                  <div class="content-section">
                     <div class="content-image">
                          <div class="ship-stack">
-                            <img src="images/battle01.png" alt="battleship logo" class="shipimgages" style="width: 45% !important; height: auto !important; max-width: 45% !important;">
-                            <img src="images/battle02.png" alt="battleship triangle" class="shipimgages" style="width: 30% !important; height: auto !important; max-width: 30% !important;">
+                            <img src="images/battle01.png" alt="battleship logo" class="shipimgages" style="width: 45% !important; height: auto !important; max-width: 45% !important;" onclick="openLightboxImg(this)">
+                            <img src="images/battle02.png" alt="battleship triangle" class="shipimgages" style="width: 30% !important; height: auto !important; max-width: 30% !important;" onclick="openLightboxImg(this)">
                         </div>
                     </div>
                     <div class="content-text">
@@ -462,8 +462,8 @@
                  <div class="content-section">
                     <div class="content-image">
                          <div class="ship-stack">
-                            <img src="images/explorer01.png" alt="explorer logo" class="shipimgages" style="width: 35% !important; height: auto !important; max-width: 35% !important;">
-                            <img src="images/explorer02.png" alt="explorer triangle" class="shipimgages" style="width: 30% !important; height: auto !important; max-width: 30% !important;">
+                            <img src="images/explorer01.png" alt="explorer logo" class="shipimgages" style="width: 35% !important; height: auto !important; max-width: 35% !important;" onclick="openLightboxImg(this)">
+                            <img src="images/explorer02.png" alt="explorer triangle" class="shipimgages" style="width: 30% !important; height: auto !important; max-width: 30% !important;" onclick="openLightboxImg(this)">
                         </div>
                     </div>
                     <div class="content-text">
@@ -481,8 +481,8 @@
                   <div class="content-section">
                     <div class="content-image">
                          <div class="ship-stack">
-                            <img src="images/interceptor01.png" alt="interceptor logo" class="shipimgages" style="width: 35% !important; height: auto !important; max-width: 35% !important;">
-                            <img src="images/interceptor02.png" alt="interceptor triangle" class="shipimgages" style="width: 30% !important; height: auto !important; max-width: 30% !important;">
+                            <img src="images/interceptor01.png" alt="interceptor logo" class="shipimgages" style="width: 35% !important; height: auto !important; max-width: 35% !important;" onclick="openLightboxImg(this)">
+                            <img src="images/interceptor02.png" alt="interceptor triangle" class="shipimgages" style="width: 30% !important; height: auto !important; max-width: 30% !important;" onclick="openLightboxImg(this)">
                         </div>
                     </div>
                     <div class="content-text">
@@ -628,10 +628,10 @@
                         </p>
                         <div style="display: flex; justify-content: center; gap: 100px; align-items: flex-start;">
                             <div class="content-image">
-                                <img src="images/rep01.png" alt="image of ship scan" style="max-width: 100%; height: auto;">
+                                <img src="images/rep01.png" alt="image of ship scan" style="max-width: 100%; height: auto;" onclick="openLightboxImg(this)">
                             </div>
                             <div class="content-image">
-                                <img src="images/rep02.png" alt="image of ship scan" style="max-width: 100%; height: auto;">
+                                <img src="images/rep02.png" alt="image of ship scan" style="max-width: 100%; height: auto;" onclick="openLightboxImg(this)">
                             </div>
                         </div>
                     </div>
@@ -688,6 +688,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Territory Map -->
              <div class="tab-content" id="map">
                 <div class="content-section">
@@ -766,7 +767,7 @@
                 <div class="content-text">
                     <p style="color: green; text-align: center;">
                         The data below is updated every
-                        six hours and may not be 100% accurate due to, well, Scopely.
+                        six hours. Data may not be 100% accurate due to, well, Scopely.
                     </p>
                 </div>
                 <div class="lcars-container">
