@@ -109,8 +109,12 @@ body {
 
 .badge-sep {
     vertical-align: middle;
-    margin: 0 4px;
-    transform: scale(1.2);
+    margin: 0 2px;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    image-rendering: crisp-edges;
+    display: inline-block;
 }
 
 @keyframes borg-marquee {
@@ -828,5 +832,13 @@ body {
     .term-tooltip:hover .tooltip-text {
         visibility: hidden;
         opacity: 0;
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .marquee .badge-sep {
+        margin: 0;
+        width: 30px;
+        height: 30px;
     }
 }
