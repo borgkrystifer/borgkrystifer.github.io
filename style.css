@@ -46,31 +46,34 @@ body {
 }
 
 .header {
-  /* background-image: url('images/xmaslights.png');
+    /* background-image: url('images/xmaslights.png');
   background-repeat: repeat-x;
   background-position: top center;
   background-size: auto 80px; */
-  padding: 50px 45px 30px 45px;
-  border-bottom: 2px solid var(--accent-gold);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  /* gap: 20px; */
+    padding: 50px 45px 30px 45px;
+    border-bottom: 2px solid var(--accent-gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
 }
 
 .header h1 {
-    flex: 1;
-    text-align: center;
     font-size: 2.5em;
     font-weight: 300;
     letter-spacing: 3px;
     color: var(--accent-gold);
     text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-    margin-bottom: 10px;
-}
-
-.header-logo {
-    flex: 0 0 auto;
+    margin: 0 0 10px 0;
 }
 
 .header p {
@@ -88,40 +91,54 @@ body {
 }
 
 .marquee {
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  width: calc(100% - 60px);
-  color: var(--accent-gold);
-  font-size: 1.9rem;
-  margin-top: 25px;
-  margin-left: 30px;
-  margin-right: 45px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    color: var(--accent-gold);
+    font-size: 1.9rem;
+    margin-top: 25px;
 }
 
 .marquee span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: borg-marquee 13s linear infinite;
+    display: inline-block;
+    padding-left: 100%;
+    animation: borg-marquee 13s linear infinite;
+}
+
+.badge-sep {
+    vertical-align: middle;
+    margin: 0 4px;
+    transform: scale(1.2);
 }
 
 @keyframes borg-marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .tabs-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 20px;
-    border-bottom: 1px solid var(--border-color);
     background: rgba(0, 0, 0, 0.3);
-    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-color);
+    display: grid !important;
+    grid-template-columns: repeat(6, max-content);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 12px;
+}
+
+.tabs-container::after {
+    content: '';
+    flex: 0 0 calc((100% - 60px) / 6);
 }
 
 .tab-button {
@@ -130,12 +147,17 @@ body {
     background: transparent;
     color: var(--text-light);
     cursor: pointer;
+    flex: 0 0 auto;
+    flex-basis: max-content;
+    white-space: nowrap;
+    box-sizing: border-box;
     font-size: 1em;
     letter-spacing: 1px;
     transition: all 0.3s ease;
     border-radius: 4px;
     font-weight: 500;
     text-decoration: none;
+    text-align: center;
 }
 
 .tab-button.roster {
@@ -159,7 +181,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    flex: 1; /* added */
+    flex: 1;
+    /* added */
 }
 
 .tab-content {
@@ -534,7 +557,7 @@ body {
     border-radius: var(--radius-base);
     cursor: help;
     font-weight: var(--font-weight-medium);
-    color: #00ff00;  /* GREEN */
+    color: var(--accent-gold);
     text-align: center;
     transition: all var(--duration-fast) var(--ease-standard);
 }
@@ -553,7 +576,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(19, 52, 59, 0.95);
-    color: var(--accent-gold);  /* GOLD TEXT */
+    color: var(--accent-gold);
+    /* GOLD TEXT */
     text-align: center;
     padding: 12px 16px;
     border-radius: var(--radius-base);
@@ -663,35 +687,38 @@ body {
 }
 
 .video-container {
-  width: 100%;
-  max-width: 640px;
-  margin: 20px auto 0;
+    width: 100%;
+    max-width: 640px;
+    margin: 20px auto 0;
 }
 
 .video-container iframe {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  border-radius: 8px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 8px;
 }
 
+/* landscape tablets/phones */
 @media (orientation: landscape) {
     .landscape-prompt.active {
         display: none;
     }
 }
 
+/* mobile (≤768px) */
 @media (max-width: 768px) {
-  .video-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 20px auto 0;
-  }
-}
 
-@media (max-width: 768px) {
+    /* video responsive */
+    .video-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto 0;
+    }
+
+    /* icons layout */
     #icons .content-section {
         flex-direction: row;
         align-items: flex-start;
@@ -710,6 +737,7 @@ body {
         text-align: center;
     }
 
+    /* global layout */
     .header h1 {
         font-size: 1.8em;
         text-align: center;
@@ -730,8 +758,12 @@ body {
         height: auto;
     }
 
+    /* tabs */
     .tabs-container {
         gap: 5px;
+        grid-template-columns: repeat(3, max-content);
+        grid-template-rows: repeat(4, auto);
+        gap: 8px;
     }
 
     .tab-button {
@@ -739,6 +771,7 @@ body {
         font-size: 0.9em;
     }
 
+    /* header */
     .header {
         padding: 80px 20px 20px 20px;
         flex-direction: column;
@@ -751,6 +784,7 @@ body {
         opacity: 0.5;
     }
 
+    /* marquee */
     .marquee {
         width: 100%;
         margin-left: 0;
@@ -762,12 +796,14 @@ body {
         padding-left: 100%;
     }
 
+    /* images */
     .container img {
         max-width: 50%;
         height: auto;
     }
 }
 
+/* tablet (769-1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .header {
         display: flex;
@@ -782,13 +818,13 @@ body {
     }
 }
 
-/* disable hover effects on touch devices */
+/* touch devices (no hover) */
 @media (hover: none) and (pointer: coarse) {
     .term-tooltip:hover {
         background-color: var(--color-secondary);
         box-shadow: none;
     }
-    
+
     .term-tooltip:hover .tooltip-text {
         visibility: hidden;
         opacity: 0;

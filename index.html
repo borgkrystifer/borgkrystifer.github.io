@@ -46,24 +46,32 @@
 </div>
 
     <div class="container">
-        <div class="header">
-            <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
-                <h1 style="color: green; margin: 0; text-align: center;">[BORG] ACADEMY</h1>
+        <header class="header">
+            <div class="header-center">
+                <h1 style="color: green;">[BORG] ACADEMY</h1>
                 <div class="marquee">
-                    <!-- <span>*** Server Maint Completed - Update Your Game Clients! ***</span> -->
+                    <span>
+                        <img src="images/nanochip.png" alt="|" class="badge-sep" width="32" height="32">
+                        <img src="images/nanochip.png" alt="|" class="badge-sep" width="32" height="32">
+                        <img src="images/nanochip.png" alt="|" class="badge-sep" width="32" height="32">
+                        &nbsp;Server Maint Jan 13th -> 5am Eastern -> Downtime ≅ 2 Hours -> Courtesy Ceasefire Shields: 8 Hours&nbsp;
+                        <img src="images/nanochip.png" alt="|" class="badge-sep" width="32" height="32">
+                        <img src="images/nanochip.png" alt="|" class="badge-sep" width="32" height="32">
+                        <img src="images/nanochip.png" alt="|" class="badge-sep" width="32" height="32">
+                    </span>
                 </div>
             </div>
-        </div>
+        </header>
 
         <div class="tabs-container">
             <a class="tab-button active" data-tab="welcome">Welcome!</a>
-            <a href="#tournaments" class="tab-button" data-tab="tournaments">Tourneys!</a>
             <a href="#command" class="tab-button" data-tab="command">Command</a>
             <a href="#roe" class="tab-button" data-tab="roe">RoE</a>
             <a href="#diplo" class="tab-button" data-tab="diplo">Diplomacy</a>
             <a href="#terminology" class="tab-button" data-tab="terminology">Terminology</a>
             <a href="#battle" class="tab-button" data-tab="battle">Battle</a>
             <a href="#icons" class="tab-button" data-tab="icons">Icons</a>
+            <a href="#tournaments" class="tab-button" data-tab="tournaments">Tourneys!</a>
             <a href="#tips" class="tab-button" data-tab="tips">Tips & Tricks</a>
             <a href="#links" class="tab-button" data-tab="links">Links</a>
             <a href="#map" class="tab-button" data-tab="map">Territory</a>
@@ -73,17 +81,18 @@
         <div class="content">
             <!-- Welcome Tab -->
              <div class="tab-content active" id="welcome">
+                <h1 class="roe-title">Resistance Is Futile</h1>
                 <div class="content-section">
-                    <div class="content-image clickable" onclick="openLightbox(this)">
-                        <img src="images/welcome.png" alt="borg welcome image">
-                    </div>
-                        <div class="content-text"><br>
+                        <div class="content-text">
+                            <div style="text-align: center">
+                                <img src="images/welcome.png" alt="image of Data with text Resistance is not futile, it is voltage divided by current" width="auto" height="300" style="filter: brightness(50%);">
+                            </div>
                             <p style="color: green;">Welcome to the [BORG] Alliance! This page was created to 
                                 help our team, both old and new players but primarily beginners. Start with the RoE tab
                                 above to learn what rules we follow on this server. Feel free to ask any questions in
                                 the AC (Alliance Chat) chat room which is found at the top, center of your screen.
                             </p>
-                            <br><br><br><br>
+                            <br><br>
                             <p style="color: green;">We are a strong team and we try to help each other as much as
                                 possible. However, please keep in mind that at the end of the day, this is a game and
                                 IRL (In Real World) things come first. This means that your life outside of the game
@@ -316,9 +325,9 @@
 
             <!-- Diplomacy Tab -->
              <div class="tab-content" id="diplo">
+                <h1 class="roe-title">Diplomacy</h1>
                 <div class="content-section">
                     <div class="content-text" style="text-align: center;">
-                        <h2>Diplomacy</h2>
                         <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
                             <img src="images/diplomacy.png" alt="diplomacy levels" style="max-width: 100%; max-height: 80vh; width: auto; height: auto; display: block;">
                         </div>
@@ -361,11 +370,11 @@
 
             <!-- Terminology Tab -->
              <div class="tab-content" id="terminology">
+                <h1 class="roe-title">OPC? UPC? ABC? 123? Huh?!</h1>
                 <div class="content-section">
                     <div class="content-text">
-                        <h2>OPC? UPC? ABC? 123? Huh!?</h2>
-                        <p>You will see and hear all kinds of terms and acronyms.
-                            Below are some of the most common ones. Hover over any
+                        <p style="color: green;">You will see and hear all kinds of terms and acronyms.
+                            Below are some of the most common ones. Hover over (or tap) any
                             term to see its definition.
                         </p>
                         
@@ -425,12 +434,13 @@
 
             <!-- Battle Tab -->
              <div class="tab-content" id="battle">
+                <h1 class="roe-title">Warships</h1>
                 <div class="content-section">
                     <div class="content-image clickable" onclick="openLightbox(this)">
                         <img src="images/battle_triangle.png" alt="stfc battle triangle">
                     </div>
                     <div class="content-text">
-                        <h2>Ship Hierarchy</h2>
+                        <h2>Warships Hierarchy</h2>
                         <p style="color: green;">
                             The battle triangle shows you which ships are best for fighting which ships.
                             Is this written in stone? No. Virtually any ship that is strong enough and has
@@ -498,12 +508,13 @@
 
             <!-- Icons Tab -->
              <div class="tab-content" id="icons">
+                <h1 class="roe-title">Game Icons</h1>
                 <div class="content-section">
                     <div class="content-image clickable" onclick="openLightbox(this)">
                         <img src="images/parsteel.png" alt="parsteel icon" style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2>Parsteel</h2>
+                        <h2 style="text-align: left;">Parsteel</h2>
                         <p style="color: green;">
                             Parsteel is used for many things in the game:
                         </p>
@@ -520,7 +531,7 @@
                         <img src="images/tritanium.png" alt="tritanium icon" style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2>Tritanium</h2><br>
+                        <h2 style="text-align: left;">Tritanium</h2><br>
                         <p style="color: green;">
                             Tritanium is also used for many things in the game:
                         </p>
@@ -535,7 +546,7 @@
                         <img src="images/dilithium.png" alt="dilithium icon" style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2>Dilithium</h2><br>
+                        <h2 style="text-align: left;">Dilithium</h2><br>
                         <p style="color: green;">
                             Dilithium is also used for many things in the game:
                         </p>
@@ -551,7 +562,7 @@
                         <img src="images/rawcrystal.png" alt="raw crystal icon" style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2>Raw Crystal</h2><br>
+                        <h2 style="text-align: left;">Raw Crystal</h2><br>
                         <p style="color: green;">
                             Raw Crystal is used in the Refinery to produce other forms of
                             Crystal: Common, Uncommon, Rare, and Epic.
@@ -567,7 +578,7 @@
                         <img src="images/rawgas.png" alt="raw gas icon" style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2>Raw Gas</h2><br>
+                        <h2 style="text-align: left;">Raw Gas</h2><br>
                         <p style="color: green;">
                             Raw Gas is also used in the Refinery to produce other forms of
                             Gas: Common, Uncommon, Rare, and Epic.
@@ -583,7 +594,7 @@
                         <img src="images/rawore.png" alt="raw ore icon" style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2>Raw Ore</h2><br>
+                        <h2 style="text-align: left;">Raw Ore</h2><br>
                         <p style="color: green;">
                             Raw Ore is also used in the Refinery to produce other forms
                             of Ore: Common, Uncommon, Rare, and Epic.
@@ -598,9 +609,9 @@
 
             <!-- Tips & Tricks -->
              <div class="tab-content" id="tips">
+                <h1 class="roe-title">Tips & Tricks</h1>
                 <div class="content-section">
                     <div class="content-text">
-                        <h2>Tips & Tricks</h2>
                         <p style="color: green; text-align: center;">
                             How to Stop a Tail
                         </p>
@@ -689,20 +700,12 @@
                 </div>
             </div>
 
-            <!-- Territory Map -->
-             <div class="tab-content" id="map">
-                <div class="content-section">
-                    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-                        <img src="images/map.png" alt="territory map" style="max-width: 100%; max-height: 80vh; width: auto; height: auto; display: block;">
-                    </div>
-                </div>
-            </div>
-
             <!-- Links -->
              <div class="tab-content" id="links">
+                <h1 class="roe-title">Useful Links</h1>
                 <div class="content-section">
                     <div class="content-text">
-                        <h2>Useful Links</h2>
+                        <!-- <h2>Useful Links</h2> -->
                         <p style="color: green;"><a href="https://home.startrekfleetcommand.com/store" target="_blank" rel="noopener noreferrer">Grab Your Daily Mission Key Here</a><br>
                             Daily Mission Keys are primarily used in the Mission Key Recruit section to exchange for Officer Shards,
                             helping you unlock and upgrade valuable Epic Officers like Khan, Una, or Quark. You get these keys free
@@ -758,6 +761,16 @@
                             <br>
                             <br>
                         </p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Territory Map -->
+             <div class="tab-content" id="map">
+                <h1 class="roe-title">717 Territories</h1>
+                <div class="content-section">
+                    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                        <img src="images/map.png" alt="territory map" style="max-width: 100%; max-height: 80vh; width: auto; height: auto; display: block;">
                     </div>
                 </div>
             </div>
