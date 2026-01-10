@@ -515,9 +515,9 @@ body {
 }
 
 .image-text-pair-content {
-    border: 1px solid var(--accent-gold);
+    /* border: 1px solid var(--accent-gold); */
     padding: 20px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     display: flex;
     flex-direction: row;
     gap: 30px;
