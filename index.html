@@ -85,7 +85,7 @@
                 <div class="content-section">
                         <div class="content-text">
                             <div style="text-align: center">
-                                <img src="images/welcome.png" alt="image of Data with text Resistance is not futile, it is voltage divided by current" width="auto" height="300" style="filter: brightness(50%);">
+                                <img src="images/welcome.png" alt="image of Data with text Resistance is not futile, it is voltage divided by current" width="auto" height="300" style="filter: brightness(50%);" onclick="openLightboxImg(this)">
                             </div>
                             <p style="color: green;">Welcome to the [BORG] Alliance! This page was created to 
                                 help our team, both old and new players but primarily beginners. Start with the RoE tab
@@ -100,38 +100,6 @@
                                 <i>have</i> to be on 24/7. If you can, that's awsome! But definately not required.
                                 Have fun and LLAP!
                             </p>
-                        </div>
-                    </div>
-                </div>
-
-            <!-- Tournaments Tab -->
-             <div class="tab-content" id="tournaments">
-                <h1 style="color: var(--accent-gold); text-align: center;">Alliance Tournaments!</h1>
-                <div class="content-section">
-                    <div class="content-image clickable" onclick="openLightbox(this)">
-                        <img src="images/tournaments.png" alt="tng command">
-                    </div>
-                        <div class="content-text">
-                            <p style="color: green";>The Tournament consists of completing tasks and the point reward goes
-                                to the alliance's total to score vs other alliances from many servers. The top 35% of alliances
-                                are promoted to next league. The bottom 35% are relegated to previous league. The alliance store
-                                will remain open for 2 days after the end of the tournament.
-                            </p><br>
-                            <p style="color: var(--accent-gold)"><b>Tasks:</b></p>
-                            <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block; color: green;">
-                                <li>complete a maximum of 3 per day. Any unfinished tasks at the end of tournament day are failed
-                                and your max is reset to 0/3</li>
-                                <li>you can only have 1 active task at a time. Taking a task, not finishing, and taking another
-                                will fail the first task.</li>
-                                <li>the task pool is common to entire alliance; refreshing or taking a task prevents others
-                                from taking it.</li>
-                                <li>the armada tasks come in multiple versions:<br>
-                                --<b><i><span style="color: var(--accent-gold);">Defeat</span></i></b> FKR armada means you
-                                simply have to <i>participate</i> in the victory over a FKR faction armada<br>
-                                --<b><i><span style="color: var(--accent-gold);">Spend</span></i></b> FKR armada means you
-                                must be the one to spend the directives on that armada. Victory not required.</li>
-                                <li>some tasks require spending $$ to complete. Obviously do not take if you do not want to spend.</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -607,6 +575,38 @@
                 </div>
             </div>
 
+            <!-- Tournaments Tab -->
+             <div class="tab-content" id="tournaments">
+                <h1 style="color: var(--accent-gold); text-align: center;">Alliance Tournaments!</h1>
+                <div class="content-section">
+                    <div class="content-image clickable" onclick="openLightbox(this)">
+                        <img src="images/tournaments.png" alt="tng command">
+                    </div>
+                        <div class="content-text">
+                            <p style="color: green";>The Tournament consists of completing tasks and the point reward goes
+                                to the alliance's total to score vs other alliances from many servers. The top 35% of alliances
+                                are promoted to next league. The bottom 35% are relegated to previous league. The alliance store
+                                will remain open for 2 days after the end of the tournament.
+                            </p><br>
+                            <p style="color: var(--accent-gold)"><b>Tasks:</b></p>
+                            <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block; color: green;">
+                                <li>complete a maximum of 3 per day. Any unfinished tasks at the end of tournament day are failed
+                                and your max is reset to 0/3</li>
+                                <li>you can only have 1 active task at a time. Taking a task, not finishing, and taking another
+                                will fail the first task.</li>
+                                <li>the task pool is common to entire alliance; refreshing or taking a task prevents others
+                                from taking it.</li>
+                                <li>the armada tasks come in multiple versions:<br>
+                                --<b><i><span style="color: var(--accent-gold);">Defeat</span></i></b> FKR armada means you
+                                simply have to <i>participate</i> in the victory over a FKR faction armada<br>
+                                --<b><i><span style="color: var(--accent-gold);">Spend</span></i></b> FKR armada means you
+                                must be the one to spend the directives on that armada. Victory not required.</li>
+                                <li>some tasks require spending $$ to complete. Obviously do not take if you do not want to spend.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             <!-- Tips & Tricks -->
              <div class="tab-content" id="tips">
                 <h1 class="roe-title">Tips & Tricks</h1>
@@ -667,7 +667,7 @@
                             at all. In fact, it can actually hinder your progress.
                         </p>
                         <br>
-                         <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; color: var(--accent-gold);">
+                         <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; color: var(--accent-gold); font-size: 1.2em;">
                             <li>Ops Lvl 05: <span style="color: green;">You are now open to PvP attacks while mining</span></li>
                             <li>Ops Lvl 10: <span style="color: green;">You are now open to PvP attacks on Warships and Surveys, from players as high as Ops Lvl 12</span></li>
                             <li>Ops Lvl 12: <span style="color: green;">This is your last chance to transfer to another server. The transfer token becomes inactive
@@ -698,6 +698,31 @@
                         </ul>
                     </div>
                 </div>
+                <div class="content-section">
+                    <div class="content-text">
+                        <h1 class="roe-title">Alliance Reputation Levels</h1><br>
+                        <p style="color: green">
+                            In Star Trek Fleet Command (STFC), Alliance Reputation, or Rep, is a personal
+                            measure of your standing within your current Alliance, distinct from
+                            Faction Rep. It is primarily used to unlock specific Starbase
+                            Research.
+                            <br>
+                            <br>
+                            <u>Key Mechanics of Alliance Rep</u>:
+                        </p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; color: var(--accent-gold); font-size: 1.2em">
+                            <li>Resets on Leave: <span style="color: green;">Unlike Faction Rep, your Alliance Rep resets to zero
+                                if you leave or are kicked from your Alliance, even if you rejoin the same one later.</span>
+                            </li>
+                            <li>Earning Points: <span style="color: green;">You earn Rep by destroying Cardassian stations,
+                                defeating Cardassian Armadas, or completing specific Alliance-based tasks and bounties.</span>
+                            </li>
+                            <li>Starbase Research: <span style="color: green;">Many late-game Starbase Research Nodes are gated
+                                behind specific Rep levels.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Links -->
@@ -705,7 +730,6 @@
                 <h1 class="roe-title">Useful Links</h1>
                 <div class="content-section">
                     <div class="content-text">
-                        <!-- <h2>Useful Links</h2> -->
                         <p style="color: green;"><a href="https://home.startrekfleetcommand.com/store" target="_blank" rel="noopener noreferrer">Grab Your Daily Mission Key Here</a><br>
                             Daily Mission Keys are primarily used in the Mission Key Recruit section to exchange for Officer Shards,
                             helping you unlock and upgrade valuable Epic Officers like Khan, Una, or Quark. You get these keys free
