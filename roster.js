@@ -101,19 +101,21 @@ function showLeaverAlert(leavers) {
   const names = leavers.map(p => p.name || p.Name || p.Player).join(', ');
   console.log(`🚨 ${leavers.length} LEFT: ${names}`);
 
-  // simple on-screen alert
   const alert = document.createElement('div');
-  alert.textContent = `🚨 ${leavers.length} MEMBER(S) LEFT: ${names}`;
+  alert.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span>🚨 ${leavers.length} Member(s) Left/Changed Names: ${names}</span>
+      <button onclick="this.parentElement.parentElement.remove()" style="background: #ff0000; color: white; border: none; border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px;">✕</button>
+    </div>
+  `;
   alert.style.cssText = `
-position: fixed; top: 10px; right: 10px;
-background: #ff4444; color: white; padding: 15px;
-border-radius: 8px; z-index: 9999; font-weight: bold;
-box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-max-width: 400px;
-word-wrap: break-word;
+    position: fixed; top: 10px; right: 10px;
+    background: #ff4444; color: white; padding: 15px;
+    border-radius: 8px; z-index: 9999; font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 400px; word-wrap: break-word;
   `;
   document.body.appendChild(alert);
-  setTimeout(() => alert.remove(), 15000);
 }
 
 async function loadAndRenderRoster() {
