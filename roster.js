@@ -51,8 +51,8 @@ function getNormalizedLeaverName(leaver) {
 }
 
 // global vars to store leavers
-let leaversData = [];           // Current session leavers
-let allTimeLeaversData = [];    // Permanent leaver history
+let leaversData = [];
+let allTimeLeaversData = [];
 
 // ==================================
 // use shared data or fetch if needed
@@ -112,7 +112,7 @@ async function getAllianceData() {
 
 function showLeaverAlert(leavers) {
   const names = leavers.map(p => p.name || p.Name || p.Player).join(', ');
-  console.log(`🚨 ${leavers.length} LEFT: ${names}`);
+  console.log(`🚨 ${leavers.length} left or changed names: ${names}`);
 
   // on-screen alert with close button
   const alert = document.createElement('div');
@@ -130,7 +130,7 @@ gap: 10px;
   `;
   
   const alertText = document.createElement('div');
-  alertText.textContent = `🚨 ${leavers.length} MEMBER(S) LEFT: ${names}`;
+  alertText.textContent = `🚨 ${leavers.length} member(s) left or changed names: ${names}`;
   alertText.style.flex = "1";
   alert.appendChild(alertText);
   
