@@ -232,7 +232,7 @@ font-family: 'Orbitron', sans-serif;
     `;
     
     const leaverTitle = document.createElement("h3");
-    leaverTitle.textContent = `⚠️ Recent Departures (Last 90 Days): ${allTimeLeaversData.length}`;
+    leaverTitle.textContent = `⚠️ Recent Name Changes/Departures (Last 90 Days): ${allTimeLeaversData.length}`;
     leaverTitle.style.margin = "0 0 10px 0";
     leaverTitle.style.color = "#ff4444";
     leaverPanel.appendChild(leaverTitle);
