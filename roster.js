@@ -245,7 +245,7 @@ font-family: 'Orbitron', sans-serif;
     allTimeLeaversData.slice(0, 15).forEach(leaver => {
       const entry = document.createElement("div");
       const timestamp = new Date(leaver.timestamp).toLocaleDateString();
-      entry.textContent = `• ${leaver.name} (${leaver.rank}, Lvl ${leaver.level}) - Left: ${timestamp}`;
+      entry.textContent = `• ${leaver.name} (${leaver.rank}, Lvl ${leaver.level}) - Left or Changed Name: ${timestamp}`;
       leaverList.appendChild(entry);
     });
     
