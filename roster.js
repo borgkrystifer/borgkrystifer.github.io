@@ -14,12 +14,13 @@ TOURNAMENT_COLUMNS.forEach(col => {
 });
 
 // ====================================================================
-// helper functions for leaver detection with special character support
+// Helper functions for leaver detection with special character support
 // ====================================================================
 
 /**
  * normalize names for comparison - handles accents, special chars, case insensitivity
- * uses unicode NFD (Canonical Decomposition) to handle accented characters
+ * uses unicode nfd (canonical decomposition) to handle accented characters
+ * examples: "Café" → "cafe", "José" → "jose", "ëtüdé" → "etude"
  */
 function normalizeNameForComparison(name) {
   if (!name) return '';
@@ -29,7 +30,8 @@ function normalizeNameForComparison(name) {
     .toLowerCase()                   // lowercase
     .normalize('NFD')                // decompose accented chars (é → e + ´)
     .replace(/[\u0300-\u036f]/g, '') // remove diacritical marks
-    .replace(/[^\w\s]/g, '');        // remove special chars, keep alphanumeric & spaces
+    .replace(/[^\w]/g, '')           // remove non-alphanumeric
+    .replace(/\d+$/g, '');           // remove trailing numbers
 }
 
 /**
@@ -48,14 +50,13 @@ function getNormalizedLeaverName(leaver) {
   return normalizeNameForComparison(name);
 }
 
-// global variable to store leavers after fetching
-let leaversData = [];
+// global vars to store leavers
+let leaversData = [];           // Current session leavers
+let allTimeLeaversData = [];    // Permanent leaver history
 
 // ==================================
 // use shared data or fetch if needed
 // ==================================
-
-// use shared data or fetch if needed
 async function getAllianceData() {
   // check if allianceRosterData is already populated by main.js
   if (
@@ -68,14 +69,20 @@ async function getAllianceData() {
     // extract leavers if available
     if (window.allianceRosterData.leavers && window.allianceRosterData.leavers.length > 0) {
       leaversData = window.allianceRosterData.leavers;
-      console.log(`Leavers data extracted:`, leaversData.map(l => getNormalizedLeaverName(l)));
+      console.log(`Current session leavers:`, leaversData.map(l => l.Name || l.name || l.Player));
       showLeaverAlert(window.allianceRosterData.leavers);
+    }
+    
+    // extract all-time leavers
+    if (window.allianceRosterData.all_time_leavers && window.allianceRosterData.all_time_leavers.length > 0) {
+      allTimeLeaversData = window.allianceRosterData.all_time_leavers;
+      console.log(`All-time leavers (last 90 days):`, allTimeLeaversData.map(l => l.name));
     }
     
     return window.allianceRosterData;
   }
 
-  // if ! available, fetch it
+  // if ! available fetch it
   console.log("allianceRosterData not available, fetching independently...");
   try {
     const res = await fetch(ALLIANCE_WORKER_URL);
@@ -83,11 +90,17 @@ async function getAllianceData() {
     
     const data = await res.json();
 
-    // handle leavers from Worker
+    // handle current session leavers from cloudflare worker
     if (data.leavers && data.leavers.length > 0) {
       leaversData = data.leavers;
-      console.log(`${data.leavers.length} leavers detected:`, data.leavers.map(p => getNormalizedLeaverName(p)));
+      console.log(`${data.leavers.length} current session leavers detected:`, data.leavers.map(p => p.Name || p.name || p.Player));
       showLeaverAlert(data.leavers);
+    }
+
+    // handle all-time leavers from cloudflare worker
+    if (data.all_time_leavers && data.all_time_leavers.length > 0) {
+      allTimeLeaversData = data.all_time_leavers;
+      console.log(`All-time leavers found:`, allTimeLeaversData.map(l => l.name));
     }
 
     return data;
@@ -101,20 +114,42 @@ function showLeaverAlert(leavers) {
   const names = leavers.map(p => p.name || p.Name || p.Player).join(', ');
   console.log(`🚨 ${leavers.length} LEFT: ${names}`);
 
+  // on-screen alert with close button
   const alert = document.createElement('div');
-  alert.innerHTML = `
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <span>🚨 ${leavers.length} Member(s) Left/Changed Names: ${names}</span>
-      <button onclick="this.parentElement.parentElement.remove()" style="background: #ff0000; color: white; border: none; border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px;">✕</button>
-    </div>
-  `;
   alert.style.cssText = `
-    position: fixed; top: 10px; right: 10px;
-    background: #ff4444; color: white; padding: 15px;
-    border-radius: 8px; z-index: 9999; font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    max-width: 400px; word-wrap: break-word;
+position: fixed; top: 10px; right: 10px;
+background: #ff4444; color: white; padding: 15px;
+border-radius: 8px; z-index: 9999; font-weight: bold;
+box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+max-width: 400px;
+word-wrap: break-word;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 10px;
   `;
+  
+  const alertText = document.createElement('div');
+  alertText.textContent = `🚨 ${leavers.length} MEMBER(S) LEFT: ${names}`;
+  alertText.style.flex = "1";
+  alert.appendChild(alertText);
+  
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = '✕';
+  closeBtn.style.cssText = `
+background: none;
+border: none;
+color: white;
+font-size: 20px;
+cursor: pointer;
+padding: 0;
+margin: 0;
+min-width: 20px;
+font-weight: bold;
+  `;
+  closeBtn.onclick = () => alert.remove();
+  alert.appendChild(closeBtn);
+  
   document.body.appendChild(alert);
 }
 
@@ -180,6 +215,50 @@ function renderRoster(players) {
         visibleColumns[column] = !TOURNAMENT_COLUMNS.includes(column);
       }
     });
+  }
+
+  // display recent departures panel =====
+  if (allTimeLeaversData && allTimeLeaversData.length > 0) {
+    const leaverPanel = document.createElement("div");
+    leaverPanel.style.cssText = `
+background: rgba(255, 68, 68, 0.15);
+border: 2px solid #ff4444;
+border-radius: 8px;
+padding: 15px;
+margin-bottom: 20px;
+color: #ff4444;
+font-weight: bold;
+font-family: 'Orbitron', sans-serif;
+    `;
+    
+    const leaverTitle = document.createElement("h3");
+    leaverTitle.textContent = `⚠️ Recent Departures (Last 90 Days): ${allTimeLeaversData.length}`;
+    leaverTitle.style.margin = "0 0 10px 0";
+    leaverTitle.style.color = "#ff4444";
+    leaverPanel.appendChild(leaverTitle);
+    
+    const leaverList = document.createElement("div");
+    leaverList.style.fontSize = "14px";
+    leaverList.style.lineHeight = "1.6";
+    leaverList.style.color = "#ffcccc";
+    
+    allTimeLeaversData.slice(0, 15).forEach(leaver => {
+      const entry = document.createElement("div");
+      const timestamp = new Date(leaver.timestamp).toLocaleDateString();
+      entry.textContent = `• ${leaver.name} (${leaver.rank}, Lvl ${leaver.level}) - Left: ${timestamp}`;
+      leaverList.appendChild(entry);
+    });
+    
+    if (allTimeLeaversData.length > 15) {
+      const more = document.createElement("div");
+      more.textContent = `... and ${allTimeLeaversData.length - 15} more`;
+      more.style.fontStyle = "italic";
+      more.style.marginTop = "10px";
+      leaverList.appendChild(more);
+    }
+    
+    leaverPanel.appendChild(leaverList);
+    container.appendChild(leaverPanel);
   }
 
   const toggleDiv = document.createElement("div");
@@ -278,18 +357,23 @@ function renderRoster(players) {
   players.forEach(player => {
     const row = document.createElement("tr");
 
-    // leaver detection with special character support
+    // check both current and all-time leavers
     const normalizedPlayerName = getNormalizedPlayerName(player);
-    const isLeaver = leaversData.some(leaver => {
+    
+    // check current session leavers
+    const isCurrentLeaver = leaversData.some(leaver => {
       const normalizedLeaverName = getNormalizedLeaverName(leaver);
-      const matches = normalizedPlayerName === normalizedLeaverName;
-      if (matches) {
-        console.log(`✓ Matched leaver: "${normalizedPlayerName}"`);
-      }
-      return matches;
+      return normalizedPlayerName === normalizedLeaverName;
     });
 
-    if (isLeaver) {
+    // check all-time leavers (permanent history)
+    const isAllTimeLeaver = allTimeLeaversData.some(leaver => {
+      const normalizedLeaverName = normalizeNameForComparison(leaver.name);
+      return normalizedPlayerName === normalizedLeaverName;
+    });
+
+    // highlight if in any leaver record (current or historical)
+    if (isCurrentLeaver || isAllTimeLeaver) {
       row.classList.add('leaver-row');
       console.log(`Highlighting ${normalizedPlayerName} as leaver`);
     }
