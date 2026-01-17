@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Borg Academy - Login</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="[BORG] Academy">
+    <meta property="og:description" content="[BORG] Academy">
+    <meta property="og:image" content="https://borg.support/images/og_image.jpg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="308">
+    <meta property="og:image:alt" content="[BORG] Academy">
+    <meta property="og:url" content="https://borg.support">
+
+    <!-- Twitter/Discord -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="[BORG] Academy">
+    <meta name="twitter:description" content="[BORG] Academy">
+    <meta name="twitter:image" content="https://borg.support/images/og_image.jpg">
+
+    <!-- Apple Touch (iOS Home Screen) -->
+    <link rel="apple-touch-icon" href="https://borg.support/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="[BORG] Academy">
+
+    <!-- Favicon (single .ico file) -->
+    <link rel="icon" href="https://borg.support/images/favicon.ico">
+    <link rel="shortcut icon" href="https://borg.support/images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://borg.support/images/apple-touch-icon.png">
+</head>
+
+<body>
+    <div class="grid-background"></div>
+
+    <div class="scan-lines"></div>
+
+    <div class="container">
+        <div class="login-panel">
+            <div class="corner-accent top-left"></div>
+            <div class="corner-accent top-right"></div>
+            <div class="corner-accent bottom-left"></div>
+            <div class="corner-accent bottom-right"></div>
+
+            <div class="header">
+                <div class="borg-logo">⬢</div>
+                <h1>Borg Academy</h1>
+                <p><span class="status-indicator"></span>ONLINE | RESISTANCE IS FUTILE</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Designation</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            class="form-input" 
+                            id="designation"
+                            placeholder="Enter your designation" 
+                            required
+                        >
+                        <span class="input-icon">⬢</span>
+                    </div>
+                    <div class="error-message" id="designationError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Encryption Code</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="password" 
+                            class="form-input" 
+                            id="password"
+                            placeholder="⑆ ⇟ ◎ ▷ △ ⎫" 
+                            required
+                        >
+                        <span class="input-icon">◆</span>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <label class="remember-me">
+                    <input type="checkbox" class="checkbox" id="rememberMe">
+                    <span>Assimilate Credentials</span>
+                </label>
+
+                <button type="submit" class="login-btn">INITIATE ASSIMILATION</button>
+            </form>
+
+            <div class="footer-text">
+                &copy; <script>document.write(new Date().getFullYear());</script> Borg Academy
+                <!-- <a href="#" onclick="event.preventDefault()">Neural Link</a> | 
+                <a href="#" onclick="event.preventDefault()">Drone Registry</a> -->
+            </div>
+
+            <div class="status-bar" id="statusBar">SYS.READY</div>
+        </div>
+    </div>
+</body>
+</html>

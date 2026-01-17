@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --borg-black: #000000;
+    --borg-dark: #0a0a0a;
+    --borg-steel: #c0c0c0;
+    --borg-teal: #00ff00bd;
+    --borg-cyan: #00ff41;
+    --borg-neon-purple: #1a3a1a;
+    --borg-red: #ff0040;
+    --borg-accent-1: #00cc33;
+    --borg-accent-2: #008800;
+    --borg-accent-3: #003300;
+    --glow-intensity: 0.8;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--borg-steel);
+}
+
+/* Animated background grid */
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(0deg, transparent 24%, rgba(0, 255, 0, 0.05) 25%, rgba(0, 255, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 0, 0.05) 75%, rgba(0, 255, 0, 0.05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 255, 0, 0.05) 25%, rgba(0, 255, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 0, 0.05) 75%, rgba(0, 255, 0, 0.05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 1;
+    animation: gridScroll 20s linear infinite;
+}
+
+@keyframes gridScroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+/* Borg scan lines effect */
+.scan-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 2;
+    animation: scanMove 8s linear infinite;
+}
+
+@keyframes scanMove {
+    0% {
+        transform: translateY(-100%);
+        box-shadow: inset 0 0 30px rgba(0, 255, 0, 0.3);
+    }
+    50% {
+        box-shadow: inset 0 0 30px rgba(0, 255, 0, 0.1);
+    }
+    100% {
+        transform: translateY(100%);
+        box-shadow: inset 0 0 30px rgba(0, 255, 0, 0.3);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* Main login panel */
+.login-panel {
+    background: rgba(5, 5, 5, 0.9);
+    border: 2px solid var(--borg-teal);
+    border-radius: 0;
+    padding: 40px;
+    position: relative;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 0, 0.3),
+        inset 0 0 20px rgba(0, 255, 0, 0.1),
+        0 0 40px rgba(0, 204, 51, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Corner accent elements */
+.corner-accent {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--borg-teal);
+}
+
+.corner-accent.top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner-accent.top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner-accent.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.corner-accent.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.borg-logo {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px var(--borg-teal), 0 0 40px var(--borg-cyan);
+    letter-spacing: 3px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: var(--borg-teal);
+    text-shadow: 0 0 10px var(--borg-teal), 0 0 20px var(--borg-cyan);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.header p {
+    font-size: 12px;
+    color: var(--borg-steel);
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--borg-teal);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        background: var(--borg-teal);
+        box-shadow: 0 0 10px var(--borg-teal);
+    }
+    50% {
+        background: var(--borg-cyan);
+        box-shadow: 0 0 20px var(--borg-cyan);
+    }
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-size: 11px;
+    color: var(--borg-steel);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--borg-teal);
+    color: var(--borg-cyan);
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+.form-input::placeholder {
+    color: rgba(192, 192, 192, 0.4);
+}
+
+.form-input:focus {
+    outline: none;
+    background: rgba(0, 255, 0, 0.05);
+    border-color: var(--borg-cyan);
+    box-shadow: 
+        inset 0 0 10px rgba(0, 255, 0, 0.2),
+        0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+.input-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--borg-teal);
+    font-size: 16px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus ~ .input-icon {
+    color: var(--borg-cyan);
+    opacity: 1;
+}
+
+.form-input:valid ~ .input-icon::before {
+    content: '✓';
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: var(--borg-steel);
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    accent-color: var(--borg-teal);
+    border: 1px solid var(--borg-teal);
+}
+
+.remember-me:hover {
+    color: var(--borg-cyan);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--borg-teal) 0%, var(--borg-cyan) 100%);
+    color: var(--borg-black);
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+}
+
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.login-btn:hover {
+    box-shadow: 
+        0 0 30px rgba(0, 255, 0, 0.6),
+        0 0 50px rgba(0, 255, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.login-btn:hover::before {
+    left: 100%;
+}
+
+.login-btn:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 0, 0.4),
+        inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 11px;
+    color: var(--borg-steel);
+    margin-top: 20px;
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+}
+
+.footer-text a {
+    color: var(--borg-teal);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.footer-text a:hover {
+    color: var(--borg-cyan);
+    text-shadow: 0 0 15px rgba(0, 255, 65, 0.6);
+}
+
+.status-bar {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    font-size: 10px;
+    color: var(--borg-steel);
+    text-align: center;
+    opacity: 0.5;
+    letter-spacing: 1px;
+}
+
+/* Success state */
+.form-input.success {
+    border-color: #00ff00;
+    box-shadow: 
+        inset 0 0 10px rgba(0, 255, 0, 0.1),
+        0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+/* Error state */
+.form-input.error {
+    border-color: var(--borg-red);
+    box-shadow: 
+        inset 0 0 10px rgba(255, 0, 64, 0.1),
+        0 0 15px rgba(255, 0, 64, 0.3);
+}
+
+.error-message {
+    font-size: 11px;
+    color: var(--borg-red);
+    margin-top: 6px;
+    text-shadow: 0 0 5px rgba(255, 0, 64, 0.5);
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .login-panel {
+        padding: 30px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .borg-logo {
+        font-size: 36px;
+    }
+}
