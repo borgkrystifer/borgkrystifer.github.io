@@ -34,6 +34,59 @@
     <link rel="icon" href="https://borg.support/images/favicon.ico?v=3">
     <link rel="shortcut icon" href="https://borg.support/images/favicon.ico?v=3">
     <link rel="apple-touch-icon-precomposed" href="https://borg.support/images/apple-touch-icon.png">
+    <style>
+        [data-bs-theme=dark] {
+            color-scheme: dark;
+        }
+
+        .mapcontainer {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            width: 100%;
+            padding-right: calc(var(--bs-gutter-x) * .5);
+            padding-left: calc(var(--bs-gutter-x) * .5);
+            margin-right: auto;
+            margin-left: auto
+        }
+
+        @media (min-width:1200px) {
+            .mapcontainer,
+            .mapcontainer-lg,
+            .mapcontainer-md,
+            .mapcontainer-sm,
+            .mapcontainer-xl {
+                max-width: 1140px
+            }
+        }
+
+        svg {
+            background-color: transparent;
+        }
+
+        line,
+        circle,
+        path {
+            pointer-events: none;
+        }
+
+        .svgSystem {
+            stroke: black;
+            stroke-width: 3;
+            fill: white;
+            fill-opacity: 0.4;
+            stroke-linejoin: round;
+            stroke-dasharray: 0;
+        }
+
+        .svgSystemConnection {
+            stroke: rgb(0, 0, 0);
+            stroke-width: 2;
+        }
+
+        .svgSystemCircle {
+            fill: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -1783,8 +1836,399 @@
                 <h2 class="roe-subtitle">Map will update as territories are acquired</h2>
                 <div class="content-section">
                     <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-                        <img src="images/blankterritory.png" alt="territory map"
-                            style="max-width: 75%; max-height: 80vh; width: auto; height: auto; display: block;">
+                        <main>
+                            <div class="mapcontainer">
+                                <div class="col" id="map">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1371 993.5" style="width: 100%; height: 900px; display: block;">
+                                        <polygon id="1598736183" class="svgSystem"
+                                            points="16 454 16 331.83 69.7 278.13 89.94 308 121 308 121 393.56 89.78 454 16 454" />
+                                        <polygon id="716012578" class="svgSystem"
+                                            points="16 585.18 16 458 89 458 89 556.49 132.5 639.54 99.09 669.25 16 585.18" />
+                                        <polygon id="1170669710" class="svgSystem"
+                                            points="101 724.18 101 672.9 135.76 642 263 642 263 681 145.2 769.35 101 724.18" />
+                                        <polygon id="1457297806" class="svgSystem"
+                                            points="136.21 638 94.31 558 263 558 263 638 136.21 638" />
+                                        <polygon id="851187192" class="svgSystem"
+                                            points="93 554 93 456.49 124.22 396 207.25 396 263.25 445 284 445 284 485.27 263 510.27 263 554 93 554" />
+                                        <polygon id="727367149" class="svgSystem"
+                                            points="264.75 441 208.75 392 125 392 125 308 284 308 284 441 264.75 441" />
+                                        <polygon id="1646136635" class="svgSystem"
+                                            points="92.06 304 72.59 275.26 134.82 214 286.11 214 331.15 263.83 285.25 304 92.06 304" />
+                                        <polygon id="1576679126" class="svgSystem"
+                                            points="288 441 288 306.91 332 268.41 332 333.8 370 373.8 370 441 288 441" />
+                                        <polygon id="1960606625" class="svgSystem"
+                                            points="267 638 267 511.73 288 486.73 288 445 370 445 370 485.29 337 526.29 337 604.17 303.17 638 267 638" />
+                                        <polygon id="1809221684" class="svgSystem"
+                                            points="220.83 799 174.83 799 148.04 772.22 267 683 267 642 302 642 302 829.23 277.92 856.09 220.83 799" />
+                                        <polygon id="404484182" class="svgSystem"
+                                            points="314.83 978 280 943.17 280 859.77 304.89 832 391.22 832 440 879.84 440 978 314.83 978" />
+                                        <polygon id="100583287" class="svgSystem"
+                                            points="444 978 444 881 527.85 881 559.85 848 616 848 616 978 444 978" />
+                                        <polygon id="1170639956" class="svgSystem"
+                                            points="620 898 620 847.1 650.26 828 737 828 737 898 620 898" />
+                                        <polygon id="1964344020" class="svgSystem"
+                                            points="620 978 620 902 737 902 737 956 679.17 956 657.17 978 620 978" />
+                                        <polygon id="2144111369" class="svgSystem"
+                                            points="741 956 741 771 808.2 771 866 825.86 866 956 741 956" />
+                                        <polygon id="1603382959" class="svgSystem"
+                                            points="870 956 870 825.94 952.85 756.73 980.15 785 1038 785 1038 929.19 1012.15 956 870 956" />
+                                        <polygon id="1238332214" class="svgSystem"
+                                            points="374 372.2 336 332.2 336 266 455.86 266 437 306.56 437 406.79 374 439.7 374 372.2" />
+                                        <polygon id="1556418684" class="svgSystem"
+                                            points="334.89 262 289.77 212.08 378.82 124 457 124 457 176.86 519.41 236.34 458.6 262 334.89 262" />
+                                        <polygon id="2044888998" class="svgSystem"
+                                            points="392.97 828 306 828 306 733 560 733 560 756.18 441.98 876.17 392.97 828" />
+                                        <polygon id="508588181" class="svgSystem"
+                                            points="306 729 306 640.83 339.83 607 437 607 437 658.93 402 693.74 402 729 306 729" />
+                                        <polygon id="507519541" class="svgSystem"
+                                            points="406 729 406 695.28 441 660.38 441 607 500 607 500 645.26 560 690.99 560 729 406 729" />
+                                        <polygon id="1133579970" class="svgSystem"
+                                            points="567.88 379 462.4 264.74 523.42 239 650.95 239 621 278.17 621 379 567.88 379" />
+                                        <polygon id="47245576" class="svgSystem"
+                                            points="545 577 545 408.76 567.9 383 622.12 383 701 468.58 701 524.13 644.21 577 545 577" />
+                                        <polygon id="1383107774" class="svgSystem"
+                                            points="441 406 441 307.44 459.55 267.55 564.3 381.03 542.1 406 441 406" />
+                                        <polygon id="450781274" class="svgSystem"
+                                            points="441 603 441 410 541 410 541 577.86 501.79 603 441 603" />
+                                        <polygon id="939860675" class="svgSystem"
+                                            points="562.67 688 504 643.3 504 606.21 543.24 581 643 581 643 661.19 617.15 688 562.67 688" />
+                                        <polygon id="1645876992" class="svgSystem"
+                                            points="446.77 877 564 757.82 564 692 616 692 616 844 558.15 844 526.15 877 446.77 877" />
+                                        <polygon id="1020076107" class="svgSystem"
+                                            points="620 744 708.23 744 737 769.89 737 824 649.1 824 620 842.37 620 744" />
+                                        <polygon id="2062242845" class="svgSystem"
+                                            points="809.8 767 739.77 767 709.77 740 620 740 620 692 804.35 692 822.35 705 900.18 705 950.02 753.88 868.08 822.32 809.8 767" />
+                                        <polygon id="1976653582" class="svgSystem"
+                                            points="738.68 688 705 646.95 705 527 721.15 527 799.67 607.48 768.63 688 738.68 688" />
+                                        <polygon id="795083356" class="svgSystem"
+                                            points="803.09 605.25 722.88 523 705 523 705 470 821.23 470 899 540.88 899 636.25 803.09 605.25" />
+                                        <polygon id="1518413947" class="svgSystem"
+                                            points="823.65 701 805.65 688 772.91 688 803.19 609.49 899 640.46 899 701 823.65 701" />
+                                        <polygon id="1433851648" class="svgSystem"
+                                            points="659.13 239 763 239 763 292.37 733.91 333.66 659.13 239" />
+                                        <polygon id="91087479" class="svgSystem"
+                                            points="625 379 625 279.45 655.02 240.26 731.51 337.07 701.96 379 625 379" />
+                                        <polygon id="233224244" class="svgSystem"
+                                            points="1113.87 783.04 1170.8 729 1204 729 1204 790.16 1162.02 831.19 1113.87 783.04" />
+                                        <polygon id="372050647" class="svgSystem"
+                                            points="1042 928 1042 785 1110.17 785 1160.59 835.41 1228.21 904.02 1205.15 928 1042 928" />
+                                        <polygon id="763527938" class="svgSystem"
+                                            points="1255 766.2 1255 727.98 1306.68 688 1354 688 1354 778.17 1309.04 823.13 1255 766.2" />
+                                        <polygon id="647935234" class="svgSystem"
+                                            points="1164.83 834.03 1208 791.84 1208 729 1251 729 1251 767.8 1306.21 825.96 1231.01 901.16 1164.83 834.03" />
+                                        <polygon id="1414400237" class="svgSystem"
+                                            points="1308 684 1308 644.17 1265 601.17 1265 528 1333.17 528 1354 548.83 1354 684 1308 684" />
+                                        <polygon id="225845685" class="svgSystem"
+                                            points="1131.25 625 1111 596.9 1111 527.01 1261 527.99 1261 601.08 1233.26 625 1131.25 625" />
+                                        <polygon id="610044534" class="svgSystem"
+                                            points="1172 725 1172 629 1234.74 629 1262.9 604.73 1304 645.83 1304 685.02 1252.32 725 1172 725" />
+                                        <polygon id="558058285" class="svgSystem"
+                                            points="1016.88 685.07 1108.79 600.63 1129.28 629 1168 629 1168 726.14 1111.04 780.2 1016.88 685.07" />
+                                        <polygon id="1766074547" class="svgSystem"
+                                            points="969 638.16 969 455 1035.81 455 1107 526.15 1107 596.76 1014.04 682.24 969 638.16" />
+                                        <polygon id="906166537" class="svgSystem"
+                                            points="903 637 903 539.12 825.18 468.19 843.64 455 965 455 965 637 903 637" />
+                                        <polygon id="75447996" class="svgSystem"
+                                            points="845 451 845 365.13 767 292.14 767 239 832.04 239 892 313.7 892 451 845 451" />
+                                        <polygon id="190693683" class="svgSystem"
+                                            points="523.8 235 461 175.14 461 122.83 561.02 23.8 623.61 84.44 653 114.38 653 235 523.8 235" />
+                                        <polygon id="620533187" class="svgSystem"
+                                            points="657 235 657 112.73 627.83 83.02 689.82 22 805 22 805 103.08 763 139.08 763 235 657 235" />
+                                        <polygon id="234507462" class="svgSystem"
+                                            points="835.7 237.16 876 197.84 876 169 940 169 940 265.16 894.18 310.03 835.7 237.16" />
+                                        <polygon id="2106408117" class="svgSystem"
+                                            points="874.79 165 809 103.14 809 22 842.17 22 940 119.83 940 165 874.79 165" />
+                                        <polygon id="1834533150" class="svgSystem" points="937 417 937 339.85 997 281.72 997 417 937 417" />
+                                        <polygon id="462342571" class="svgSystem"
+                                            points="341 603 341 527.71 374 486.71 374 444.21 437 411.3 437 603 341 603" />
+                                        <polygon id="599322744" class="svgSystem"
+                                            points="622.71 688 647 662.81 647 579.87 701 529.59 701 648.3 733.47 688 622.71 688" />
+                                        <polygon id="1995161692" class="svgSystem"
+                                            points="981.85 781 954.44 752.61 903 702.16 903 641 966.18 641 1012.6 686.43 1106.21 781 981.85 781" />
+                                        <polygon id="1205790513" class="svgSystem"
+                                            points="704.05 466 627.56 383 704.04 383 765.31 296.03 841 366.87 841 451.97 821.36 466 704.05 466" />
+                                        <polygon id="1695443788" class="svgSystem"
+                                            points="767 235 767 140.92 806.94 106.69 872 167.86 872 196.16 832.19 235 767 235" />
+                                        <line class="svgSystemConnection" x1="322" y1="918" x2="353" y2="865" />
+                                        <line class="svgSystemConnection" x1="388" y1="918" x2="353" y2="865" />
+                                        <line class="svgSystemConnection" x1="322" y1="918" x2="388" y2="918" />
+                                        <line class="svgSystemConnection" x1="273" y1="807" x2="322" y2="918" />
+                                        <line class="svgSystemConnection" x1="260" y1="736" x2="273" y2="807" />
+                                        <line class="svgSystemConnection" x1="346" y1="690" x2="260" y2="736" />
+                                        <line class="svgSystemConnection" x1="405" y1="770" x2="273" y2="807" />
+                                        <line class="svgSystemConnection" x1="353" y1="865" x2="405" y2="770" />
+                                        <line class="svgSystemConnection" x1="486" y1="789" x2="405" y2="770" />
+                                        <line class="svgSystemConnection" x1="467" y1="701" x2="486" y2="789" />
+                                        <line class="svgSystemConnection" x1="488" y1="665" x2="467" y2="701" />
+                                        <line class="svgSystemConnection" x1="370" y1="637" x2="346" y2="690" />
+                                        <line class="svgSystemConnection" x1="467" y1="701" x2="370" y2="637" />
+                                        <line class="svgSystemConnection" x1="182" y1="672" x2="260" y2="736" />
+                                        <line class="svgSystemConnection" x1="145" y1="706" x2="182" y2="672" />
+                                        <line class="svgSystemConnection" x1="136" y1="597" x2="182" y2="672" />
+                                        <line class="svgSystemConnection" x1="60" y1="597" x2="136" y2="597" />
+                                        <line class="svgSystemConnection" x1="145" y1="706" x2="60" y2="597" />
+                                        <line class="svgSystemConnection" x1="34" y1="559" x2="60" y2="597" />
+                                        <line class="svgSystemConnection" x1="34" y1="335" x2="34" y2="559" />
+                                        <line class="svgSystemConnection" x1="78" y1="378" x2="34" y2="335" />
+                                        <line class="svgSystemConnection" x1="181" y1="349" x2="78" y2="378" />
+                                        <line class="svgSystemConnection" x1="181" y1="445" x2="181" y2="349" />
+                                        <line class="svgSystemConnection" x1="150" y1="498" x2="181" y2="445" />
+                                        <line class="svgSystemConnection" x1="216" y1="498" x2="181" y2="445" />
+                                        <line class="svgSystemConnection" x1="150" y1="498" x2="216" y2="498" />
+                                        <line class="svgSystemConnection" x1="229" y1="597" x2="150" y2="498" />
+                                        <line class="svgSystemConnection" x1="136" y1="597" x2="229" y2="597" />
+                                        <line class="svgSystemConnection" x1="296" y1="575" x2="229" y2="597" />
+                                        <line class="svgSystemConnection" x1="296" y1="575" x2="379" y2="556" />
+                                        <line class="svgSystemConnection" x1="315" y1="498" x2="296" y2="575" />
+                                        <line class="svgSystemConnection" x1="216" y1="498" x2="315" y2="498" />
+                                        <line class="svgSystemConnection" x1="331" y1="416" x2="315" y2="498" />
+                                        <line class="svgSystemConnection" x1="313" y1="364" x2="331" y2="416" />
+                                        <line class="svgSystemConnection" x1="247" y1="360" x2="313" y2="364" />
+                                        <line class="svgSystemConnection" x1="245" y1="255" x2="247" y2="360" />
+                                        <line class="svgSystemConnection" x1="170" y1="264" x2="245" y2="255" />
+                                        <line class="svgSystemConnection" x1="34" y1="335" x2="170" y2="264" />
+                                        <line class="svgSystemConnection" x1="181" y1="349" x2="247" y2="360" />
+                                        <line class="svgSystemConnection" x1="332" y1="207" x2="245" y2="255" />
+                                        <line class="svgSystemConnection" x1="360" y1="333" x2="313" y2="364" />
+                                        <line class="svgSystemConnection" x1="403" y1="305" x2="360" y2="333" />
+                                        <line class="svgSystemConnection" x1="332" y1="207" x2="403" y2="305" />
+                                        <line class="svgSystemConnection" x1="422" y1="207" x2="332" y2="207" />
+                                        <line class="svgSystemConnection" x1="518" y1="276" x2="422" y2="207" />
+                                        <line class="svgSystemConnection" x1="465" y1="328" x2="403" y2="305" />
+                                        <line class="svgSystemConnection" x1="518" y1="276" x2="465" y2="328" />
+                                        <line class="svgSystemConnection" x1="492" y1="364" x2="465" y2="328" />
+                                        <line class="svgSystemConnection" x1="484" y1="457" x2="492" y2="364" />
+                                        <line class="svgSystemConnection" x1="398" y1="515" x2="484" y2="457" />
+                                        <line class="svgSystemConnection" x1="379" y1="556" x2="398" y2="515" />
+                                        <line class="svgSystemConnection" x1="370" y1="637" x2="379" y2="556" />
+                                        <line class="svgSystemConnection" x1="484" y1="539" x2="484" y2="457" />
+                                        <line class="svgSystemConnection" x1="549" y1="616" x2="484" y2="539" />
+                                        <line class="svgSystemConnection" x1="576" y1="517" x2="484" y2="539" />
+                                        <line class="svgSystemConnection" x1="607" y1="464" x2="576" y2="517" />
+                                        <line class="svgSystemConnection" x1="642" y1="517" x2="607" y2="464" />
+                                        <line class="svgSystemConnection" x1="576" y1="517" x2="642" y2="517" />
+                                        <line class="svgSystemConnection" x1="621" y1="630" x2="549" y2="616" />
+                                        <line class="svgSystemConnection" x1="488" y1="665" x2="549" y2="616" />
+                                        <line class="svgSystemConnection" x1="642" y1="517" x2="621" y2="630" />
+                                        <line class="svgSystemConnection" x1="672" y1="617" x2="621" y2="630" />
+                                        <line class="svgSystemConnection" x1="674" y1="663" x2="672" y2="617" />
+                                        <line class="svgSystemConnection" x1="751" y1="727" x2="674" y2="663" />
+                                        <line class="svgSystemConnection" x1="739" y1="586" x2="672" y2="617" />
+                                        <line class="svgSystemConnection" x1="752" y1="619" x2="739" y2="586" />
+                                        <line class="svgSystemConnection" x1="809" y1="659" x2="752" y2="619" />
+                                        <line class="svgSystemConnection" x1="843" y1="683" x2="809" y2="659" />
+                                        <line class="svgSystemConnection" x1="559" y1="789" x2="486" y2="789" />
+                                        <line class="svgSystemConnection" x1="567" y1="824" x2="559" y2="789" />
+                                        <line class="svgSystemConnection" x1="482" y1="918" x2="567" y2="824" />
+                                        <line class="svgSystemConnection" x1="388" y1="918" x2="482" y2="918" />
+                                        <line class="svgSystemConnection" x1="566" y1="918" x2="482" y2="918" />
+                                        <line class="svgSystemConnection" x1="640" y1="936" x2="566" y2="918" />
+                                        <line class="svgSystemConnection" x1="639" y1="869" x2="640" y2="936" />
+                                        <line class="svgSystemConnection" x1="566" y1="918" x2="639" y2="869" />
+                                        <line class="svgSystemConnection" x1="703" y1="867" x2="639" y2="869" />
+                                        <line class="svgSystemConnection" x1="699" y1="936" x2="640" y2="936" />
+                                        <line class="svgSystemConnection" x1="645" y1="787" x2="703" y2="867" />
+                                        <line class="svgSystemConnection" x1="567" y1="824" x2="645" y2="787" />
+                                        <line class="svgSystemConnection" x1="701" y1="787" x2="645" y2="787" />
+                                        <line class="svgSystemConnection" x1="806" y1="821" x2="701" y2="787" />
+                                        <line class="svgSystemConnection" x1="806" y1="902" x2="806" y2="821" />
+                                        <line class="svgSystemConnection" x1="699" y1="936" x2="806" y2="902" />
+                                        <line class="svgSystemConnection" x1="751" y1="727" x2="806" y2="821" />
+                                        <line class="svgSystemConnection" x1="880" y1="751" x2="751" y2="727" />
+                                        <line class="svgSystemConnection" x1="843" y1="683" x2="880" y2="751" />
+                                        <line class="svgSystemConnection" x1="924" y1="902" x2="806" y2="902" />
+                                        <line class="svgSystemConnection" x1="955" y1="849" x2="924" y2="902" />
+                                        <line class="svgSystemConnection" x1="990" y1="902" x2="924" y2="902" />
+                                        <line class="svgSystemConnection" x1="955" y1="849" x2="990" y2="902" />
+                                        <line class="svgSystemConnection" x1="880" y1="751" x2="955" y2="849" />
+                                        <line class="svgSystemConnection" x1="1129" y1="896" x2="990" y2="902" />
+                                        <line class="svgSystemConnection" x1="1078" y1="823" x2="1129" y2="896" />
+                                        <line class="svgSystemConnection" x1="1014" y1="737" x2="1078" y2="823" />
+                                        <line class="svgSystemConnection" x1="936" y1="703" x2="1014" y2="737" />
+                                        <line class="svgSystemConnection" x1="936" y1="544" x2="936" y2="703" />
+                                        <line class="svgSystemConnection" x1="1151" y1="785" x2="1078" y2="823" />
+                                        <line class="svgSystemConnection" x1="1177" y1="761" x2="1151" y2="785" />
+                                        <line class="svgSystemConnection" x1="1248" y1="843" x2="1129" y2="896" />
+                                        <line class="svgSystemConnection" x1="1246" y1="801" x2="1248" y2="843" />
+                                        <line class="svgSystemConnection" x1="1177" y1="761" x2="1246" y2="801" />
+                                        <line class="svgSystemConnection" x1="1328" y1="761" x2="1246" y2="801" />
+                                        <line class="svgSystemConnection" x1="1297" y1="732" x2="1328" y2="761" />
+                                        <line class="svgSystemConnection" x1="1232" y1="660" x2="1297" y2="732" />
+                                        <line class="svgSystemConnection" x1="1277" y1="664" x2="1232" y2="660" />
+                                        <line class="svgSystemConnection" x1="1328" y1="608" x2="1277" y2="664" />
+                                        <line class="svgSystemConnection" x1="1328" y1="761" x2="1328" y2="608" />
+                                        <line class="svgSystemConnection" x1="1304" y1="572" x2="1328" y2="608" />
+                                        <line class="svgSystemConnection" x1="1222" y1="563" x2="1304" y2="572" />
+                                        <line class="svgSystemConnection" x1="1232" y1="660" x2="1222" y2="563" />
+                                        <line class="svgSystemConnection" x1="1142" y1="563" x2="1222" y2="563" />
+                                        <line class="svgSystemConnection" x1="1142" y1="696" x2="1142" y2="563" />
+                                        <line class="svgSystemConnection" x1="1077" y1="696" x2="1142" y2="696" />
+                                        <line class="svgSystemConnection" x1="1177" y1="761" x2="1142" y2="696" />
+                                        <line class="svgSystemConnection" x1="1014" y1="737" x2="1077" y2="696" />
+                                        <line class="svgSystemConnection" x1="936" y1="544" x2="999" y2="581" />
+                                        <line class="svgSystemConnection" x1="1030" y1="528" x2="999" y2="581" />
+                                        <line class="svgSystemConnection" x1="1065" y1="581" x2="999" y2="581" />
+                                        <line class="svgSystemConnection" x1="1065" y1="581" x2="1077" y2="696" />
+                                        <line class="svgSystemConnection" x1="1030" y1="528" x2="1065" y2="581" />
+                                        <line class="svgSystemConnection" x1="1142" y1="563" x2="1065" y2="581" />
+                                        <line class="svgSystemConnection" x1="870" y1="477" x2="936" y2="544" />
+                                        <line class="svgSystemConnection" x1="803" y1="536" x2="870" y2="477" />
+                                        <line class="svgSystemConnection" x1="856" y1="592" x2="803" y2="536" />
+                                        <line class="svgSystemConnection" x1="843" y1="683" x2="856" y2="592" />
+                                        <line class="svgSystemConnection" x1="739" y1="586" x2="803" y2="536" />
+                                        <line class="svgSystemConnection" x1="607" y1="464" x2="714" y2="421" />
+                                        <line class="svgSystemConnection" x1="794" y1="387" x2="714" y2="421" />
+                                        <line class="svgSystemConnection" x1="871" y1="394" x2="870" y2="477" />
+                                        <line class="svgSystemConnection" x1="844" y1="312" x2="871" y2="394" />
+                                        <line class="svgSystemConnection" x1="794" y1="387" x2="844" y2="312" />
+                                        <line class="svgSystemConnection" x1="739" y1="282" x2="794" y2="387" />
+                                        <line class="svgSystemConnection" x1="657" y1="360" x2="714" y2="421" />
+                                        <line class="svgSystemConnection" x1="659" y1="302" x2="657" y2="360" />
+                                        <line class="svgSystemConnection" x1="708" y1="258" x2="659" y2="302" />
+                                        <line class="svgSystemConnection" x1="739" y1="282" x2="708" y2="258" />
+                                        <line class="svgSystemConnection" x1="896" y1="247" x2="844" y2="312" />
+                                        <line class="svgSystemConnection" x1="911" y1="198" x2="896" y2="247" />
+                                        <line class="svgSystemConnection" x1="892" y1="107" x2="911" y2="198" />
+                                        <line class="svgSystemConnection" x1="849" y1="69" x2="892" y2="107" />
+                                        <line class="svgSystemConnection" x1="730" y1="69" x2="849" y2="69" />
+                                        <line class="svgSystemConnection" x1="708" y1="160" x2="730" y2="69" />
+                                        <line class="svgSystemConnection" x1="708" y1="258" x2="708" y2="160" />
+                                        <line class="svgSystemConnection" x1="792" y1="160" x2="708" y2="160" />
+                                        <line class="svgSystemConnection" x1="892" y1="107" x2="792" y2="160" />
+                                        <line class="svgSystemConnection" x1="828" y1="193" x2="792" y2="160" />
+                                        <line class="svgSystemConnection" x1="896" y1="247" x2="828" y2="193" />
+                                        <line class="svgSystemConnection" x1="560" y1="116" x2="730" y2="69" />
+                                        <line class="svgSystemConnection" x1="524" y1="172" x2="560" y2="116" />
+                                        <line class="svgSystemConnection" x1="593" y1="172" x2="560" y2="116" />
+                                        <line class="svgSystemConnection" x1="524" y1="172" x2="593" y2="172" />
+                                        <line class="svgSystemConnection" x1="422" y1="207" x2="524" y2="172" />
+                                        <line class="svgSystemConnection" x1="593" y1="172" x2="594" y2="298" />
+                                        <line class="svgSystemConnection" x1="518" y1="276" x2="594" y2="298" />
+                                        <line class="svgSystemConnection" x1="659" y1="302" x2="594" y2="298" />
+                                        <line class="svgSystemConnection" x1="974" y1="352" x2="957" y2="387" />
+                                        <line class="svgSystemConnection" x1="982" y1="376" x2="957" y2="387" />
+                                        <line class="svgSystemConnection" x1="974" y1="352" x2="982" y2="376" />
+                                        <circle class="svgSystemCircle" cx="674" cy="663" r="5" />
+                                        <circle class="svgSystemCircle" cx="703" cy="867" r="5" />
+                                        <circle class="svgSystemCircle" cx="1151" cy="785" r="5" />
+                                        <circle class="svgSystemCircle" cx="730" cy="69" r="5" />
+                                        <circle class="svgSystemCircle" cx="484" cy="457" r="5" />
+                                        <circle class="svgSystemCircle" cx="1142" cy="696" r="5" />
+                                        <circle class="svgSystemCircle" cx="870" cy="477" r="5" />
+                                        <circle class="svgSystemCircle" cx="1328" cy="608" r="5" />
+                                        <circle class="svgSystemCircle" cx="1328" cy="761" r="5" />
+                                        <circle class="svgSystemCircle" cx="492" cy="364" r="5" />
+                                        <circle class="svgSystemCircle" cx="892" cy="107" r="5" />
+                                        <circle class="svgSystemCircle" cx="1246" cy="801" r="5" />
+                                        <circle class="svgSystemCircle" cx="911" cy="198" r="5" />
+                                        <circle class="svgSystemCircle" cx="559" cy="789" r="5" />
+                                        <circle class="svgSystemCircle" cx="247" cy="360" r="5" />
+                                        <circle class="svgSystemCircle" cx="422" cy="207" r="5" />
+                                        <circle class="svgSystemCircle" cx="260" cy="736" r="5" />
+                                        <circle class="svgSystemCircle" cx="315" cy="498" r="5" />
+                                        <circle class="svgSystemCircle" cx="150" cy="498" r="5" />
+                                        <circle class="svgSystemCircle" cx="181" cy="349" r="5" />
+                                        <circle class="svgSystemCircle" cx="844" cy="312" r="5" />
+                                        <circle class="svgSystemCircle" cx="640" cy="936" r="5" />
+                                        <circle class="svgSystemCircle" cx="1065" cy="581" r="5" />
+                                        <circle class="svgSystemCircle" cx="549" cy="616" r="5" />
+                                        <circle class="svgSystemCircle" cx="659" cy="302" r="5" />
+                                        <circle class="svgSystemCircle" cx="567" cy="824" r="5" />
+                                        <circle class="svgSystemCircle" cx="924" cy="902" r="5" />
+                                        <circle class="svgSystemCircle" cx="856" cy="592" r="5" />
+                                        <circle class="svgSystemCircle" cx="974" cy="352" r="5" />
+                                        <circle class="svgSystemCircle" cx="1297" cy="732" r="5" />
+                                        <circle class="svgSystemCircle" cx="379" cy="556" r="5" />
+                                        <circle class="svgSystemCircle" cx="245" cy="255" r="5" />
+                                        <circle class="svgSystemCircle" cx="1177" cy="761" r="5" />
+                                        <circle class="svgSystemCircle" cx="1304" cy="572" r="5" />
+                                        <circle class="svgSystemCircle" cx="792" cy="160" r="5" />
+                                        <circle class="svgSystemCircle" cx="332" cy="207" r="5" />
+                                        <circle class="svgSystemCircle" cx="1277" cy="664" r="5" />
+                                        <circle class="svgSystemCircle" cx="136" cy="597" r="5" />
+                                        <circle class="svgSystemCircle" cx="1232" cy="660" r="5" />
+                                        <circle class="svgSystemCircle" cx="360" cy="333" r="5" />
+                                        <circle class="svgSystemCircle" cx="353" cy="865" r="5" />
+                                        <circle class="svgSystemCircle" cx="990" cy="902" r="5" />
+                                        <circle class="svgSystemCircle" cx="296" cy="575" r="5" />
+                                        <circle class="svgSystemCircle" cx="871" cy="394" r="5" />
+                                        <circle class="svgSystemCircle" cx="1030" cy="528" r="5" />
+                                        <circle class="svgSystemCircle" cx="488" cy="665" r="5" />
+                                        <circle class="svgSystemCircle" cx="672" cy="617" r="5" />
+                                        <circle class="svgSystemCircle" cx="229" cy="597" r="5" />
+                                        <circle class="svgSystemCircle" cx="566" cy="918" r="5" />
+                                        <circle class="svgSystemCircle" cx="370" cy="637" r="5" />
+                                        <circle class="svgSystemCircle" cx="398" cy="515" r="5" />
+                                        <circle class="svgSystemCircle" cx="936" cy="703" r="5" />
+                                        <circle class="svgSystemCircle" cx="806" cy="902" r="5" />
+                                        <circle class="svgSystemCircle" cx="482" cy="918" r="5" />
+                                        <circle class="svgSystemCircle" cx="849" cy="69" r="5" />
+                                        <circle class="svgSystemCircle" cx="1142" cy="563" r="5" />
+                                        <circle class="svgSystemCircle" cx="170" cy="264" r="5" />
+                                        <circle class="svgSystemCircle" cx="34" cy="559" r="5" />
+                                        <circle class="svgSystemCircle" cx="999" cy="581" r="5" />
+                                        <circle class="svgSystemCircle" cx="936" cy="544" r="5" />
+                                        <circle class="svgSystemCircle" cx="645" cy="787" r="5" />
+                                        <circle class="svgSystemCircle" cx="880" cy="751" r="5" />
+                                        <circle class="svgSystemCircle" cx="1248" cy="843" r="5" />
+                                        <circle class="svgSystemCircle" cx="806" cy="821" r="5" />
+                                        <circle class="svgSystemCircle" cx="465" cy="328" r="5" />
+                                        <circle class="svgSystemCircle" cx="708" cy="258" r="5" />
+                                        <circle class="svgSystemCircle" cx="701" cy="787" r="5" />
+                                        <circle class="svgSystemCircle" cx="331" cy="416" r="5" />
+                                        <circle class="svgSystemCircle" cx="467" cy="701" r="5" />
+                                        <circle class="svgSystemCircle" cx="518" cy="276" r="5" />
+                                        <circle class="svgSystemCircle" cx="794" cy="387" r="5" />
+                                        <circle class="svgSystemCircle" cx="1078" cy="823" r="5" />
+                                        <circle class="svgSystemCircle" cx="739" cy="586" r="5" />
+                                        <circle class="svgSystemCircle" cx="708" cy="160" r="5" />
+                                        <circle class="svgSystemCircle" cx="576" cy="517" r="5" />
+                                        <circle class="svgSystemCircle" cx="957" cy="387" r="5" />
+                                        <circle class="svgSystemCircle" cx="751" cy="727" r="5" />
+                                        <circle class="svgSystemCircle" cx="642" cy="517" r="5" />
+                                        <circle class="svgSystemCircle" cx="1222" cy="563" r="5" />
+                                        <circle class="svgSystemCircle" cx="34" cy="335" r="5" />
+                                        <circle class="svgSystemCircle" cx="607" cy="464" r="5" />
+                                        <circle class="svgSystemCircle" cx="739" cy="282" r="5" />
+                                        <circle class="svgSystemCircle" cx="843" cy="683" r="5" />
+                                        <circle class="svgSystemCircle" cx="896" cy="247" r="5" />
+                                        <circle class="svgSystemCircle" cx="403" cy="305" r="5" />
+                                        <circle class="svgSystemCircle" cx="639" cy="869" r="5" />
+                                        <circle class="svgSystemCircle" cx="752" cy="619" r="5" />
+                                        <circle class="svgSystemCircle" cx="1077" cy="696" r="5" />
+                                        <circle class="svgSystemCircle" cx="828" cy="193" r="5" />
+                                        <circle class="svgSystemCircle" cx="216" cy="498" r="5" />
+                                        <circle class="svgSystemCircle" cx="1014" cy="737" r="5" />
+                                        <circle class="svgSystemCircle" cx="803" cy="536" r="5" />
+                                        <circle class="svgSystemCircle" cx="1129" cy="896" r="5" />
+                                        <circle class="svgSystemCircle" cx="699" cy="936" r="5" />
+                                        <circle class="svgSystemCircle" cx="346" cy="690" r="5" />
+                                        <circle class="svgSystemCircle" cx="181" cy="445" r="5" />
+                                        <circle class="svgSystemCircle" cx="594" cy="298" r="5" />
+                                        <circle class="svgSystemCircle" cx="388" cy="918" r="5" />
+                                        <circle class="svgSystemCircle" cx="78" cy="378" r="5" />
+                                        <circle class="svgSystemCircle" cx="486" cy="789" r="5" />
+                                        <circle class="svgSystemCircle" cx="657" cy="360" r="5" />
+                                        <circle class="svgSystemCircle" cx="145" cy="706" r="5" />
+                                        <circle class="svgSystemCircle" cx="593" cy="172" r="5" />
+                                        <circle class="svgSystemCircle" cx="273" cy="807" r="5" />
+                                        <circle class="svgSystemCircle" cx="621" cy="630" r="5" />
+                                        <circle class="svgSystemCircle" cx="560" cy="116" r="5" />
+                                        <circle class="svgSystemCircle" cx="955" cy="849" r="5" />
+                                        <circle class="svgSystemCircle" cx="313" cy="364" r="5" />
+                                        <circle class="svgSystemCircle" cx="405" cy="770" r="5" />
+                                        <circle class="svgSystemCircle" cx="714" cy="421" r="5" />
+                                        <circle class="svgSystemCircle" cx="182" cy="672" r="5" />
+                                        <circle class="svgSystemCircle" cx="524" cy="172" r="5" />
+                                        <circle class="svgSystemCircle" cx="322" cy="918" r="5" />
+                                        <circle class="svgSystemCircle" cx="484" cy="539" r="5" />
+                                        <circle class="svgSystemCircle" cx="60" cy="597" r="5" />
+                                        <circle class="svgSystemCircle" cx="809" cy="659" r="5" />
+                                        <circle class="svgSystemCircle" cx="982" cy="376" r="5" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </main>
                     </div>
                 </div>
             </div>
