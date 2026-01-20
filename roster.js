@@ -13,15 +13,6 @@ TOURNAMENT_COLUMNS.forEach(col => {
   visibleColumns[col] = false;
 });
 
-// ====================================================================
-// Helper functions for leaver detection with special character support
-// ====================================================================
-
-/**
- * normalize names for comparison - handles accents, special chars, case insensitivity
- * uses unicode nfd (canonical decomposition) to handle accented characters
- * examples: "Café" → "cafe", "José" → "jose", "ëtüdé" → "etude"
- */
 function normalizeNameForComparison(name) {
   if (!name) return '';
   
@@ -34,31 +25,20 @@ function normalizeNameForComparison(name) {
     .replace(/\d+$/g, '');           // remove trailing numbers
 }
 
-/**
- * extract player name from any field variation and normalize it
- */
 function getNormalizedPlayerName(player) {
   const name = player.Name || player.name || player.Player || player["Player"] || player["PLAYER"] || "";
   return normalizeNameForComparison(name);
 }
 
-/**
- * extract leaver name from any field variation and normalize it
- */
 function getNormalizedLeaverName(leaver) {
   const name = leaver.name || leaver.Name || leaver.Player || leaver["Player"] || leaver["PLAYER"] || "";
   return normalizeNameForComparison(name);
 }
 
-// global vars to store leavers
 let leaversData = [];
 let allTimeLeaversData = [];
 
-// ==================================
-// use shared data or fetch if needed
-// ==================================
 async function getAllianceData() {
-  // check if allianceRosterData is already populated by main.js
   if (
     window.allianceRosterData &&
     window.allianceRosterData.players &&
@@ -66,14 +46,12 @@ async function getAllianceData() {
   ) {
     console.log("Using shared allianceRosterData from main.js");
     
-    // extract leavers if available
     if (window.allianceRosterData.leavers && window.allianceRosterData.leavers.length > 0) {
       leaversData = window.allianceRosterData.leavers;
       console.log(`Current session leavers:`, leaversData.map(l => l.Name || l.name || l.Player));
       showLeaverAlert(window.allianceRosterData.leavers);
     }
     
-    // extract all-time leavers
     if (window.allianceRosterData.all_time_leavers && window.allianceRosterData.all_time_leavers.length > 0) {
       allTimeLeaversData = window.allianceRosterData.all_time_leavers;
       console.log(`All-time leavers (last 90 days):`, allTimeLeaversData.map(l => l.name));
@@ -82,7 +60,6 @@ async function getAllianceData() {
     return window.allianceRosterData;
   }
 
-  // if ! available fetch it
   console.log("allianceRosterData not available, fetching independently...");
   try {
     const res = await fetch(ALLIANCE_WORKER_URL);
@@ -90,14 +67,12 @@ async function getAllianceData() {
     
     const data = await res.json();
 
-    // handle current session leavers from cloudflare worker
     if (data.leavers && data.leavers.length > 0) {
       leaversData = data.leavers;
       console.log(`${data.leavers.length} current session leavers detected:`, data.leavers.map(p => p.Name || p.name || p.Player));
       showLeaverAlert(data.leavers);
     }
 
-    // handle all-time leavers from cloudflare worker
     if (data.all_time_leavers && data.all_time_leavers.length > 0) {
       allTimeLeaversData = data.all_time_leavers;
       console.log(`All-time leavers found:`, allTimeLeaversData.map(l => l.name));
@@ -114,7 +89,6 @@ function showLeaverAlert(leavers) {
   const names = leavers.map(p => p.name || p.Name || p.Player).join(', ');
   console.log(`🚨 ${leavers.length} left or changed names: ${names}`);
 
-  // on-screen alert with close button
   const alert = document.createElement('div');
   alert.style.cssText = `
 position: fixed; top: 10px; right: 10px;
@@ -165,7 +139,6 @@ async function loadAndRenderRoster() {
 
     allPlayers = data.players;
 
-    // merge tournament data if available
     if (Array.isArray(data.tournaments) && data.tournaments.length > 0) {
       const tournByName = new Map(
         data.tournaments
@@ -217,7 +190,6 @@ function renderRoster(players) {
     });
   }
 
-  // display recent departures panel =====
   if (allTimeLeaversData && allTimeLeaversData.length > 0) {
     const leaverPanel = document.createElement("div");
     leaverPanel.style.cssText = `
@@ -356,23 +328,18 @@ font-family: 'Orbitron', sans-serif;
 
   players.forEach(player => {
     const row = document.createElement("tr");
-
-    // check both current and all-time leavers
     const normalizedPlayerName = getNormalizedPlayerName(player);
     
-    // check current session leavers
     const isCurrentLeaver = leaversData.some(leaver => {
       const normalizedLeaverName = getNormalizedLeaverName(leaver);
       return normalizedPlayerName === normalizedLeaverName;
     });
 
-    // check all-time leavers (permanent history)
     const isAllTimeLeaver = allTimeLeaversData.some(leaver => {
       const normalizedLeaverName = normalizeNameForComparison(leaver.name);
       return normalizedPlayerName === normalizedLeaverName;
     });
 
-    // highlight if in any leaver record (current or historical)
     if (isCurrentLeaver || isAllTimeLeaver) {
       row.classList.add('leaver-row');
       console.log(`Highlighting ${normalizedPlayerName} as leaver`);
@@ -404,26 +371,38 @@ font-family: 'Orbitron', sans-serif;
   });
 }
 
+function parseDate(dateStr) {
+  if (!dateStr || typeof dateStr !== "string") return new Date(0);
+  try {
+    return new Date(dateStr);
+  } catch {
+    return new Date(0);
+  }
+}
+
+function isDateColumn(column) {
+  return column.toLowerCase().includes('date') || column.toLowerCase().includes('joined');
+}
+
 function parseFormattedNumber(value) {
   if (typeof value !== "string") return parseFloat(value) || 0;
-
   const trimmed = value.trim();
-  const match = trimmed.match(/^([\d.]+)\s*([KMBT]?)$/i);
-
+  
+  const withoutCommas = trimmed.replace(/,/g, '');
+  
+  const match = withoutCommas.match(/^([\d.]+)\s*([KMBT]?)$/i);
   if (!match) {
-    const plainNum = parseFloat(trimmed);
+    const plainNum = parseFloat(withoutCommas);
     return isNaN(plainNum) ? 0 : plainNum;
   }
 
   let num = parseFloat(match[1]);
   if (isNaN(num)) return 0;
-
   const suffix = match[2] ? match[2].toUpperCase() : "";
   if (suffix === "K") num *= 1_000;
   else if (suffix === "M") num *= 1_000_000;
   else if (suffix === "B") num *= 1_000_000_000;
   else if (suffix === "T") num *= 1_000_000_000_000;
-
   return num;
 }
 
@@ -439,10 +418,19 @@ function sortTable(column) {
     let aVal = a[column];
     let bVal = b[column];
 
+    if (isDateColumn(column)) {
+      const aDate = parseDate(aVal);
+      const bDate = parseDate(bVal);
+      return currentSort.ascending ? aDate - bDate : bDate - aDate;
+    }
+
     const aNum = parseFormattedNumber(aVal);
     const bNum = parseFormattedNumber(bVal);
 
-    if (aNum !== 0 || bNum !== 0) {
+    const aIsNumeric = /^[\d,]+(?:\.\d+)?\s*[KMBT]?$/i.test(String(aVal).trim());
+    const bIsNumeric = /^[\d,]+(?:\.\d+)?\s*[KMBT]?$/i.test(String(bVal).trim());
+
+    if (aIsNumeric && bIsNumeric) {
       return currentSort.ascending ? aNum - bNum : bNum - aNum;
     }
 
@@ -472,9 +460,6 @@ function toggleColumn(column, isVisible) {
   });
 }
 
-// ============================================
-// load on page ready
-// ============================================
 document.addEventListener("DOMContentLoaded", () => {
   loadAndRenderRoster();
 });
