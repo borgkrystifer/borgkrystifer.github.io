@@ -31,8 +31,8 @@
     <meta name="apple-mobile-web-app-title" content="[BORG] Academy">
 
     <!-- Favicon (single .ico file) -->
-    <link rel="icon" href="https://borg.support/images/favicon.ico">
-    <link rel="shortcut icon" href="https://borg.support/images/favicon.ico">
+    <link rel="icon" href="https://borg.support/images/favicon.ico?v=3">
+    <link rel="shortcut icon" href="https://borg.support/images/favicon.ico?v=3">
     <link rel="apple-touch-icon-precomposed" href="https://borg.support/images/apple-touch-icon.png">
 </head>
 
@@ -73,7 +73,8 @@
             <a href="#tips" class="tab-button" data-tab="tips">Tips & Tricks</a>
             <a href="#factions" class="tab-button" data-tab="factions">Factions</a>
             <a href="#links" class="tab-button" data-tab="links">Links</a>
-            <!-- <a href="#map" class="tab-button" data-tab="map">Territory</a> -->
+            <!-- Ships -->
+            <a href="#map" class="tab-button" data-tab="map">Territory</a>
             <a href="#roster" class="tab-button roster" data-tab="roster">Roster</a>
         </div>
 
@@ -315,7 +316,8 @@
                     <div class="content-text" style="text-align: center;">
                         <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
                             <img src="images/diplomacy.png" alt="diplomacy levels"
-                                style="max-width: 100%; max-height: 80vh; width: auto; height: auto; display: block;" onclick="openLightboxImg(this)">
+                                style="max-width: 100%; max-height: 80vh; width: auto; height: auto; display: block;"
+                                onclick="openLightboxImg(this)">
                         </div>
                         <div class="content-text">
                             <p style="color: green;">
@@ -1202,19 +1204,15 @@
                         <ul
                             style="margin: 15px 0 0 20px; line-height: 2; text-align: left; color: var(--accent-gold); font-size: 1.2em">
                             <li>Resets on Leave: <span style="color: green;">Unlike Faction Rep, your Alliance Rep
-                                    resets to zero
-                                    if you leave or are kicked from your Alliance, even if you rejoin the same one
-                                    later.</span>
-                            </li>
+                                    resets to zero if you leave or are kicked from your Alliance, even if you rejoin the
+                                    same one
+                                    later.</span></li>
                             <li>Earning Points: <span style="color: green;">You earn Rep by destroying Cardassian
-                                    stations,
-                                    defeating Cardassian Armadas, or completing specific Alliance-based tasks and
-                                    bounties.</span>
-                            </li>
+                                    stations, defeating Cardassian Armadas, or completing specific Alliance-based tasks
+                                    and
+                                    bounties.</span></li>
                             <li>Starbase Research: <span style="color: green;">Many late-game Starbase Research
-                                    Nodes are gated
-                                    behind specific Rep levels.</span>
-                            </li>
+                                    Nodes are gated behind specific Rep levels.</span></li>
                         </ul>
                         <br>
                         <p style="color: green">
@@ -1372,7 +1370,8 @@
                                     </li>
                                 </ul><br><br>
                                 <p style="color: green;"><br>
-                                    Once you reach a Rep lock threshold, your standing <u>cannot</u> drop below that threshold. This
+                                    Once you reach a Rep lock threshold, your standing <u>cannot</u> drop below that
+                                    threshold. This
                                     allows you to shift focus to other
                                     Factions without losing progress. The first lock at <span
                                         style="color: var(--accent-teal)">10 million</span> is particularly crucial,
@@ -1607,7 +1606,8 @@
                                             style="color: green;">then work on the third. This provides access to
                                             two</span> <span style="color: var(--accent-teal)">Faction Stores</span>
                                         <span style="color: green;">while maintaining the ability to grind hostiles from
-                                            the third Faction for Events</span></li>
+                                            the third Faction for Events</span>
+                                    </li>
                                     <li><span style="color: var(--accent-gold)">Triple Faction</span>: <span
                                             style="color: green;">Lock all three Factions at</span> <span
                                             style="color: var(--accent-teal)">10M+ Rep</span>. <span
@@ -1707,7 +1707,8 @@
                             special events, and they're crucial for progress in events like the Mission Key Hunter.
                             <br>
                             <br>
-                            <a href="https://startrekfleetcommand.com/" target="_blank" rel="noopener noreferrer">Official
+                            <a href="https://startrekfleetcommand.com/" target="_blank"
+                                rel="noopener noreferrer">Official
                                 STFC Website</a>
                             <br>
                             The official website for the game.
@@ -1774,16 +1775,19 @@
                 </div>
             </div>
 
+            <!-- Ships -->
+
             <!-- Territory Map -->
-            <!-- <div class="tab-content" id="map">
+            <div class="tab-content" id="map">
                 <h1 class="roe-title">717 Territories</h1>
+                <h2 class="roe-subtitle">Map will update as territories are acquired</h2>
                 <div class="content-section">
                     <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-                        <img src="images/map.png" alt="territory map"
+                        <img src="images/blankterritory.png" alt="territory map"
                             style="max-width: 100%; max-height: 80vh; width: auto; height: auto; display: block;">
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Roster -->
             <div class="tab-content" id="roster">
@@ -1818,4 +1822,5 @@
                 onclick="closeLightbox()">&times;</span>
         </div>
 </body>
+
 </html>
