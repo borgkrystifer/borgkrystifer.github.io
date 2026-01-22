@@ -85,7 +85,7 @@
         }
 
         .svgSystemCircle {
-            fill: white;
+            fill: rgb(0, 0, 0);
         }
     </style>
 </head>
@@ -183,7 +183,7 @@
                     <div class="content-text">
                         <p>
                             <b>
-                                <span class="heading-number">1.</span>
+                                <span class="heading-number" id="roe1">1.</span>
                                 <span class="heading-text"> Survey Ships: Always protected while UPC. Exceptions:</span>
                             </b>
                         </p>
@@ -205,7 +205,7 @@
                     <div class="content-text">
                         <p>
                             <b>
-                                <span class="heading-number">2.</span>
+                                <span class="heading-number" id="roe2">2.</span>
                                 <span class="heading-text"> Warships as Miners:</span>
                             </b>
                         </p>
@@ -228,7 +228,7 @@
                     <div class="content-text">
                         <p>
                             <b>
-                                <span class="heading-number">3.</span>
+                                <span class="heading-number" id="roe3">3.</span>
                                 <span class="heading-text">Token Space: Any system requiring you to spend something to
                                     enter.</span>
                             </b>
@@ -252,7 +252,7 @@
                     <div class="content-text">
                         <p>
                             <b>
-                                <span class="heading-number">4.</span>
+                                <span class="heading-number" id="roe4">4.</span>
                                 <span class="heading-text"> Armadas:</span>
                             </b>
                         </p>
@@ -272,7 +272,7 @@
                     <div class="content-text">
                         <p>
                             <b>
-                                <span class="heading-number">5.</span>
+                                <span class="heading-number" id="roe5">5.</span>
                                 <span class="heading-text">Alliance Owned Territory:</span>
                             </b>
                         </p>
@@ -283,7 +283,7 @@
                         </ul><br>
                         <p>
                             <b>
-                                <span class="heading-number">6.</span>
+                                <span class="heading-number" id="roe6">6.</span>
                                 <span class="heading-text">Territory Capture or Defense:</span>
                             </b>
                         </p>
@@ -302,7 +302,7 @@
                     <div class="content-text">
                         <p>
                             <b>
-                                <span class="heading-number">7.</span>
+                                <span class="heading-number" id="roe7">7.</span>
                                 <span class="heading-text">Warships:</span>
                             </b>
                         </p>
@@ -321,13 +321,13 @@
                 <!-- UPC/OPC -->
                 <div class="image-text-pair-content">
                     <div class="image-text-pair">
-                        <h3>UPC = Under Protected Cargo</h3>
+                        <h3 id="upc1">UPC = Under Protected Cargo</h3>
                         <div class="content-image-native">
                             <img src="images/roe01.png" alt="empty loot box upc example"
                                 onclick="openLightboxImg(this)">
                         </div>
 
-                        <h3>As long as this bar is gray, you are UPC</h3>
+                        <h3 id="upc2">As long as this bar is gray, you are UPC</h3>
                         <div class="content-image-native">
                             <img src="images/upc.png" alt="under protected caro image"
                                 style="height: 500px; width: auto;" onclick="openLightboxImg(this)">
@@ -335,12 +335,12 @@
                     </div>
 
                     <div class="image-text-pair">
-                        <h3>OPC = Over Protected Cargo</h3>
+                        <h3 id="opc1">OPC = Over Protected Cargo</h3>
                         <div class="content-image-native">
                             <img src="images/loot.png" alt="full loot box opc example" onclick="openLightboxImg(this)">
                         </div>
 
-                        <h3>When the bar turns green, you are OPC</h3>
+                        <h3 id="opc2">When the bar turns green, you are OPC</h3>
                         <div class="content-image-native">
                             <img src="images/opc.png" alt="over protected cargo image"
                                 style="height: 500px; width: auto;" onclick="openLightboxImg(this)">
@@ -510,7 +510,7 @@
                         <img src="images/battle_triangle.png" alt="stfc battle triangle">
                     </div>
                     <div class="content-text">
-                        <h2>Warships Hierarchy</h2>
+                        <h2 id="ship-archy">Warships Hierarchy</h2>
                         <p style="color: green;">
                             The battle triangle shows you which ships are best for fighting which ships.
                             Is this written in stone? No. Virtually any ship that is strong enough and has
@@ -533,7 +533,7 @@
                         </div>
                     </div>
                     <div class="content-text">
-                        <h2>Battleships</h2>
+                        <h2 id="bttl-ship">Battleships</h2>
                         <p style="color: green;">
                             These majestic ships come with immense firepower forming the backbone
                             of every noble fleet. Only Interceptors manage to effectively penetrate
@@ -555,7 +555,7 @@
                         </div>
                     </div>
                     <div class="content-text">
-                        <h2>Explorers</h2>
+                        <h2 id="exp-ship">Explorers</h2>
                         <p style="color: green;">
                             The pathfinders of the galaxy with the strongest Warp Engines,
                             Explorers should not be underestimated in combat either. Agile
@@ -578,7 +578,7 @@
                         </div>
                     </div>
                     <div class="content-text">
-                        <h2>Interceptors</h2>
+                        <h2 id="int-ship">Interceptors</h2>
                         <p style="color: green;">
                             Lightning fast fighter vessels steered by only the most skilled pilots. Equipped with
                             high impact weapons and effective impulse engines, Interceptors only have to watch out
@@ -598,7 +598,7 @@
                             style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2 style="text-align: left;">Parsteel</h2>
+                        <h2 id="par-resource" style="text-align: left;">Parsteel</h2>
                         <p style="color: green;">
                             Parsteel is used for many things in the game:
                         </p>
@@ -619,7 +619,7 @@
                             style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2 style="text-align: left;">Tritanium</h2>
+                        <h2 id="tri-resource" style="text-align: left;">Tritanium</h2>
                         <p style="color: green;">
                             Tritanium is also used for many things in the game:
                         </p>
@@ -637,7 +637,7 @@
                             style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2 style="text-align: left;">Dilithium</h2>
+                        <h2 id="dil-resource" style="text-align: left;">Dilithium</h2>
                         <p style="color: green;">
                             Dilithium is also used for many things in the game:
                         </p>
@@ -662,7 +662,7 @@
                             style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2 style="text-align: left;">Raw Crystal</h2>
+                        <h2 id="cry-resource" style="text-align: left;">Raw Crystal</h2>
                         <p style="color: green;">
                             Raw Crystal is used in the Refinery to produce other forms of
                             Crystal: <span style="color: var(--accent-teal)">Common</span>, <span
@@ -685,7 +685,7 @@
                             style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2 style="text-align: left;">Raw Gas</h2>
+                        <h2 id="gas-resource" style="text-align: left;">Raw Gas</h2>
                         <p style="color: green;">
                             Raw Gas is also used in the Refinery to produce other forms of
                             Gas: <span style="color: var(--accent-teal)">Common</span>, <span
@@ -710,7 +710,7 @@
                             style="width: 75% !important; height: auto !important;">
                     </div>
                     <div class="content-text">
-                        <h2 style="text-align: left;">Raw Ore</h2>
+                        <h2 id="ore-resource" style="text-align: left;">Raw Ore</h2>
                         <p style="color: green;">
                             Raw Ore is also used in the Refinery to produce other forms
                             of Ore: <span style="color: var(--accent-teal)">Common</span>, <span
@@ -750,7 +750,7 @@
                         </div>
                     </div>
                     <div class="content-text" style="margin-left: 13.5%;">
-                        <h2 style="text-align: left;">Corrupted/Decoded Data</h2>
+                        <h2 id="cor-dec-data" style="text-align: left;">Corrupted/Decoded Data</h2>
                         <p style="color: green;">
                             The <span style="color: var(--accent-teal)">Botany Bay</span> is the <span
                                 style="color: var(--accent-teal)">Augment Space</span> Mining/Survey Ship best for
@@ -793,7 +793,7 @@
                         <img src="images/mycelium.png" alt="image of mycelium spores">
                     </div>
                     <div class="content-text" style="margin-left: 16.7%;">
-                        <h2 style="text-align: left;">Mycelium Spores</h2>
+                        <h2 id="mycel-resource" style="text-align: left;">Mycelium Spores</h2>
                         <p style="color: green">
                             Mycelium Spores are a key resource for the <span style="color: var(--accent-teal)">USS
                                 Discovery's</span> unique
@@ -867,7 +867,7 @@
                         </div>
                     </div>
                     <div class="content-text" style="margin-left: 14%;">
-                        <h2 style="text-align: left;">Latinum</h2>
+                        <h2 id="latty-resource" style="text-align: left;">Latinum</h2>
                         <p style="color: green;">
                             Raw Latinum is mined and refined into <span style="color: var(--accent-teal)">Concentrated
                                 Latinum</span>,
@@ -921,7 +921,7 @@
                         <img src="images/isogen.png" alt="image of isogen">
                     </div>
                     <div class="content-text" style="margin-left: 16.5%;">
-                        <h2 style="text-align: left;">Isogen</h2>
+                        <h2 id="iso-resource" style="text-align: left;">Isogen</h2>
                         <div class="content-text">
                             <p style="color: green">
                                 Isogen is crucial for <span style="color: var(--accent-teal)">Alliance Territory
@@ -956,7 +956,7 @@
                         </div>
                     </div>
                     <div class="content-text" style="margin-left: 14%;">
-                        <h2 style="text-align: left;">Trellium A & D</h2>
+                        <h2 id="trell-resource" style="text-align: left;">Trellium A & D</h2>
                         <p style="color: green;">
                             Trellium-A and Trellium-D are valuable minerals from the <span
                                 style="color: var(--accent-teal)">Mirror Universe</span>, mined from systems
@@ -1020,7 +1020,7 @@
                     </div>
 
                     <div class="content-text" style="margin-left: 14%;">
-                        <h2 style="text-align: left;">Σ-Dilithium</h2>
+                        <h2 id="sig-dil" style="text-align: left;">Σ-Dilithium</h2>
                         <p style="color: green;">
                             Sigma Dilithium (<span style="color: var(--accent-teal)">Σ-Dilithium</span>) is a
                             high-grade, end-game resource (<span style="color: var(--accent-teal)">Grade 6</span>) used
@@ -1034,7 +1034,7 @@
                         </p>
                         <br>
                         <br>
-                        <h2 style="text-align: left;">Σ-Parsteel</h2>
+                        <h2 id="sig-par" style="text-align: left;">Σ-Parsteel</h2>
                         <p style="color: green;">
                             Sigma Parsteel (<span style="color: var(--accent-teal)">Σ-Parsteel</span>) is a crucial
                             <span style="color: var(--accent-teal)">G6</span> resource needed for high-level activities,
@@ -1045,7 +1045,7 @@
                         </p>
                         <br>
                         <br>
-                        <h2 style="text-align: left;">Σ-Tritanium</h2>
+                        <h2 id="sig-tri" style="text-align: left;">Σ-Tritanium</h2>
                         <p style="color: green;">
                             Sigma Tritanium (<span style="color: var(--accent-teal)">Σ-Tritanium</span>) is a
                             high-level, <span style="color: var(--accent-teal)">G6</span> resource essential for
@@ -1114,9 +1114,7 @@
                 <!-- Stop A Tail  -->
                 <div class="content-section">
                     <div class="content-text">
-                        <p style="color: green; text-align: center;">
-                            How to Stop a Tail
-                        </p>
+                        <h1 id="stop-tail" style="color: var(--accent-gold); text-align: center;">How To Stop a Tail</h1>
                         <div class="video-container">
                             <iframe src="https://www.youtube.com/embed/lys8ZYz0vLc?rel=0&mute=1&rel=0&controls=0"
                                 frameborder="0"
@@ -1130,7 +1128,8 @@
                 <!-- Faction Ships Rep -->
                 <div class="content-section">
                     <div class="content-text">
-                        <p style="color: green; text-align: center;">
+                        <h1 id="fkr-rep" class="roe-title">Increase/Decrease FKR Rep</h1><br>
+                        <p style="color: green; text-align: left;">
                             * Faction <span style="color: var(--accent-gold);"><b>Survey</b></span> ships
                             give a "higher" negative hit to your reputation within that Faction than other ship
                             types. If you have
@@ -1158,7 +1157,8 @@
                 <!-- CarMadas/FKR -->
                 <div class="content-section">
                     <div class="content-text">
-                        <p style="color: green; text-align: center;">* <a href="#terminology" target="_blank"
+                        <h1 id="tour-mada" class="roe-title">Tourneys & Armadas</h1><br>
+                        <p style="color: green; text-align: left;">* <a href="#terminology" target="_blank"
                                 style="color: var(--accent-gold);">CarMadas</a> do not count
                             towards <a href="#terminology" target="_blank" style="color: var(--accent-gold);">FKR</a>
                             Events
@@ -1169,7 +1169,7 @@
                 <!-- Ops Levels Milestones -->
                 <div class="content-section">
                     <div class="content-text">
-                        <h1 style="color: green; text-align: center;">Operations Levels Milestones</h1><br><br>
+                        <h1 id="ops-milestone" class="roe-title">Operations Levels Milestones</h1><br><br>
                         <p style="color: green; text-align: center;">
                             <span style="color: var(--accent-gold);">
                                 Rule of thumb: Level <u>ALL</u> Buildings, Weapons Platforms, Drydocks & Research
@@ -1236,7 +1236,7 @@
                 <!-- Alliance Rep -->
                 <div class="content-section">
                     <div class="content-text">
-                        <h1 class="roe-title">Alliance Reputation Levels</h1><br>
+                        <h1 id="alli-rep" class="roe-title">Alliance Reputation Levels</h1><br>
                         <p style="color: green">
                             In Star Trek Fleet Command (STFC), Alliance Reputation, or Rep, is a personal
                             measure of your standing within your current Alliance, distinct from
@@ -1289,6 +1289,30 @@
                                     elite tiers</span></li>
                             <li>Glorified: <span style="color: green;">The standard peak for many long-term
                                     players</span></li>
+                    </div>
+                </div>
+                <!-- Stella Info -->
+                <div class="content-section">
+                    <div class="content-text">
+                        <h1 id="stella-ship" class="roe-title">Acquiring Stella</h1><br>
+                        <div style="text-align: center">
+                            <img src="images/stella.png" alt="image of the Stella ship" style="max-width: 15%; height: auto;" onclick="openLightboxImg(this)">
+                        </div>
+                        <p style="color: green;">
+                            When working to get the Stella, keep the following in mind:
+                        </p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; color: var(--accent-gold); font-size: 1.2em">
+                            <li><u>Do not rush Rogue Rep</u>. <span style="color: green">Avoid completing missions or tasks that push your Rogue Rep
+                                past Rank 1 (Lackey) to avoid losing access to getting the bps in the Rogue Faction store.
+                                Once you reach Rank 2 (Abettor) or higher, the option to purchase Stella bps with Rogue
+                                Credits disappears from the store.</span>
+                            </li>
+                            <li>Credits: <span style="color: green;">You need 1,000 Rogue Credits to purchase the full
+                                set of bps. (10 bps per 100 Creds * 10).</span>
+                            </li>
+                            <li>Rep Increase: <span style="color: green;">After you have your first Stella, you can increase your Rep freely.</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1835,7 +1859,7 @@
                                         <polygon id="716012578" class="svgSystem"
                                             points="16 585.18 16 458 89 458 89 556.49 132.5 639.54 99.09 669.25 16 585.18" />
                                         <polygon id="1170669710" class="svgSystem"
-                                            points="101 724.18 101 672.9 135.76 642 263 642 263 681 145.2 769.35 101 724.18" />
+                                            points="101 724.18 101 672.9 135.76 642 263 642 263 681 145.2 769.35 101 724.18" style="fill: maroon"/>
                                         <polygon id="1457297806" class="svgSystem"
                                             points="136.21 638 94.31 558 263 558 263 638 136.21 638" />
                                         <polygon id="851187192" class="svgSystem"
@@ -1877,13 +1901,13 @@
                                         <polygon id="47245576" class="svgSystem"
                                             points="545 577 545 408.76 567.9 383 622.12 383 701 468.58 701 524.13 644.21 577 545 577" />
                                         <polygon id="1383107774" class="svgSystem"
-                                            points="441 406 441 307.44 459.55 267.55 564.3 381.03 542.1 406 441 406" />
+                                            points="441 406 441 307.44 459.55 267.55 564.3 381.03 542.1 406 441 406" style="fill: green;"/>
                                         <polygon id="450781274" class="svgSystem"
                                             points="441 603 441 410 541 410 541 577.86 501.79 603 441 603" />
                                         <polygon id="939860675" class="svgSystem"
                                             points="562.67 688 504 643.3 504 606.21 543.24 581 643 581 643 661.19 617.15 688 562.67 688" />
                                         <polygon id="1645876992" class="svgSystem"
-                                            points="446.77 877 564 757.82 564 692 616 692 616 844 558.15 844 526.15 877 446.77 877" />
+                                            points="446.77 877 564 757.82 564 692 616 692 616 844 558.15 844 526.15 877 446.77 877" style="fill: orange;"/>
                                         <polygon id="1020076107" class="svgSystem"
                                             points="620 744 708.23 744 737 769.89 737 824 649.1 824 620 842.37 620 744" />
                                         <polygon id="2062242845" class="svgSystem"
@@ -1899,17 +1923,17 @@
                                         <polygon id="91087479" class="svgSystem"
                                             points="625 379 625 279.45 655.02 240.26 731.51 337.07 701.96 379 625 379" />
                                         <polygon id="233224244" class="svgSystem"
-                                            points="1113.87 783.04 1170.8 729 1204 729 1204 790.16 1162.02 831.19 1113.87 783.04" />
+                                            points="1113.87 783.04 1170.8 729 1204 729 1204 790.16 1162.02 831.19 1113.87 783.04" style="fill: purple;"/>
                                         <polygon id="372050647" class="svgSystem"
-                                            points="1042 928 1042 785 1110.17 785 1160.59 835.41 1228.21 904.02 1205.15 928 1042 928" />
+                                            points="1042 928 1042 785 1110.17 785 1160.59 835.41 1228.21 904.02 1205.15 928 1042 928" style="fill: purple;" />
                                         <polygon id="763527938" class="svgSystem"
                                             points="1255 766.2 1255 727.98 1306.68 688 1354 688 1354 778.17 1309.04 823.13 1255 766.2" />
                                         <polygon id="647935234" class="svgSystem"
                                             points="1164.83 834.03 1208 791.84 1208 729 1251 729 1251 767.8 1306.21 825.96 1231.01 901.16 1164.83 834.03" />
                                         <polygon id="1414400237" class="svgSystem"
-                                            points="1308 684 1308 644.17 1265 601.17 1265 528 1333.17 528 1354 548.83 1354 684 1308 684" />
+                                            points="1308 684 1308 644.17 1265 601.17 1265 528 1333.17 528 1354 548.83 1354 684 1308 684" style="fill: #1a90b7;" />
                                         <polygon id="225845685" class="svgSystem"
-                                            points="1131.25 625 1111 596.9 1111 527.01 1261 527.99 1261 601.08 1233.26 625 1131.25 625" />
+                                            points="1131.25 625 1111 596.9 1111 527.01 1261 527.99 1261 601.08 1233.26 625 1131.25 625" style="fill: #1a90b7;" />
                                         <polygon id="610044534" class="svgSystem"
                                             points="1172 725 1172 629 1234.74 629 1262.9 604.73 1304 645.83 1304 685.02 1252.32 725 1172 725" />
                                         <polygon id="558058285" class="svgSystem"
@@ -1939,6 +1963,7 @@
                                             points="704.05 466 627.56 383 704.04 383 765.31 296.03 841 366.87 841 451.97 821.36 466 704.05 466" />
                                         <polygon id="1695443788" class="svgSystem"
                                             points="767 235 767 140.92 806.94 106.69 872 167.86 872 196.16 832.19 235 767 235" />
+                                        <!-- warp paths -->
                                         <line class="svgSystemConnection" x1="322" y1="918" x2="353" y2="865" />
                                         <line class="svgSystemConnection" x1="388" y1="918" x2="353" y2="865" />
                                         <line class="svgSystemConnection" x1="322" y1="918" x2="388" y2="918" />
@@ -2098,6 +2123,7 @@
                                         <line class="svgSystemConnection" x1="974" y1="352" x2="957" y2="387" />
                                         <line class="svgSystemConnection" x1="982" y1="376" x2="957" y2="387" />
                                         <line class="svgSystemConnection" x1="974" y1="352" x2="982" y2="376" />
+                                        <!-- system dots -->
                                         <circle class="svgSystemCircle" cx="674" cy="663" r="5" />
                                         <circle class="svgSystemCircle" cx="703" cy="867" r="5" />
                                         <circle class="svgSystemCircle" cx="1151" cy="785" r="5" />
@@ -2215,6 +2241,118 @@
                                         <circle class="svgSystemCircle" cx="60" cy="597" r="5" />
                                         <circle class="svgSystemCircle" cx="809" cy="659" r="5" />
                                         <circle class="svgSystemCircle" cx="982" cy="376" r="5" />
+
+                                        <!-- system names -->
+                                        <!-- Adia -->
+                                        <text x="805" y="290" id="75447996-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Adia</text>
+                                        <!-- Abilakk -->
+                                        <text x="491" y="500" id="450781274-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Abilakk</text>
+                                        <!-- Anzat -->
+                                        <text x="573" y="654" id="939860675-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Anzat</text>
+                                        <!-- Aonad -->
+                                        <text x="1304.5" y="755.5650024414062" id="763527938-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Aonad</text>
+                                        <!-- Asiti -->
+                                        <text x="742" y="657" id="1976653582-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Asiti</text>
+                                        <!-- Avansa -->
+                                        <text x="1186" y="596" id="225845685-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Avansa</text>
+                                        <!-- Aylus -->
+                                        <text x="361" y="719" id="508588181-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Aylus</text>
+                                        <!-- Barasa -->
+                                        <text x="954" y="935" id="1603382959-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Barasa</text>
+                                        <!-- Beku -->
+                                        <text x="678" y="925" id="1964344020-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Beku</text>
+                                        <!-- Ber'Tho -->
+                                        <text x="433" y="815" id="2044888998-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Ber'Tho</text>
+                                        <!-- Bimasa -->
+                                        <text x="530" y="947" id="100583287-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Bimasa</text>
+                                        <!-- Bolari -->
+                                        <text x="800" y="757" id="2062242845-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Bolari</text>
+                                        <!-- Brellan -->
+                                        <text x="360" y="945" id="404484182-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Brellan</text>
+                                        <!-- Brijac -->
+                                        <text x="803" y="935" id="2144111369-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Brijac</text>
+                                        <!-- Burran -->
+                                        <text x="1100" y="856" id="372050647-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Burran</text>
+                                        <!-- Comst -->
+                                        <text x="1209" y="835" id="647935234-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Comst</text>
+                                        <!-- Corva -->
+                                        <text x="1018" y="620" id="1766074547-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Corva</text>
+                                        <!-- Crios -->
+                                        <text x="920" y="500" id="906166537-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Crios</text>
+                                        <!-- Duportas -->
+                                        <text x="250" y="779" id="1809221684-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Duportas</text>
+                                        <!-- Eldur -->
+                                        <text x="300" y="541.5" id="1960606625-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Eldur</text>
+                                        <!-- Ezla -->
+                                        <text x="795" y="220" id="1695443788-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Ezla</text>
+                                        <!-- Framtid -->
+                                        <text x="52" y="540" id="716012578-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 18px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Framtid</text>
+                                        <!-- Gelida -->
+                                        <text x="678" y="890" id="1170639956-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Gelida</text>
+                                        <!-- Helvi -->
+                                        <text x="396" y="353" id="1238332214-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Helvi</text>
+                                        <!-- Hoobishan -->
+                                        <text x="716" y="128.5" id="620533187-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Hoobishan</text>
+                                        <!-- Hrojost -->
+                                        <text x="170" y="587" id="1457297806-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Hrojost</text>
+                                        <!-- Innlasn -->
+                                        <text x="68.5" y="410" id="1598736183-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Innlasn</text>
+                                        <!-- Klefaski -->
+                                        <text x="329" y="400" id="1576679126-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Klefaski</text>
+                                        <!-- Kolava -->
+                                        <text x="835" y="665" id="1518413947-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Kolava</text>
+                                        <!-- Lenara -->
+                                        <text x="480" y="393" id="1383107774-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Lenara</text>
+                                        <!-- Mak'ala -->
+                                        <text x="557" y="95" id="190693683-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Mak'ala</text>
+                                        <!-- Nujord -->
+                                        <text x="150" y="735" id="1170669710-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Nujord</text>
+                                        <!-- Nyrheimur -->
+                                        <text x="188" y="480" id="851187192-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Nyrheimur</text>
+                                        <!-- Otima -->
+                                        <text x="1309" y="555" id="1414400237-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Otima</text>
+                                        <!-- Parturi -->
+                                        <text x="678" y="683" id="599322744-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Parturi</text>
+                                        <!-- Perim -->
+                                        <text x="894" y="150" id="2106408117-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Perim</text>
+                                        <!-- Qeyma -->
+                                        <text x="785" y="513" id="795083356-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Qeyma</text>
+                                        <!-- Roshar -->
+                                        <text x="1109" y="735" id="558058285-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Roshar</text>
+                                        <!-- Ruhe -->
+                                        <text x="1218" y="705" id="610044534-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Ruhe</text>
+                                        <!-- Saldeti -->
+                                        <text x="675" y="770" id="1020076107-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Saldeti</text>
+                                        <!-- Stilhe -->
+                                        <text x="990" y="711" id="1995161692-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Stilhe</text>
+                                        <!-- Tazolka -->
+                                        <text x="515" y="700" id="507519541-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Tazolka</text>
+                                        <!-- Tefkari -->
+                                        <text x="201" y="243" id="1646136635-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Tefkari</text>
+                                        <!-- Temeri -->
+                                        <text x="894" y="272" id="234507462-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Temeri</text>
+                                        <!-- Tezera -->
+                                        <text x="774" y="435" id="1205790513-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Tezera</text>
+                                        <!-- Thaylen -->
+                                        <text x="1163" y="793" id="233224244-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Thaylen</text>
+                                        <!-- Tholus -->
+                                        <text x="610" y="435" id="47245576-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Tholus</text>
+                                        <!-- Thosz -->
+                                        <text x="403" y="475" id="462342571-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Thosz</text>
+                                        <!-- Tigan -->
+                                        <text x="689" y="343" id="91087479-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Tigan</text>
+                                        <!-- Tola -->
+                                        <text x="967" y="411" id="1834533150-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Tola</text>
+                                        <!-- Triss -->
+                                        <text x="579" y="350" id="1133579970-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Triss</text>
+                                        <!-- Vantar -->
+                                        <text x="204" y="335" id="727367149-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Vantar</text>
+                                        <!-- Vemira -->
+                                        <text x="717" y="273" id="1433851648-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Vemira</text>
+                                        <!-- Zamaro -->
+                                        <text x="570" y="810" id="1645876992-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Zamaro</text>
+                                        <!-- Zhian -->
+                                        <text x="404" y="177" id="1556418684-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">Zhian</text>
                                     </svg>
                                 </div>
                             </div>
@@ -2256,5 +2394,4 @@
                 onclick="closeLightbox()">&times;</span>
         </div>
 </body>
-
 </html>
