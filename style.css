@@ -90,6 +90,17 @@ body {
     color: green;
 }
 
+.heading-link {
+    margin-right: 8px;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.heading-link:hover {
+    opacity: 1 !important;
+}
+
 .marquee {
     position: relative;
     overflow: hidden;
