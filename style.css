@@ -525,9 +525,7 @@ body {
 }
 
 .image-text-pair-content {
-    /* border: 1px solid var(--accent-gold); */
     padding: 20px;
-    /* border-radius: 8px; */
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -555,7 +553,6 @@ body {
     margin-top: 45px;
 }
 
-/* terminology grid with tooltips */
 .terminology-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -591,7 +588,6 @@ body {
     transform: translateX(-50%);
     background-color: rgba(19, 52, 59, 0.95);
     color: var(--accent-gold);
-    /* GOLD TEXT */
     text-align: center;
     padding: 12px 16px;
     border-radius: var(--radius-base);
@@ -715,24 +711,20 @@ body {
     border-radius: 19px;
 }
 
-/* landscape tablets/phones */
 @media (orientation: landscape) {
     .landscape-prompt.active {
         display: none;
     }
 }
 
-/* mobile (≤768px) */
 @media (max-width: 768px) {
 
-    /* video responsive */
     .video-container {
         width: 100%;
         max-width: 100%;
         margin: 20px auto 0;
     }
 
-    /* icons layout */
     #icons .content-section {
         flex-direction: row;
         align-items: flex-start;
@@ -751,7 +743,6 @@ body {
         text-align: center;
     }
 
-    /* global layout */
     .header h1 {
         font-size: 1.8em;
         text-align: center;
@@ -772,7 +763,6 @@ body {
         height: auto;
     }
 
-    /* tabs */
     .tabs-container {
         gap: 5px;
         grid-template-columns: repeat(3, max-content);
@@ -785,7 +775,6 @@ body {
         font-size: 0.9em;
     }
 
-    /* header */
     .header {
         padding: 80px 20px 20px 20px;
         flex-direction: column;
@@ -798,7 +787,6 @@ body {
         opacity: 0.5;
     }
 
-    /* marquee */
     .marquee {
         width: 100%;
         margin-left: 0;
@@ -810,14 +798,12 @@ body {
         padding-left: 100%;
     }
 
-    /* images */
     .container img {
         max-width: 50%;
         height: auto;
     }
 }
 
-/* tablet (769-1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .header {
         display: flex;
@@ -832,7 +818,6 @@ body {
     }
 }
 
-/* touch devices (no hover) */
 @media (hover: none) and (pointer: coarse) {
     .term-tooltip:hover {
         background-color: var(--color-secondary);
@@ -851,4 +836,337 @@ body {
         width: 30px;
         height: 30px;
     }
+}
+
+#pvpfinder .pvp-root {
+    --borg-black: #000000;
+    --borg-green: #d4af37;
+    --borg-dark-green: green;
+    --borg-medium-green: green;
+    --borg-gray: #000000;
+    --borg-grid: #003300;
+    --text-green: green;
+    --text-dim-green: green;
+}
+
+#pvpfinder .pvp-wrapper {
+    font-family: 'Courier New', monospace;
+    background: var(--borg-black);
+    color: var(--text-green);
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#pvpfinder .lcars-container {
+    background: var(--borg-black);
+    border: 2px solid var(--borg-green);
+    border-radius: 8px;
+    padding: 25px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2), inset 0 0 15px rgba(0, 170, 34, 0.1);
+    position: relative;
+}
+
+#pvpfinder .lcars-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 65, 0.03) 0px,
+        rgba(0, 255, 65, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    border-radius: 8px;
+}
+
+#pvpfinder .pvp-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--borg-green);
+    padding-bottom: 15px;
+}
+
+#pvpfinder .pvp-header h2 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: var(--borg-green);
+    text-shadow: 0 0 8px var(--borg-green);
+    margin-bottom: 5px;
+}
+
+#pvpfinder .pvp-header p {
+    font-size: 10px;
+    color: var(--text-dim-green);
+    letter-spacing: 2px;
+}
+
+#pvpfinder .display-panel {
+    background: var(--borg-grid);
+    border: 1px solid var(--borg-dark-green);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+#pvpfinder .display-label {
+    font-size: 9px;
+    color: var(--text-dim-green);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+#pvpfinder .level-display {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--borg-green);
+    text-align: center;
+    text-shadow: 0 0 8px var(--borg-green);
+    margin-bottom: 15px;
+    min-height: 45px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 4px;
+}
+
+#pvpfinder .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#pvpfinder .result-card {
+    background: var(--borg-black);
+    border: 1px solid var(--text-dim-green);
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+    box-shadow: 0 0 6px rgba(0, 170, 34, 0.3);
+}
+
+#pvpfinder .result-label {
+    font-size: 8px;
+    color: var(--text-dim-green);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+#pvpfinder .result-value {
+    font-size: 22px;
+    color: var(--borg-green);
+    font-weight: bold;
+    text-shadow: 0 0 6px var(--borg-green);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+#pvpfinder .keypad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+#pvpfinder .key {
+    aspect-ratio: 1;
+    border: 1px solid var(--borg-green);
+    background: var(--borg-gray);
+    color: var(--borg-green);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.1s ease;
+    box-shadow: 0 0 6px rgba(0, 255, 65, 0.1);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    min-height: 32px;
+}
+
+#pvpfinder .key:hover {
+    background: var(--borg-dark-green);
+    color: var(--borg-green);
+    box-shadow: 0 0 12px rgba(0, 255, 65, 0.4);
+    transform: scale(1.05);
+}
+
+#pvpfinder .key:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.6);
+}
+
+#pvpfinder .key.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background: var(--borg-gray);
+    border-color: var(--borg-gray);
+}
+
+#pvpfinder .key.disabled:hover {
+    background: var(--borg-gray);
+    color: var(--text-dim-green);
+    box-shadow: 0 0 6px rgba(0, 255, 65, 0.05);
+    transform: scale(1);
+}
+
+#pvpfinder .control-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+#pvpfinder .btn-control {
+    padding: 8px;
+    border: 1px solid var(--borg-green);
+    background: var(--borg-gray);
+    color: var(--borg-green);
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 6px rgba(0, 255, 65, 0.1);
+    font-family: 'Courier New', monospace;
+}
+
+#pvpfinder .btn-control:hover {
+    background: var(--borg-dark-green);
+    color: var(--borg-green);
+    box-shadow: 0 0 12px rgba(0, 255, 65, 0.4);
+}
+
+#pvpfinder .btn-control:active {
+    transform: scale(0.98);
+}
+
+#pvpfinder .status-bar {
+    font-size: 8px;
+    color: var(--text-dim-green);
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--borg-dark-green);
+    letter-spacing: 1px;
+}
+
+#pvpfinder .status-indicator {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--borg-green);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pvp-pulse 1.5s infinite;
+}
+
+@keyframes pvp-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+#pvpfinder .range-indicator {
+    margin-top: 8px;
+    padding: 8px;
+    background: var(--borg-black);
+    border-left: 2px solid var(--borg-green);
+    font-size: 9px;
+    color: var(--text-green);
+    border-radius: 3px;
+}
+
+#pvpfinder .range-text {
+    letter-spacing: 1px;
+}
+
+@media (max-width: 480px) {
+    #pvpfinder .lcars-container {
+        padding: 15px;
+    }
+
+    #pvpfinder .pvp-header h2 {
+        font-size: 14px;
+    }
+
+    #pvpfinder .level-display {
+        font-size: 24px;
+    }
+
+    #pvpfinder .result-value {
+        font-size: 16px;
+    }
+
+    #pvpfinder .key {
+        font-size: 12px;
+        min-height: 28px;
+    }
+}
+
+.mapcontainer {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto
+}
+
+@media (min-width:1200px) {
+    .mapcontainer,
+    .mapcontainer-lg,
+    .mapcontainer-md,
+    .mapcontainer-sm,
+    .mapcontainer-xl {
+        max-width: 1140px
+    }
+}
+
+svg {
+    background-color: transparent;
+}
+
+line,
+circle,
+path {
+    pointer-events: none;
+}
+
+.svgSystem {
+    stroke: black;
+    stroke-width: 3;
+    fill: rgb(187, 179, 179);
+    fill-opacity: 0.7;
+    stroke-linejoin: round;
+    stroke-dasharray: 0;
+}
+
+.svgSystemConnection {
+    stroke: rgb(0, 0, 0);
+    stroke-width: 2;
+}
+
+.svgSystemCircle {
+    fill: rgb(0, 0, 0);
+}
+
+.svgIsoIcon {
+    fill: rgb(0, 0, 0);
+    fill-opacity: 0.4;
 }

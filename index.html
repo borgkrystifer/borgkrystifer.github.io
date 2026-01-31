@@ -34,61 +34,6 @@
     <link rel="icon" href="https://borg.support/images/favicon.ico">
     <link rel="shortcut icon" href="https://borg.support/images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="https://borg.support/images/apple-touch-icon.png">
-    
-    <style>
-        .mapcontainer {
-            --bs-gutter-x: 1.5rem;
-            --bs-gutter-y: 0;
-            width: 100%;
-            padding-right: calc(var(--bs-gutter-x) * .5);
-            padding-left: calc(var(--bs-gutter-x) * .5);
-            margin-right: auto;
-            margin-left: auto
-        }
-
-        @media (min-width:1200px) {
-            .mapcontainer,
-            .mapcontainer-lg,
-            .mapcontainer-md,
-            .mapcontainer-sm,
-            .mapcontainer-xl {
-                max-width: 1140px
-            }
-        }
-
-        svg {
-            background-color: transparent;
-        }
-
-        line,
-        circle,
-        path {
-            pointer-events: none;
-        }
-
-        .svgSystem {
-            stroke: black;
-            stroke-width: 3;
-            fill: rgb(187, 179, 179);
-            fill-opacity: 0.7;
-            stroke-linejoin: round;
-            stroke-dasharray: 0;
-        }
-
-        .svgSystemConnection {
-            stroke: rgb(0, 0, 0);
-            stroke-width: 2;
-        }
-
-        .svgSystemCircle {
-            fill: rgb(0, 0, 0);
-        }
-
-        .svgIsoIcon {
-            fill: rgb(0, 0, 0);
-            fill-opacity: 0.4;
-        }
-    </style>
 </head>
 
 <body>
@@ -118,6 +63,7 @@
             <a href="#icons" class="tab-button" data-tab="icons">Icons</a>
             <a href="#tournaments" class="tab-button" data-tab="tournaments">Tourneys!</a>
             <a href="#tips" class="tab-button" data-tab="tips">Tips & Tricks</a>
+            <a href="pvpfinder" class="tab-button" data-tab="pvpfinder">PvP Finder</a>
             <a href="#factions" class="tab-button" data-tab="factions">Factions</a>
             <a href="#links" class="tab-button" data-tab="links">Links</a>
             <a href="#map" class="tab-button" data-tab="map">Territory</a>
@@ -1106,6 +1052,176 @@
                                 to spend.</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+
+            <!-- PvP Finder -->
+            <div class="tab-content" id="pvpfinder">
+                <h1 class="roe-title">PvP Finder</h1>
+                <div class="content-section">
+                    <p style="color: green; text-align: center; width: 100%; line-height: 1.8; font-size: 1.3em;">Using your keyboard or mouse, enter your
+                        Ops Level to see the MIN and MAX levels you can engage. Your Station can be attacked, and you can
+                        attack other Stations starting at Ops Lvl 15.
+                    </p>
+                    <div class="pvp-root pvp-wrapper">
+                        <div class="lcars-container">
+                            <div class="display-panel">
+                                <div class="display-label">Current Level</div>
+                                <div class="level-display" id="pvp-levelDisplay">--</div>
+
+                                <div class="results-grid">
+                                    <div class="result-card">
+                                        <div class="result-label">Min Target</div>
+                                        <div class="result-value" id="pvp-minDisplay">--</div>
+                                    </div>
+                                    <div class="result-card">
+                                        <div class="result-label">Max Target</div>
+                                        <div class="result-value" id="pvp-maxDisplay">--</div>
+                                    </div>
+                                </div>
+
+                                <div class="range-indicator" id="pvp-rangeIndicator" style="display: none; text-align: center;">
+                                    <div class="range-text">Attackable Range: <span id="pvp-rangeText"></span></div>
+                                </div>
+                            </div>
+
+                            <div class="keypad" id="pvp-keypad"></div>
+
+                            <div class="control-buttons">
+                                <button class="btn-control" onclick="pvpClearInput()">Clear</button>
+                                <button class="btn-control" onclick="pvpBackspace()">Back</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        (function() {
+                            const pvpDb = [
+                                { level: 10, min: 8, max: 12 }, { level: 11, min: 9, max: 13 },
+                                { level: 12, min: 10, max: 14 }, { level: 13, min: 11, max: 15 },
+                                { level: 14, min: 12, max: 16 }, { level: 15, min: 13, max: 17 },
+                                { level: 16, min: 14, max: 18 }, { level: 17, min: 15, max: 19 },
+                                { level: 18, min: 16, max: 20 }, { level: 19, min: 17, max: 21 },
+                                { level: 20, min: 18, max: 24 }, { level: 21, min: 19, max: 27 },
+                                { level: 22, min: 20, max: 30 }, { level: 23, min: 20, max: 33 },
+                                { level: 24, min: 20, max: 36 }, { level: 25, min: 21, max: 39 },
+                                { level: 26, min: 21, max: 40 }, { level: 27, min: 21, max: 42 },
+                                { level: 28, min: 22, max: 43 }, { level: 29, min: 22, max: 45 },
+                                { level: 30, min: 22, max: 46 }, { level: 31, min: 23, max: 48 },
+                                { level: 32, min: 23, max: 49 }, { level: 33, min: 23, max: 51 },
+                                { level: 34, min: 24, max: 52 }, { level: 35, min: 24, max: 54 },
+                                { level: 36, min: 24, max: 55 }, { level: 37, min: 25, max: 57 },
+                                { level: 38, min: 25, max: 58 }, { level: 39, min: 25, max: 60 },
+                                { level: 40, min: 26, max: 61 }, { level: 41, min: 27, max: 63 },
+                                { level: 42, min: 27, max: 64 }, { level: 43, min: 28, max: 66 },
+                                { level: 44, min: 29, max: 67 }, { level: 45, min: 29, max: 69 },
+                                { level: 46, min: 30, max: 70 }, { level: 47, min: 31, max: 72 },
+                                { level: 48, min: 31, max: 73 }, { level: 49, min: 32, max: 75 },
+                                { level: 50, min: 33, max: 76 }, { level: 51, min: 33, max: 78 },
+                                { level: 52, min: 34, max: 79 }, { level: 53, min: 35, max: 80 },
+                                { level: 54, min: 35, max: 80 }, { level: 55, min: 36, max: 80 },
+                                { level: 56, min: 37, max: 80 }, { level: 57, min: 37, max: 80 },
+                                { level: 58, min: 38, max: 80 }, { level: 59, min: 39, max: 80 },
+                                { level: 60, min: 39, max: 80 }, { level: 61, min: 40, max: 80 },
+                                { level: 62, min: 40, max: 80 }, { level: 63, min: 40, max: 80 },
+                                { level: 64, min: 41, max: 80 }, { level: 65, min: 41, max: 80 },
+                                { level: 66, min: 41, max: 80 }, { level: 67, min: 42, max: 80 },
+                                { level: 68, min: 42, max: 80 }, { level: 69, min: 42, max: 80 },
+                                { level: 70, min: 43, max: 80 }, { level: 71, min: 44, max: 80 },
+                                { level: 72, min: 44, max: 80 }, { level: 73, min: 44, max: 80 },
+                                { level: 74, min: 45, max: 80 }, { level: 75, min: 45, max: 80 },
+                                { level: 76, min: 45, max: 80 }, { level: 77, min: 46, max: 80 },
+                                { level: 78, min: 46, max: 80 }, { level: 79, min: 46, max: 80 },
+                                { level: 80, min: 46, max: 80 }
+                            ];
+
+                            let currentInput = '';
+
+                            function initKeypad() {
+                                const keypadEl = document.getElementById('pvp-keypad');
+                                const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+                                
+                                keys.forEach(num => {
+                                    const btn = document.createElement('button');
+                                    btn.className = 'key';
+                                    btn.textContent = num;
+                                    btn.onclick = () => inputNumber(num);
+                                    keypadEl.appendChild(btn);
+                                });
+                            }
+
+                            function inputNumber(num) {
+                                if (currentInput.length < 2) {
+                                    currentInput += num;
+                                    updateDisplay();
+                                }
+                            }
+
+                            function updateDisplay() {
+                                const levelDisplay = document.getElementById('pvp-levelDisplay');
+                                const minDisplay = document.getElementById('pvp-minDisplay');
+                                const maxDisplay = document.getElementById('pvp-maxDisplay');
+                                const rangeIndicator = document.getElementById('pvp-rangeIndicator');
+                                const rangeText = document.getElementById('pvp-rangeText');
+
+                                if (currentInput === '') {
+                                    levelDisplay.textContent = '--';
+                                    minDisplay.textContent = '--';
+                                    maxDisplay.textContent = '--';
+                                    rangeIndicator.style.display = 'none';
+                                    return;
+                                }
+
+                                const level = parseInt(currentInput);
+                                const data = pvpDb.find(entry => entry.level === level);
+
+                                if (data) {
+                                    levelDisplay.textContent = level.toString();
+                                    minDisplay.textContent = data.min.toString();
+                                    maxDisplay.textContent = data.max.toString();
+                                    rangeText.textContent = `${data.min} - ${data.max}`;
+                                    rangeIndicator.style.display = 'block';
+                                    levelDisplay.style.color = 'var(--borg-green)';
+                                } else {
+                                    levelDisplay.textContent = currentInput;
+                                    minDisplay.textContent = '??';
+                                    maxDisplay.textContent = '??';
+                                    rangeIndicator.style.display = 'none';
+                                    levelDisplay.style.color = 'var(--borg-green)';
+                                }
+                            }
+
+                            window.pvpClearInput = function() {
+                                currentInput = '';
+                                updateDisplay();
+                            };
+
+                            window.pvpBackspace = function() {
+                                currentInput = currentInput.slice(0, -1);
+                                updateDisplay();
+                            };
+
+                            function handleKeydown(e) {
+                                const pvpTab = document.getElementById('pvpfinder');
+                                if (!pvpTab || pvpTab.style.display === 'none') {
+                                    return;
+                                }
+
+                                if (/^[0-9]$/.test(e.key)) {
+                                    inputNumber(e.key);
+                                } else if (e.key === 'Backspace') {
+                                    e.preventDefault();
+                                    window.pvpBackspace();
+                                } else if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                }
+                            }
+
+                            document.addEventListener('keydown', handleKeydown);
+                            
+                            initKeypad();
+                        })();
+                    </script>
                 </div>
             </div>
 
