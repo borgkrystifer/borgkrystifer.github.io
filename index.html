@@ -41,15 +41,15 @@
         <header class="header">
             <div class="header-center">
                 <h1 style="color: green;">[BORG] ACADEMY</h1>
-                <!-- <div class="marquee">
+                <div class="marquee">
                     <span>
                         <img src="images/nanochip.png" alt="|" class="badge-sep"><img src="images/nanochip.png" alt="|"
                             class="badge-sep"><img src="images/nanochip.png" alt="|" class="badge-sep">
-                        &nbsp;&nbsp;
+                        &nbsp;Server Maint. Feb. 10th 5am Eastern - Downtime ~2h - Ceasefire Peace Shields: 8h&nbsp;
                         <img src="images/nanochip.png" alt="|" class="badge-sep"><img src="images/nanochip.png" alt="|"
                             class="badge-sep"><img src="images/nanochip.png" alt="|" class="badge-sep">
                     </span>
-                </div> -->
+                </div>
             </div>
         </header>
 
@@ -1059,8 +1059,10 @@
             <div class="tab-content" id="pvpfinder">
                 <h1 class="roe-title">PvP Finder</h1>
                 <div class="content-section">
-                    <p style="color: green; text-align: center; width: 100%; line-height: 1.8; font-size: 1.3em;">Using your keyboard or mouse, enter your
-                        Ops Level to see the MIN and MAX levels you can engage. Your Station can be attacked, and you can
+                    <p style="color: green; text-align: center; width: 100%; line-height: 1.8; font-size: 1.3em;">Using
+                        your keyboard or mouse, enter your
+                        Ops Level to see the MIN and MAX levels you can engage. Your Station can be attacked, and you
+                        can
                         attack other Stations starting at Ops Lvl 15.
                     </p>
                     <div class="pvp-root pvp-wrapper">
@@ -1080,7 +1082,8 @@
                                     </div>
                                 </div>
 
-                                <div class="range-indicator" id="pvp-rangeIndicator" style="display: none; text-align: center;">
+                                <div class="range-indicator" id="pvp-rangeIndicator"
+                                    style="display: none; text-align: center;">
                                     <div class="range-text">Attackable Range: <span id="pvp-rangeText"></span></div>
                                 </div>
                             </div>
@@ -1095,7 +1098,7 @@
                     </div>
 
                     <script>
-                        (function() {
+                        (function () {
                             const pvpDb = [
                                 { level: 10, min: 8, max: 12 }, { level: 11, min: 9, max: 13 },
                                 { level: 12, min: 10, max: 14 }, { level: 13, min: 11, max: 15 },
@@ -1140,7 +1143,7 @@
                             function initKeypad() {
                                 const keypadEl = document.getElementById('pvp-keypad');
                                 const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-                                
+
                                 keys.forEach(num => {
                                     const btn = document.createElement('button');
                                     btn.className = 'key';
@@ -1191,12 +1194,12 @@
                                 }
                             }
 
-                            window.pvpClearInput = function() {
+                            window.pvpClearInput = function () {
                                 currentInput = '';
                                 updateDisplay();
                             };
 
-                            window.pvpBackspace = function() {
+                            window.pvpBackspace = function () {
                                 currentInput = currentInput.slice(0, -1);
                                 updateDisplay();
                             };
@@ -1218,7 +1221,7 @@
                             }
 
                             document.addEventListener('keydown', handleKeydown);
-                            
+
                             initKeypad();
                         })();
                     </script>
@@ -1231,7 +1234,8 @@
                 <!-- Stop A Tail  -->
                 <div class="content-section">
                     <div class="content-text">
-                        <h1 id="stop-tail" style="color: var(--accent-gold); text-align: center;">How To Stop a Tail</h1>
+                        <h1 id="stop-tail" style="color: var(--accent-gold); text-align: center;">How To Stop a Tail
+                        </h1>
                         <div class="video-container">
                             <iframe src="https://www.youtube.com/embed/lys8ZYz0vLc?rel=0&mute=1&rel=0&controls=0"
                                 frameborder="0"
@@ -1414,33 +1418,54 @@
                     <div class="content-text">
                         <h1 id="swarmys" class="roe-title">Swarms</h1><br>
                         <div style="text-align: center">
-                            <img src="images/swarms.png" alt="image of swarm ships" style="max-width: 25%; height: auto;" onclick="openLightboxImg(this)">
+                            <img src="images/swarms.png" alt="image of swarm ships"
+                                style="max-width: 25%; height: auto;" onclick="openLightboxImg(this)">
                         </div><br>
                         <p style="color: green;">
-                            <span style="color: var(--accent-gold)">Andvaris</span> [15] <span style="color: var(--accent-gold)">Caldik</span> [16]
-                            <span style="color: var(--accent-gold)">Altamid</span> [17] <span style="color: var(--accent-gold)">Herias</span> [18]
-                            <span style="color: var(--accent-gold)">Ezani</span> [19] <span style="color: var(--accent-gold)">Beta Vordunn</span> [20]
-                            <span style="color: var(--accent-gold)">Klaiz</span> [22] <span style="color: var(--accent-gold)">Er’Yozun</span> [24]
-                            <span style="color: var(--accent-gold)">Lahrel</span> [24] <span style="color: var(--accent-gold)">Alpha Horunia</span> [26]<br>
-                            <span style="color: var(--accent-gold)">Sayo</span> [26] <span style="color: var(--accent-gold)">Ortek</span> [28]
-                            <span style="color: var(--accent-gold)">Redmond</span> [28] <span style="color: var(--accent-gold)">Fontaine</span> [30]
-                            <span style="color: var(--accent-gold)">Von</span> [30] <span style="color: var(--accent-gold)">Adelphi</span> [32]
-                            <span style="color: var(--accent-gold)">Fyrsta</span> [32] <span style="color: var(--accent-gold)">Dalogn</span> [35]
-                            <span style="color: var(--accent-gold)">Araxian</span> [37] <span style="color: var(--accent-gold)">Estar</span> [37]
+                            <span style="color: var(--accent-gold)">Andvaris</span> [15] <span
+                                style="color: var(--accent-gold)">Caldik</span> [16]
+                            <span style="color: var(--accent-gold)">Altamid</span> [17] <span
+                                style="color: var(--accent-gold)">Herias</span> [18]
+                            <span style="color: var(--accent-gold)">Ezani</span> [19] <span
+                                style="color: var(--accent-gold)">Beta Vordunn</span> [20]
+                            <span style="color: var(--accent-gold)">Klaiz</span> [22] <span
+                                style="color: var(--accent-gold)">Er’Yozun</span> [24]
+                            <span style="color: var(--accent-gold)">Lahrel</span> [24] <span
+                                style="color: var(--accent-gold)">Alpha Horunia</span> [26]<br>
+                            <span style="color: var(--accent-gold)">Sayo</span> [26] <span
+                                style="color: var(--accent-gold)">Ortek</span> [28]
+                            <span style="color: var(--accent-gold)">Redmond</span> [28] <span
+                                style="color: var(--accent-gold)">Fontaine</span> [30]
+                            <span style="color: var(--accent-gold)">Von</span> [30] <span
+                                style="color: var(--accent-gold)">Adelphi</span> [32]
+                            <span style="color: var(--accent-gold)">Fyrsta</span> [32] <span
+                                style="color: var(--accent-gold)">Dalogn</span> [35]
+                            <span style="color: var(--accent-gold)">Araxian</span> [37] <span
+                                style="color: var(--accent-gold)">Estar</span> [37]
                             <span style="color: var(--accent-gold)">Iusum</span> [37]<br>
-                            <span style="color: var(--accent-gold)">Kiju</span> [39] <span style="color: var(--accent-gold)">Uyik</span> [39]
-                            <span style="color: var(--accent-gold)">Vahok</span> [39] <span style="color: var(--accent-gold)">Huik</span> [41]
-                            <span style="color: var(--accent-gold)">Siiequa</span> [41] <span style="color: var(--accent-gold)">Miset</span> [43]
-                            <span style="color: var(--accent-gold)">Nobeau</span> [43] <span style="color: var(--accent-gold)">Begekou</span> [44]
-                            <span style="color: var(--accent-gold)">Imada</span> [44] <span style="color: var(--accent-gold)">Vugef</span> [45]
-                            <span style="color: var(--accent-gold)">Hobu</span> [46] <span style="color: var(--accent-gold)">Hedex</span> [47]<br>
-                            <span style="color: var(--accent-gold)">Widis</span> [48] <span style="color: var(--accent-gold)">Raxo</span> [49]
+                            <span style="color: var(--accent-gold)">Kiju</span> [39] <span
+                                style="color: var(--accent-gold)">Uyik</span> [39]
+                            <span style="color: var(--accent-gold)">Vahok</span> [39] <span
+                                style="color: var(--accent-gold)">Huik</span> [41]
+                            <span style="color: var(--accent-gold)">Siiequa</span> [41] <span
+                                style="color: var(--accent-gold)">Miset</span> [43]
+                            <span style="color: var(--accent-gold)">Nobeau</span> [43] <span
+                                style="color: var(--accent-gold)">Begekou</span> [44]
+                            <span style="color: var(--accent-gold)">Imada</span> [44] <span
+                                style="color: var(--accent-gold)">Vugef</span> [45]
+                            <span style="color: var(--accent-gold)">Hobu</span> [46] <span
+                                style="color: var(--accent-gold)">Hedex</span> [47]<br>
+                            <span style="color: var(--accent-gold)">Widis</span> [48] <span
+                                style="color: var(--accent-gold)">Raxo</span> [49]
                             <span style="color: var(--accent-gold)">Beilum</span> [50]<br><br>
                             Elite Swarms (Acrocanth)<br>
-                            <span style="color: var(--accent-gold)">Ethent</span> [52] <span style="color: var(--accent-gold)">K’Abath</span> [54]
-                            <span style="color: var(--accent-gold)">Urid</span> [56] <span style="color: var(--accent-gold)">Xaria</span> [60]<br><br>
+                            <span style="color: var(--accent-gold)">Ethent</span> [52] <span
+                                style="color: var(--accent-gold)">K’Abath</span> [54]
+                            <span style="color: var(--accent-gold)">Urid</span> [56] <span
+                                style="color: var(--accent-gold)">Xaria</span> [60]<br><br>
                             G6 Rare Swarm Hordes<br>
-                            <span style="color: var(--accent-gold)">Vax</span> [61] <span style="color: var(--accent-gold)">Quv Qeb</span> [65]
+                            <span style="color: var(--accent-gold)">Vax</span> [61] <span
+                                style="color: var(--accent-gold)">Quv Qeb</span> [65]
                         </p>
                     </div>
                 </div>
@@ -1450,21 +1475,27 @@
                     <div class="content-text">
                         <h1 id="stella-ship" class="roe-title">Acquiring Stella</h1><br>
                         <div style="text-align: center">
-                            <img src="images/stella.png" alt="image of the Stella ship" style="max-width: 15%; height: auto;" onclick="openLightboxImg(this)">
+                            <img src="images/stella.png" alt="image of the Stella ship"
+                                style="max-width: 15%; height: auto;" onclick="openLightboxImg(this)">
                         </div>
                         <p style="color: green;">
                             When working to get the Stella, keep the following in mind:
                         </p>
-                        <ul style="margin: 15px 0 0 20px; line-height: 2; text-align: left; color: var(--accent-gold); font-size: 1.2em">
-                            <li><u>Do not rush Rogue Rep</u>. <span style="color: green">Avoid completing missions or tasks that push your Rogue Rep
-                                past Rank 1 (Lackey) to avoid losing access to getting the bps in the Rogue Faction store.
-                                Once you reach Rank 2 (Abettor) or higher, the option to purchase Stella bps with Rogue
-                                Credits disappears from the store.</span>
+                        <ul
+                            style="margin: 15px 0 0 20px; line-height: 2; text-align: left; color: var(--accent-gold); font-size: 1.2em">
+                            <li><u>Do not rush Rogue Rep</u>. <span style="color: green">Avoid completing missions or
+                                    tasks that push your Rogue Rep
+                                    past Rank 1 (Lackey) to avoid losing access to getting the bps in the Rogue Faction
+                                    store.
+                                    Once you reach Rank 2 (Abettor) or higher, the option to purchase Stella bps with
+                                    Rogue
+                                    Credits disappears from the store.</span>
                             </li>
                             <li>Credits: <span style="color: green;">You need 1,000 Rogue Credits to purchase the full
-                                set of bps. (10 bps per 100 Creds * 10).</span>
+                                    set of bps. (10 bps per 100 Creds * 10).</span>
                             </li>
-                            <li>Rep Increase: <span style="color: green;">After you have your first Stella, you can increase your Rep freely.</span>
+                            <li>Rep Increase: <span style="color: green;">After you have your first Stella, you can
+                                    increase your Rep freely.</span>
                             </li>
                         </ul>
                     </div>
@@ -1476,26 +1507,38 @@
                         <p style="color: green;">
                             If a Station has a peace shield up, you will not be able to attack it or scan it until
                             that shield comes down. Station shields can come down in one of two ways: either the timer
-                            on it runs out, or the player attacks another player or Station. Meaning: if you have a shield
-                            up on your Station and you attack another player (PvP) or attack another player's Station, your
+                            on it runs out, or the player attacks another player or Station. Meaning: if you have a
+                            shield
+                            up on your Station and you attack another player (PvP) or attack another player's Station,
+                            your
                             Station's shield will drop.
                             <br><br>
-                            When you find an unshielded Station of a level that you can attack, click the Station and then click
-                            "scan". This will show you the power level as well as what loot you can get. All of a player's unvaulted
-                            Parsteel, Tritanium and Dilithium are up for grabs. A higher ratio of reward to opposition is preferred.
+                            When you find an unshielded Station of a level that you can attack, click the Station and
+                            then click
+                            "scan". This will show you the power level as well as what loot you can get. All of a
+                            player's unvaulted
+                            Parsteel, Tritanium and Dilithium are up for grabs. A higher ratio of reward to opposition
+                            is preferred.
                             <br><br>
-                            The power level of the Station and the attacking ship is not a 1:1 match. Usually, a relatively weaker ship
-                            can overwhelm a relatively stronger Station. Even if an attacking ship does not destroy a Station's defenses
+                            The power level of the Station and the attacking ship is not a 1:1 match. Usually, a
+                            relatively weaker ship
+                            can overwhelm a relatively stronger Station. Even if an attacking ship does not destroy a
+                            Station's defenses
                             completely, it will usually weaken them, making the next attack more likely to succeed.
                             <br><br>
                         </p>
                         <h2 id="shield-attack">Attacking</h2>
                         <p style="color: green;">
-                            When you attack a Station for the first time, regardless of whether you are successful or not, an automatic
-                            10-minute Peace Shield pops into place and the Station owner (theoretically) gets a notification that they
-                            have been attacked. Position your other attack ships nearby for when the 10‐minute shield drops. Once it does,
-                            attack until the target's defenses (ships plus platform defenses) are destroyed. Once they are, move your Station
-                            as close to your target as possible and raid with whatever ships have the highest cargo hold. Keep in mind, when
+                            When you attack a Station for the first time, regardless of whether you are successful or
+                            not, an automatic
+                            10-minute Peace Shield pops into place and the Station owner (theoretically) gets a
+                            notification that they
+                            have been attacked. Position your other attack ships nearby for when the 10‐minute shield
+                            drops. Once it does,
+                            attack until the target's defenses (ships plus platform defenses) are destroyed. Once they
+                            are, move your Station
+                            as close to your target as possible and raid with whatever ships have the highest cargo
+                            hold. Keep in mind, when
                             you attack the opponent's Station, your Station's shield drops.
                         </p>
                     </div>
@@ -1543,7 +1586,10 @@
                             </p>
                             <div style="display: flex; flex-direction: column; align-items: left;">
                                 <p style="color: green; text-align: left; margin-bottom: 5px;">
-                                    There are 35 Rep Tiers. Below are the key thresholds but for a complete list, check out <a href="https://scopely.helpshift.com/hc/en/19-star-trek-fleet-command/faq/7046-reputation-locks/">Rep Locks</a>:
+                                    There are 35 Rep Tiers. Below are the key thresholds but for a complete list, check
+                                    out <a
+                                        href="https://scopely.helpshift.com/hc/en/19-star-trek-fleet-command/faq/7046-reputation-locks/">Rep
+                                        Locks</a>:
                                 </p>
                                 <ul
                                     style="margin: 15px 0 0 20px; line-height: 2; text-align: left; display: inline-block; font-size: 1.2em; list-style-position: inside; padding-left: 0;">
@@ -1570,8 +1616,7 @@
                                             style="color: var(--accent-gold);">-</span> <span
                                             style="color: var(--accent-teal);">Hero</span>
                                     </li>
-                                    <li><span
-                                            style="color: var(--accent-gold);">450T/450T</span>:
+                                    <li><span style="color: var(--accent-gold);">450T/450T</span>:
                                         <span style="color: green;">Fifth lock</span> <span
                                             style="color: var(--accent-gold);">-</span> <span
                                             style="color: var(--accent-teal);">Prestige VI</span>
@@ -2041,137 +2086,341 @@
                         <main>
                             <div class="mapcontainer">
                                 <div class="col" id="map">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1371 993.5" style="width: 100%; height: 900px; display: block;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1371 993.5"
+                                        style="width: 100%; height: 900px; display: block;">
                                         
                                         <!-- ### SNOW ###-->
                                         <!-- Adia -->
-                                        <polygon id="75447996" class="svgSystem" points="845 451 845 365.13 767 292.14 767 239 832.04 239 892 313.7 892 451 845 451" style="fill: rgb(1, 75, 61);"><title>Adia</title></polygon>
+                                        <polygon id="75447996" class="svgSystem"
+                                            points="845 451 845 365.13 767 292.14 767 239 832.04 239 892 313.7 892 451 845 451"
+                                            style="fill: rgb(1, 75, 61);">
+                                            <title>Adia</title>
+                                        </polygon>
                                         <!-- Ezla -->
-                                        <polygon id="1695443788" class="svgSystem" points="767 235 767 140.92 806.94 106.69 872 167.86 872 196.16 832.19 235 767 235" style="fill: rgb(1, 75, 61);"><title>Ezla</title></polygon>
+                                        <polygon id="1695443788" class="svgSystem"
+                                            points="767 235 767 140.92 806.94 106.69 872 167.86 872 196.16 832.19 235 767 235"
+                                            style="fill: rgb(1, 75, 61);">
+                                            <title>Ezla</title>
+                                        </polygon>
                                         <!-- Hoobishan -->
-                                        <polygon id="620533187" class="svgSystem" points="657 235 657 112.73 627.83 83.02 689.82 22 805 22 805 103.08 763 139.08 763 235 657 235" style="fill: rgb(1, 75, 61);"><title>Hoobishan</title></polygon>
+                                        <polygon id="620533187" class="svgSystem"
+                                            points="657 235 657 112.73 627.83 83.02 689.82 22 805 22 805 103.08 763 139.08 763 235 657 235"
+                                            style="fill: rgb(1, 75, 61);">
+                                            <title>Hoobishan</title>
+                                        </polygon>
                                         <!-- Temeri -->
-                                        <polygon id="234507462" class="svgSystem" points="835.7 237.16 876 197.84 876 169 940 169 940 265.16 894.18 310.03 835.7 237.16" style="fill: rgb(1, 75, 61);"><title>Temeri</title></polygon>
+                                        <polygon id="234507462" class="svgSystem"
+                                            points="835.7 237.16 876 197.84 876 169 940 169 940 265.16 894.18 310.03 835.7 237.16"
+                                            style="fill: rgb(1, 75, 61);">
+                                            <title>Temeri</title>
+                                        </polygon>
                                         <!-- Tezera -->
-                                        <polygon id="1205790513" class="svgSystem" points="704.05 466 627.56 383 704.04 383 765.31 296.03 841 366.87 841 451.97 821.36 466 704.05 466" style="fill: rgb(1, 75, 61);"><title>Tezera</title></polygon>
+                                        <polygon id="1205790513" class="svgSystem"
+                                            points="704.05 466 627.56 383 704.04 383 765.31 296.03 841 366.87 841 451.97 821.36 466 704.05 466"
+                                            style="fill: rgb(1, 75, 61);">
+                                            <title>Tezera</title>
+                                        </polygon>
 
                                         <!-- ### TAG ### -->
                                         <!-- Abilakk -->
-                                        <polygon id="450781274" class="svgSystem" points="441 603 441 410 541 410 541 577.86 501.79 603 441 603" style="fill: rgb(68, 25, 163);"><title>Abilakk</title></polygon>
+                                        <polygon id="450781274" class="svgSystem"
+                                            points="441 603 441 410 541 410 541 577.86 501.79 603 441 603"
+                                            style="fill: rgb(68, 25, 163);">
+                                            <title>Abilakk</title>
+                                        </polygon>
                                         <!-- Lenara -->
-                                        <polygon id="1383107774" class="svgSystem" points="441 406 441 307.44 459.55 267.55 564.3 381.03 542.1 406 441 406" style="fill: rgb(68, 25, 163);"><title>Lenara</title></polygon>
+                                        <polygon id="1383107774" class="svgSystem"
+                                            points="441 406 441 307.44 459.55 267.55 564.3 381.03 542.1 406 441 406"
+                                            style="fill: rgb(68, 25, 163);">
+                                            <title>Lenara</title>
+                                        </polygon>
                                         <!-- Mak'ala -->
-                                        <polygon id="190693683" class="svgSystem" points="523.8 235 461 175.14 461 122.83 561.02 23.8 623.61 84.44 653 114.38 653 235 523.8 235" style="fill: rgb(68, 25, 163)"><title>Mak'ala</title></polygon>
+                                        <polygon id="190693683" class="svgSystem"
+                                            points="523.8 235 461 175.14 461 122.83 561.02 23.8 623.61 84.44 653 114.38 653 235 523.8 235"
+                                            style="fill: rgb(68, 25, 163)">
+                                            <title>Mak'ala</title>
+                                        </polygon>
                                         <!-- Tholus -->
-                                        <polygon id="47245576" class="svgSystem" points="545 577 545 408.76 567.9 383 622.12 383 701 468.58 701 524.13 644.21 577 545 577" style="fill: rgb(68, 25, 163);"><title>Tholus</title></polygon>
+                                        <polygon id="47245576" class="svgSystem"
+                                            points="545 577 545 408.76 567.9 383 622.12 383 701 468.58 701 524.13 644.21 577 545 577"
+                                            style="fill: rgb(68, 25, 163);">
+                                            <title>Tholus</title>
+                                        </polygon>
                                         <!-- Triss -->
-                                        <polygon id="1133579970" class="svgSystem" points="567.88 379 462.4 264.74 523.42 239 650.95 239 621 278.17 621 379 567.88 379" style="fill: rgb(68, 25, 163);"><title>Triss</title></polygon>
+                                        <polygon id="1133579970" class="svgSystem"
+                                            points="567.88 379 462.4 264.74 523.42 239 650.95 239 621 278.17 621 379 567.88 379"
+                                            style="fill: rgb(68, 25, 163);">
+                                            <title>Triss</title>
+                                        </polygon>
 
                                         <!-- ### MC ### -->
                                         <!-- Aonad -->
-                                        <polygon id="763527938" class="svgSystem" points="1255 766.2 1255 727.98 1306.68 688 1354 688 1354 778.17 1309.04 823.13 1255 766.2" style="fill: rgb(187, 125, 10);"><title>Aonad</title></polygon>
+                                        <polygon id="763527938" class="svgSystem"
+                                            points="1255 766.2 1255 727.98 1306.68 688 1354 688 1354 778.17 1309.04 823.13 1255 766.2"
+                                            style="fill: rgb(187, 125, 10);">
+                                            <title>Aonad</title>
+                                        </polygon>
                                         <!-- Barasa -->
-                                        <polygon id="1603382959" class="svgSystem" points="870 956 870 825.94 952.85 756.73 980.15 785 1038 785 1038 929.19 1012.15 956 870 956" style="fill: rgb(187, 125, 10);"><title>Barasa</title></polygon>
+                                        <polygon id="1603382959" class="svgSystem"
+                                            points="870 956 870 825.94 952.85 756.73 980.15 785 1038 785 1038 929.19 1012.15 956 870 956"
+                                            style="fill: rgb(187, 125, 10);">
+                                            <title>Barasa</title>
+                                        </polygon>
                                         <!-- Burran -->
-                                        <polygon id="372050647" class="svgSystem" points="1042 928 1042 785 1110.17 785 1160.59 835.41 1228.21 904.02 1205.15 928 1042 928" style="fill: rgb(187, 125, 10);"><title>Burran</title></polygon>
+                                        <polygon id="372050647" class="svgSystem"
+                                            points="1042 928 1042 785 1110.17 785 1160.59 835.41 1228.21 904.02 1205.15 928 1042 928"
+                                            style="fill: rgb(187, 125, 10);">
+                                            <title>Burran</title>
+                                        </polygon>
                                         <!-- Comst -->
-                                        <polygon id="647935234" class="svgSystem" points="1164.83 834.03 1208 791.84 1208 729 1251 729 1251 767.8 1306.21 825.96 1231.01 901.16 1164.83 834.03" style="fill: rgb(187, 125, 10);"><title>Comst</title></polygon>
+                                        <polygon id="647935234" class="svgSystem"
+                                            points="1164.83 834.03 1208 791.84 1208 729 1251 729 1251 767.8 1306.21 825.96 1231.01 901.16 1164.83 834.03"
+                                            style="fill: rgb(187, 125, 10);">
+                                            <title>Comst</title>
+                                        </polygon>
                                         <!-- Ruhe -->
-                                        <polygon id="610044534" class="svgSystem" points="1172 725 1172 629 1234.74 629 1262.9 604.73 1304 645.83 1304 685.02 1252.32 725 1172 725" style="fill: rgb(187, 125, 10);"><title>Ruhe</title></polygon>
+                                        <polygon id="610044534" class="svgSystem"
+                                            points="1172 725 1172 629 1234.74 629 1262.9 604.73 1304 645.83 1304 685.02 1252.32 725 1172 725"
+                                            style="fill: rgb(187, 125, 10);">
+                                            <title>Ruhe</title>
+                                        </polygon>
 
                                         <!-- ### TDI ### -->
+                                         <!-- Beku -->
+                                        <polygon id="1964344020" class="svgSystem"
+                                            points="620 978 620 902 737 902 737 956 679.17 956 657.17 978 620 978"
+                                            style="fill: rgb(38, 210, 141);">
+                                            <title>Beku</title>
+                                        </polygon>
                                         <!-- Ber'Tho -->
-                                        <polygon id="2044888998" class="svgSystem" points="392.97 828 306 828 306 733 560 733 560 756.18 441.98 876.17 392.97 828" style="fill: rgb(38, 210, 141);"><title>Ber'Tho</title></polygon>
+                                        <polygon id="2044888998" class="svgSystem"
+                                            points="392.97 828 306 828 306 733 560 733 560 756.18 441.98 876.17 392.97 828"
+                                            style="fill: rgb(38, 210, 141);">
+                                            <title>Ber'Tho</title>
+                                        </polygon>
                                         <!-- Bimasa -->
-                                        <polygon id="100583287" class="svgSystem" points="444 978 444 881 527.85 881 559.85 848 616 848 616 978 444 978" style="fill: rgb(38, 210, 141);"><title>Bimasa</title></polygon>
+                                        <polygon id="100583287" class="svgSystem"
+                                            points="444 978 444 881 527.85 881 559.85 848 616 848 616 978 444 978"
+                                            style="fill: rgb(38, 210, 141);">
+                                            <title>Bimasa</title>
+                                        </polygon>
                                         <!-- Brellan -->
-                                        <polygon id="404484182" class="svgSystem" points="314.83 978 280 943.17 280 859.77 304.89 832 391.22 832 440 879.84 440 978 314.83 978" style="fill: rgb(38, 210, 141);"><title>Brellan</title></polygon>
+                                        <polygon id="404484182" class="svgSystem"
+                                            points="314.83 978 280 943.17 280 859.77 304.89 832 391.22 832 440 879.84 440 978 314.83 978"
+                                            style="fill: rgb(38, 210, 141);">
+                                            <title>Brellan</title>
+                                        </polygon>
                                         <!-- Zamaro -->
-                                        <polygon id="1645876992" class="svgSystem" points="446.77 877 564 757.82 564 692 616 692 616 844 558.15 844 526.15 877 446.77 877" style="fill: rgb(38, 210, 141);"><title>Zamaro</title></polygon>
+                                        <polygon id="1645876992" class="svgSystem"
+                                            points="446.77 877 564 757.82 564 692 616 692 616 844 558.15 844 526.15 877 446.77 877"
+                                            style="fill: rgb(38, 210, 141);">
+                                            <title>Zamaro</title>
+                                        </polygon>
 
                                         <!-- ### BORG ### -->
                                         <!-- Corva -->
-                                        <polygon id="1766074547" class="svgSystem" points="969 638.16 969 455 1035.81 455 1107 526.15 1107 596.76 1014.04 682.24 969 638.16" style="fill: #8A6C96;"><title>Corva</title></polygon>
+                                        <polygon id="1766074547" class="svgSystem"
+                                            points="969 638.16 969 455 1035.81 455 1107 526.15 1107 596.76 1014.04 682.24 969 638.16"
+                                            style="fill: #8A6C96;">
+                                            <title>Corva</title>
+                                        </polygon>
                                         <!-- Crios -->
-                                        <polygon id="906166537" class="svgSystem" points="903 637 903 539.12 825.18 468.19 843.64 455 965 455 965 637 903 637" style="fill: #8A6C96;"><title>Crios</title></polygon>
+                                        <polygon id="906166537" class="svgSystem"
+                                            points="903 637 903 539.12 825.18 468.19 843.64 455 965 455 965 637 903 637"
+                                            style="fill: #8A6C96;">
+                                            <title>Crios</title>
+                                        </polygon>
                                         <!-- Roshar -->
-                                        <polygon id="558058285" class="svgSystem" points="1016.88 685.07 1108.79 600.63 1129.28 629 1168 629 1168 726.14 1111.04 780.2 1016.88 685.07" style="fill: #8A6C96;"><title>Roshar</title></polygon>
+                                        <polygon id="558058285" class="svgSystem"
+                                            points="1016.88 685.07 1108.79 600.63 1129.28 629 1168 629 1168 726.14 1111.04 780.2 1016.88 685.07"
+                                            style="fill: #8A6C96;">
+                                            <title>Roshar</title>
+                                        </polygon>
                                         <!-- Stilhe -->
-                                        <polygon id="1995161692" class="svgSystem" points="981.85 781 954.44 752.61 903 702.16 903 641 966.18 641 1012.6 686.43 1106.21 781 981.85 781" style="fill: #8A6C96;"><title>Stilhe</title></polygon>
+                                        <polygon id="1995161692" class="svgSystem"
+                                            points="981.85 781 954.44 752.61 903 702.16 903 641 966.18 641 1012.6 686.43 1106.21 781 981.85 781"
+                                            style="fill: #8A6C96;">
+                                            <title>Stilhe</title>
+                                        </polygon>
                                         <!-- Thaylen -->
-                                        <polygon id="233224244" class="svgSystem" points="1113.87 783.04 1170.8 729 1204 729 1204 790.16 1162.02 831.19 1113.87 783.04" style="fill: #8A6C96;"><title>Thaylen</title></polygon>
+                                        <polygon id="233224244" class="svgSystem"
+                                            points="1113.87 783.04 1170.8 729 1204 729 1204 790.16 1162.02 831.19 1113.87 783.04"
+                                            style="fill: #8A6C96;">
+                                            <title>Thaylen</title>
+                                        </polygon>
 
                                         <!-- ### NWO ### -->
                                         <!-- Duportas -->
-                                        <polygon id="1809221684" class="svgSystem" points="220.83 799 174.83 799 148.04 772.22 267 683 267 642 302 642 302 829.23 277.92 856.09 220.83 799" style="fill: rgb(64, 132, 8);"><title>Duportas</title></polygon>
+                                        <polygon id="1809221684" class="svgSystem"
+                                            points="220.83 799 174.83 799 148.04 772.22 267 683 267 642 302 642 302 829.23 277.92 856.09 220.83 799"
+                                            style="fill: rgb(64, 132, 8);">
+                                            <title>Duportas</title>
+                                        </polygon>
                                         <!-- Eldur -->
-                                        <polygon id="1960606625" class="svgSystem" points="267 638 267 511.73 288 486.73 288 445 370 445 370 485.29 337 526.29 337 604.17 303.17 638 267 638" style="fill: rgb(64, 132, 8);"><title>Eldur</title></polygon>
+                                        <polygon id="1960606625" class="svgSystem"
+                                            points="267 638 267 511.73 288 486.73 288 445 370 445 370 485.29 337 526.29 337 604.17 303.17 638 267 638"
+                                            style="fill: rgb(64, 132, 8);">
+                                            <title>Eldur</title>
+                                        </polygon>
                                         <!-- Hrojost -->
-                                        <polygon id="1457297806" class="svgSystem" points="136.21 638 94.31 558 263 558 263 638 136.21 638" style="fill: rgb(64, 132, 8);"><title>Hrojost</title></polygon>
+                                        <polygon id="1457297806" class="svgSystem"
+                                            points="136.21 638 94.31 558 263 558 263 638 136.21 638"
+                                            style="fill: rgb(64, 132, 8);">
+                                            <title>Hrojost</title>
+                                        </polygon>
                                         <!-- Nujord -->
-                                        <polygon id="1170669710" class="svgSystem" points="101 724.18 101 672.9 135.76 642 263 642 263 681 145.2 769.35 101 724.18" style="fill: rgb(64, 132, 8);"><title>Nujord</title></polygon>
+                                        <polygon id="1170669710" class="svgSystem"
+                                            points="101 724.18 101 672.9 135.76 642 263 642 263 681 145.2 769.35 101 724.18"
+                                            style="fill: rgb(64, 132, 8);">
+                                            <title>Nujord</title>
+                                        </polygon>
                                         <!-- Nyrheimur -->
-                                        <polygon id="851187192" class="svgSystem" points="93 554 93 456.49 124.22 396 207.25 396 263.25 445 284 445 284 485.27 263 510.27 263 554 93 554" style="fill: rgb(64, 132, 8);"><title>Nyrheimur</title></polygon>
+                                        <polygon id="851187192" class="svgSystem"
+                                            points="93 554 93 456.49 124.22 396 207.25 396 263.25 445 284 445 284 485.27 263 510.27 263 554 93 554"
+                                            style="fill: rgb(64, 132, 8);">
+                                            <title>Nyrheimur</title>
+                                        </polygon>
 
                                         <!-- ### GANG ### -->
                                         <!-- Helvi -->
-                                        <polygon id="1238332214" class="svgSystem" points="374 372.2 336 332.2 336 266 455.86 266 437 306.56 437 406.79 374 439.7 374 372.2" style="fill: yellow;"><title>Helvi</title></polygon>
+                                        <polygon id="1238332214" class="svgSystem"
+                                            points="374 372.2 336 332.2 336 266 455.86 266 437 306.56 437 406.79 374 439.7 374 372.2"
+                                            style="fill: yellow;">
+                                            <title>Helvi</title>
+                                        </polygon>
                                         <!-- Zhian -->
-                                        <polygon id="1556418684" class="svgSystem" points="334.89 262 289.77 212.08 378.82 124 457 124 457 176.86 519.41 236.34 458.6 262 334.89 262" style="fill: yellow;"><title>Zhian</title></polygon>
+                                        <polygon id="1556418684" class="svgSystem"
+                                            points="334.89 262 289.77 212.08 378.82 124 457 124 457 176.86 519.41 236.34 458.6 262 334.89 262"
+                                            style="fill: yellow;">
+                                            <title>Zhian</title>
+                                        </polygon>
 
                                         <!-- ### UA ### -->
                                         <!-- Innlasn -->
-                                        <polygon id="1598736183" class="svgSystem" points="16 454 16 331.83 69.7 278.13 89.94 308 121 308 121 393.56 89.78 454 16 454" style="fill: rgb(204, 255, 0);"><title>Innlasn</title></polygon>
+                                        <polygon id="1598736183" class="svgSystem"
+                                            points="16 454 16 331.83 69.7 278.13 89.94 308 121 308 121 393.56 89.78 454 16 454"
+                                            style="fill: rgb(204, 255, 0);">
+                                            <title>Innlasn</title>
+                                        </polygon>
                                         <!-- Tefkari -->
-                                        <polygon id="1646136635" class="svgSystem" points="92.06 304 72.59 275.26 134.82 214 286.11 214 331.15 263.83 285.25 304 92.06 304" style="fill: rgb(204, 255, 0);"><title>Tefkari</title></polygon>
+                                        <polygon id="1646136635" class="svgSystem"
+                                            points="92.06 304 72.59 275.26 134.82 214 286.11 214 331.15 263.83 285.25 304 92.06 304"
+                                            style="fill: rgb(204, 255, 0);">
+                                            <title>Tefkari</title>
+                                        </polygon>
                                         <!-- Vantar -->
-                                        <polygon id="727367149" class="svgSystem" points="264.75 441 208.75 392 125 392 125 308 284 308 284 441 264.75 441" style="fill: rgb(204, 255, 0);"><title>Vantar</title></polygon>
+                                        <polygon id="727367149" class="svgSystem"
+                                            points="264.75 441 208.75 392 125 392 125 308 284 308 284 441 264.75 441"
+                                            style="fill: rgb(204, 255, 0);">
+                                            <title>Vantar</title>
+                                        </polygon>
+
+                                        <!-- ### ZZZ ### -->
+                                        <!-- Asiti -->
+                                        <polygon id="1976653582" class="svgSystem"
+                                            points="738.68 688 705 646.95 705 527 721.15 527 799.67 607.48 768.63 688 738.68 688"
+                                            style="fill: black;">
+                                            <title>Asiti</title>
+                                        </polygon>
 
                                         <!-- ################################################################################################################################################################################################# -->
                                         <!-- Anzat -->
-                                        <polygon id="939860675" class="svgSystem" points="562.67 688 504 643.3 504 606.21 543.24 581 643 581 643 661.19 617.15 688 562.67 688"><title>Anzat</title></polygon>
-                                        <!-- Asiti -->
-                                        <polygon id="1976653582" class="svgSystem" points="738.68 688 705 646.95 705 527 721.15 527 799.67 607.48 768.63 688 738.68 688" style="fill: black;"><title>Asiti</title></polygon>
+                                        <polygon id="939860675" class="svgSystem"
+                                            points="562.67 688 504 643.3 504 606.21 543.24 581 643 581 643 661.19 617.15 688 562.67 688">
+                                            <title>Anzat</title>
+                                        </polygon>
                                         <!-- Avansa -->
-                                        <polygon id="225845685" class="svgSystem" points="1131.25 625 1111 596.9 1111 527.01 1261 527.99 1261 601.08 1233.26 625 1131.25 625"><title>Avansa</title></polygon>
+                                        <polygon id="225845685" class="svgSystem"
+                                            points="1131.25 625 1111 596.9 1111 527.01 1261 527.99 1261 601.08 1233.26 625 1131.25 625">
+                                            <title>Avansa</title>
+                                        </polygon>
                                         <!-- Aylus -->
-                                        <polygon id="508588181" class="svgSystem" points="306 729 306 640.83 339.83 607 437 607 437 658.93 402 693.74 402 729 306 729"><title>Aylus</title></polygon>
-                                        <!-- Beku -->
-                                        <polygon id="1964344020" class="svgSystem" points="620 978 620 902 737 902 737 956 679.17 956 657.17 978 620 978"><title>Beku</title></polygon>
+                                        <polygon id="508588181" class="svgSystem"
+                                            points="306 729 306 640.83 339.83 607 437 607 437 658.93 402 693.74 402 729 306 729">
+                                            <title>Aylus</title>
+                                        </polygon>
                                         <!-- Bolari -->
-                                        <polygon id="2062242845" class="svgSystem" points="809.8 767 739.77 767 709.77 740 620 740 620 692 804.35 692 822.35 705 900.18 705 950.02 753.88 868.08 822.32 809.8 767"><title>Bolari</title></polygon>
+                                        <polygon id="2062242845" class="svgSystem"
+                                            points="809.8 767 739.77 767 709.77 740 620 740 620 692 804.35 692 822.35 705 900.18 705 950.02 753.88 868.08 822.32 809.8 767">
+                                            <title>Bolari</title>
+                                        </polygon>
                                         <!-- Brijac -->
-                                        <polygon id="2144111369" class="svgSystem" points="741 956 741 771 808.2 771 866 825.86 866 956 741 956"><title>Brijac</title></polygon>
+                                        <polygon id="2144111369" class="svgSystem"
+                                            points="741 956 741 771 808.2 771 866 825.86 866 956 741 956">
+                                            <title>Brijac</title>
+                                        </polygon>
                                         <!-- Framtid -->
-                                        <polygon id="716012578" class="svgSystem" points="16 585.18 16 458 89 458 89 556.49 132.5 639.54 99.09 669.25 16 585.18"><title>Framtid</title></polygon>
+                                        <polygon id="716012578" class="svgSystem"
+                                            points="16 585.18 16 458 89 458 89 556.49 132.5 639.54 99.09 669.25 16 585.18">
+                                            <title>Framtid</title>
+                                        </polygon>
                                         <!-- Gelida -->
-                                        <polygon id="1170639956" class="svgSystem" points="620 898 620 847.1 650.26 828 737 828 737 898 620 898"><title>Gelida</title></polygon>
+                                        <polygon id="1170639956" class="svgSystem"
+                                            points="620 898 620 847.1 650.26 828 737 828 737 898 620 898">
+                                            <title>Gelida</title>
+                                        </polygon>
                                         <!-- Klefaski -->
-                                        <polygon id="1576679126" class="svgSystem" points="288 441 288 306.91 332 268.41 332 333.8 370 373.8 370 441 288 441"><title>Klefaski</title></polygon>
+                                        <polygon id="1576679126" class="svgSystem"
+                                            points="288 441 288 306.91 332 268.41 332 333.8 370 373.8 370 441 288 441">
+                                            <title>Klefaski</title>
+                                        </polygon>
                                         <!-- Kolava -->
-                                        <polygon id="1518413947" class="svgSystem" points="823.65 701 805.65 688 772.91 688 803.19 609.49 899 640.46 899 701 823.65 701"><title>Kolava</title></polygon>
+                                        <polygon id="1518413947" class="svgSystem"
+                                            points="823.65 701 805.65 688 772.91 688 803.19 609.49 899 640.46 899 701 823.65 701">
+                                            <title>Kolava</title>
+                                        </polygon>
                                         <!-- Otima -->
-                                        <polygon id="1414400237" class="svgSystem" points="1308 684 1308 644.17 1265 601.17 1265 528 1333.17 528 1354 548.83 1354 684 1308 684"><title>Otima</title></polygon>
+                                        <polygon id="1414400237" class="svgSystem"
+                                            points="1308 684 1308 644.17 1265 601.17 1265 528 1333.17 528 1354 548.83 1354 684 1308 684">
+                                            <title>Otima</title>
+                                        </polygon>
                                         <!-- Parturi -->
-                                        <polygon id="599322744" class="svgSystem" points="622.71 688 647 662.81 647 579.87 701 529.59 701 648.3 733.47 688 622.71 688"><title>Parturi</title></polygon>
+                                        <polygon id="599322744" class="svgSystem"
+                                            points="622.71 688 647 662.81 647 579.87 701 529.59 701 648.3 733.47 688 622.71 688">
+                                            <title>Parturi</title>
+                                        </polygon>
                                         <!-- Perim -->
-                                        <polygon id="2106408117" class="svgSystem" points="874.79 165 809 103.14 809 22 842.17 22 940 119.83 940 165 874.79 165"><title>Perim</title></polygon>
+                                        <polygon id="2106408117" class="svgSystem"
+                                            points="874.79 165 809 103.14 809 22 842.17 22 940 119.83 940 165 874.79 165">
+                                            <title>Perim</title>
+                                        </polygon>
                                         <!-- Qeyma -->
-                                        <polygon id="795083356" class="svgSystem" points="803.09 605.25 722.88 523 705 523 705 470 821.23 470 899 540.88 899 636.25 803.09 605.25"><title>Qeyma</title></polygon>
+                                        <polygon id="795083356" class="svgSystem"
+                                            points="803.09 605.25 722.88 523 705 523 705 470 821.23 470 899 540.88 899 636.25 803.09 605.25">
+                                            <title>Qeyma</title>
+                                        </polygon>
                                         <!-- Saldeti -->
-                                        <polygon id="1020076107" class="svgSystem" points="620 744 708.23 744 737 769.89 737 824 649.1 824 620 842.37 620 744"><title>Saldeti</title></polygon>
+                                        <polygon id="1020076107" class="svgSystem"
+                                            points="620 744 708.23 744 737 769.89 737 824 649.1 824 620 842.37 620 744">
+                                            <title>Saldeti</title>
+                                        </polygon>
                                         <!-- Tazolka -->
-                                        <polygon id="507519541" class="svgSystem" points="406 729 406 695.28 441 660.38 441 607 500 607 500 645.26 560 690.99 560 729 406 729"><title>Tazolka</title></polygon>
+                                        <polygon id="507519541" class="svgSystem"
+                                            points="406 729 406 695.28 441 660.38 441 607 500 607 500 645.26 560 690.99 560 729 406 729">
+                                            <title>Tazolka</title>
+                                        </polygon>
                                         <!-- Thosz -->
-                                        <polygon id="462342571" class="svgSystem" points="341 603 341 527.71 374 486.71 374 444.21 437 411.3 437 603 341 603"><title>Thosz</title></polygon>
+                                        <polygon id="462342571" class="svgSystem"
+                                            points="341 603 341 527.71 374 486.71 374 444.21 437 411.3 437 603 341 603">
+                                            <title>Thosz</title>
+                                        </polygon>
                                         <!-- Tigan -->
-                                        <polygon id="91087479" class="svgSystem" points="625 379 625 279.45 655.02 240.26 731.51 337.07 701.96 379 625 379"><title>Tigan</title></polygon>
+                                        <polygon id="91087479" class="svgSystem"
+                                            points="625 379 625 279.45 655.02 240.26 731.51 337.07 701.96 379 625 379">
+                                            <title>Tigan</title>
+                                        </polygon>
                                         <!-- Tola -->
-                                        <polygon id="1834533150" class="svgSystem" points="937 417 937 339.85 997 281.72 997 417 937 417"><title>Tola</title></polygon>
+                                        <polygon id="1834533150" class="svgSystem"
+                                            points="937 417 937 339.85 997 281.72 997 417 937 417">
+                                            <title>Tola</title>
+                                        </polygon>
                                         <!-- Vemira -->
-                                        <polygon id="1433851648" class="svgSystem" points="659.13 239 763 239 763 292.37 733.91 333.66 659.13 239"><title>Vemira</title></polygon>
+                                        <polygon id="1433851648" class="svgSystem"
+                                            points="659.13 239 763 239 763 292.37 733.91 333.66 659.13 239">
+                                            <title>Vemira</title>
+                                        </polygon>
                                         <!-- ################################################################################################################################################################################################# -->
-                                        
+
                                         <!-- warp paths -->
                                         <line class="svgSystemConnection" x1="322" y1="918" x2="353" y2="865" />
                                         <line class="svgSystemConnection" x1="388" y1="918" x2="353" y2="865" />
@@ -2451,7 +2700,7 @@
                                         <circle class="svgSystemCircle" cx="60" cy="597" r="5" />
                                         <circle class="svgSystemCircle" cx="809" cy="659" r="5" />
                                         <circle class="svgSystemCircle" cx="982" cy="376" r="5" />
-                                        
+
                                         <!-- alliance tags -->
                                         <!-- Adia -->
                                         <!-- <text x="805" y="290" id="75447996-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
@@ -2462,7 +2711,9 @@
                                         <!-- Aonad -->
                                         <!-- <text x="1304" y="755" id="763527938-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Asiti -->
-                                        <text x="742" y="657" id="1976653582-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">ZZZ</text>
+                                        <text x="742" y="657" id="1976653582-name-tag" class="territory-name-tag"
+                                            style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;"
+                                            text-anchor="middle">ZZZ</text>
                                         <!-- Avansa -->
                                         <!-- <text x="1186" y="596" id="225845685-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Aylus -->
@@ -2482,7 +2733,9 @@
                                         <!-- Brijac -->
                                         <!-- <text x="803" y="935" id="2144111369-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Burran -->
-                                        <text x="1140" y="856" id="372050647-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">MC</text>
+                                        <text x="1140" y="856" id="372050647-name-tag" class="territory-name-tag"
+                                            style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;"
+                                            text-anchor="middle">MC</text>
                                         <!-- Comst -->
                                         <!-- <text x="1209" y="835" id="647935234-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Corva -->
@@ -2494,13 +2747,17 @@
                                         <!-- Eldur -->
                                         <!-- <text x="300" y="541.5" id="1960606625-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Ezla -->
-                                        <text x="803" y="225" id="1695443788-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">SNOW</text>
+                                        <text x="803" y="225" id="1695443788-name-tag" class="territory-name-tag"
+                                            style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;"
+                                            text-anchor="middle">SNOW</text>
                                         <!-- Framtid -->
                                         <!-- <text x="52" y="540" id="716012578-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 18px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Gelida -->
                                         <!-- <text x="678" y="890" id="1170639956-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Helvi -->
-                                        <text x="396" y="363" id="1238332214-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">GANG</text>
+                                        <text x="396" y="363" id="1238332214-name-tag" class="territory-name-tag"
+                                            style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;"
+                                            text-anchor="middle">GANG</text>
                                         <!-- Hoobishan -->
                                         <!-- <text x="716" y="128" id="620533187-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Hrojost -->
@@ -2516,7 +2773,9 @@
                                         <!-- Mak'ala -->
                                         <!-- <text x="557" y="95" id="190693683-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Nujord -->
-                                        <text x="150" y="735" id="1170669710-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">NWO</text>
+                                        <text x="150" y="735" id="1170669710-name-tag" class="territory-name-tag"
+                                            style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;"
+                                            text-anchor="middle">NWO</text>
                                         <!-- Nyrheimur -->
                                         <!-- <text x="188" y="480" id="851187192-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Otima -->
@@ -2534,11 +2793,15 @@
                                         <!-- Saldeti -->
                                         <!-- <text x="675" y="770" id="1020076107-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Stilhe -->
-                                        <text x="975" y="695" id="1995161692-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">BORG</text>
+                                        <text x="975" y="695" id="1995161692-name-tag" class="territory-name-tag"
+                                            style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;"
+                                            text-anchor="middle">BORG</text>
                                         <!-- Tazolka -->
                                         <!-- <text x="515" y="700" id="507519541-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Tefkari -->
-                                        <text x="201" y="243" id="1646136635-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">UA</text>
+                                        <text x="201" y="243" id="1646136635-name-tag" class="territory-name-tag"
+                                            style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;"
+                                            text-anchor="middle">UA</text>
                                         <!-- Temeri -->
                                         <!-- <text x="894" y="272" id="234507462-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Tezera -->
@@ -2554,100 +2817,272 @@
                                         <!-- Tola -->
                                         <!-- <text x="967" y="411" id="1834533150-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Triss -->
-                                        <text x="579" y="350" id="1133579970-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">TAG</text>
+                                        <text x="579" y="350" id="1133579970-name-tag" class="territory-name-tag"
+                                            style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;"
+                                            text-anchor="middle">TAG</text>
                                         <!-- Vantar -->
                                         <!-- <text x="204" y="335" id="727367149-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Vemira -->
                                         <!-- <text x="717" y="273" id="1433851648-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
                                         <!-- Zamaro -->
-                                        <text x="590" y="790" id="1645876992-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle">TDI</text>
+                                        <text x="590" y="790" id="1645876992-name-tag" class="territory-name-tag"
+                                            style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;"
+                                            text-anchor="middle">TDI</text>
                                         <!-- Zhian -->
                                         <!-- <text x="404" y="177" id="1556418684-name-tag" class="territory-name-tag" style="pointer-events: none; font-size: 21px; fill: white; text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 2px;" text-anchor="middle"></text> -->
-                                        
-                                        <path class="svgIsoIcon" d="M941.1,877.9L930,864v0l-11.1,13.8l11.1,10.2v0L941.1,877.9z M925.5,880.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L925.5,880.1z"></path>
-                                        <path class="svgIsoIcon" d="M966.1,877.9L955,864v0l-11.1,13.8l11.1,10.2v0L966.1,877.9z M950.5,880.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L950.5,880.1z"></path>
-                                        <path class="svgIsoIcon" d="M991.1,877.9L980,864v0l-11.1,13.8l11.1,10.2v0L991.1,877.9z M975.5,880.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L975.5,880.1z"></path>
-                                        <path class="svgIsoIcon" d="M593.1,492.9L582,479v0l-11.1,13.8l11.1,10.2v0L593.1,492.9z M577.5,495.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L577.5,495.1z"></path>
-                                        <path class="svgIsoIcon" d="M618.1,492.9L607,479v0l-11.1,13.8l11.1,10.2v0L618.1,492.9z M602.5,495.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L602.5,495.1z"></path>
-                                        <path class="svgIsoIcon" d="M643.1,492.9L632,479v0l-11.1,13.8l11.1,10.2v0L643.1,492.9z M627.5,495.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L627.5,495.1z"></path>
-                                        <path class="svgIsoIcon" d="M1016.1,556.9L1005,543v0l-11.1,13.8l11.1,10.2v0L1016.1,556.9z M1000.5,559.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1000.5,559.1z"></path>
-                                        <path class="svgIsoIcon" d="M1041.1,556.9L1030,543v0l-11.1,13.8l11.1,10.2v0L1041.1,556.9z M1025.5,559.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1025.5,559.1z"></path>
-                                        <path class="svgIsoIcon" d="M1066.1,556.9L1055,543v0l-11.1,13.8l11.1,10.2v0L1066.1,556.9z M1050.5,559.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1050.5,559.1z"></path>
-                                        <path class="svgIsoIcon" d="M546.1,144.9L535,131v0l-11.1,13.8l11.1,10.2v0L546.1,144.9z M530.5,147.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L530.5,147.1z"></path>
-                                        <path class="svgIsoIcon" d="M571.1,144.9L560,131v0l-11.1,13.8l11.1,10.2v0L571.1,144.9z M555.5,147.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L555.5,147.1z"></path>
-                                        <path class="svgIsoIcon" d="M596.1,144.9L585,131v0l-11.1,13.8l11.1,10.2v0L596.1,144.9z M580.5,147.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L580.5,147.1z"></path>
-                                        <path class="svgIsoIcon" d="M167.1,473.9L156,460v0l-11.1,13.8l11.1,10.2v0L167.1,473.9z M151.5,476.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L151.5,476.1z"></path>
-                                        <path class="svgIsoIcon" d="M192.1,473.9L181,460v0l-11.1,13.8l11.1,10.2v0L192.1,473.9z M176.5,476.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L176.5,476.1z"></path>
-                                        <path class="svgIsoIcon" d="M217.1,473.9L206,460v0l-11.1,13.8l11.1,10.2v0L217.1,473.9z M201.5,476.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L201.5,476.1z"></path>
-                                        <path class="svgIsoIcon" d="M339.1,893.9L328,880v0l-11.1,13.8l11.1,10.2v0L339.1,893.9z M323.5,896.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L323.5,896.1z"></path>
-                                        <path class="svgIsoIcon" d="M364.1,893.9L353,880v0l-11.1,13.8l11.1,10.2v0L364.1,893.9z M348.5,896.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L348.5,896.1z"></path>
-                                        <path class="svgIsoIcon" d="M389.1,893.9L378,880v0l-11.1,13.8l11.1,10.2v0L389.1,893.9z M373.5,896.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L373.5,896.1z"></path>
-                                        <path class="svgIsoIcon" d="M804.4,865.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L804.4,865.2z M788.8,867.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L788.8,867.4z"></path>
-                                        <path class="svgIsoIcon" d="M829.4,865.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L829.4,865.2z M813.8,867.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L813.8,867.4z"></path>
-                                        <path class="svgIsoIcon" d="M1101.1,860.8L1090,847v0l-11.1,13.8L1090,871v0L1101.1,860.8z M1085.5,863l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1085.5,863z"></path>
-                                        <path class="svgIsoIcon" d="M1126.1,860.8L1115,847v0l-11.1,13.8L1115,871v0L1126.1,860.8z M1110.5,863l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1110.5,863z"></path>
-                                        <path class="svgIsoIcon" d="M1246.7,825l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1246.7,825z M1231,827.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1231,827.1z"></path>
-                                        <path class="svgIsoIcon" d="M1182.7,784.8l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1182.7,784.8z M1167.1,787l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1167.1,787z"></path>
-                                        <path class="svgIsoIcon" d="M1262.1,681.5l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1262.1,681.5z M1246.5,683.7l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1246.5,683.7z"></path>
-                                        <path class="svgIsoIcon" d="M1315.8,762.8l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1315.8,762.8z M1300.1,765l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1300.1,765z"></path>
-                                        <path class="svgIsoIcon" d="M1331.4,587.8l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1331.4,587.8z M1315.8,590l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1315.8,590z"></path>
-                                        <path class="svgIsoIcon" d="M1181.4,570.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1181.4,570.3z M1165.7,572.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1165.7,572.5z"></path>
-                                        <path class="svgIsoIcon" d="M1206.4,570.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1206.4,570.3z M1190.7,572.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1190.7,572.5z"></path>
-                                        <path class="svgIsoIcon" d="M1133.1,681.5l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1133.1,681.5z M1117.5,683.7l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1117.5,683.7z"></path>
-                                        <path class="svgIsoIcon" d="M1108.1,681.5l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1108.1,681.5z M1092.5,683.7l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1092.5,683.7z"></path>
-                                        <path class="svgIsoIcon" d="M988.1,718.3L977,704.5v0l-11.1,13.8l11.1,10.2v0L988.1,718.3z M972.5,720.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L972.5,720.5z"></path>
-                                        <path class="svgIsoIcon" d="M940.6,510.8L929.5,497v0l-11.1,13.8l11.1,10.2v0L940.6,510.8z M925,513l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L925,513 z"></path>
-                                        <path class="svgIsoIcon" d="M915.6,510.8L904.5,497v0l-11.1,13.8l11.1,10.2v0L915.6,510.8z M900,513l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L900,513 z"></path>
-                                        <path class="svgIsoIcon" d="M841.6,562.8L830.5,549v0l-11.1,13.8l11.1,10.2v0L841.6,562.8z M826,565l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L826,565 z"></path>
-                                        <path class="svgIsoIcon" d="M783.2,408.8L772.1,395v0l-11.1,13.8l11.1,10.2v0L783.2,408.8z M767.6,411l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L767.6,411z"></path>
-                                        <path class="svgIsoIcon" d="M758.2,408.8L747.1,395v0l-11.1,13.8l11.1,10.2v0L758.2,408.8z M742.6,411l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L742.6,411z"></path>
-                                        <path class="svgIsoIcon" d="M868.6,343.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L868.6,343.2z M853,345.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L853,345.4z"></path>
-                                        <path class="svgIsoIcon" d="M919.3,225.7l-11.1-13.8v0L897,225.6l11.1,10.2v0L919.3,225.7z M903.6,227.9l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L903.6,227.9z"></path>
-                                        <path class="svgIsoIcon" d="M879.8,94.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L879.8,94.3z M864.1,96.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L864.1,96.5z"></path>
-                                        <path class="svgIsoIcon" d="M741.2,119.7l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L741.2,119.7z M725.6,121.9l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L725.6,121.9z"></path>
-                                        <path class="svgIsoIcon" d="M716.2,119.7l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L716.2,119.7z M700.6,121.9l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L700.6,121.9z"></path>
-                                        <path class="svgIsoIcon" d="M820.3,178.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L820.3,178.3z M804.7,180.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L804.7,180.5z"></path>
-                                        <path class="svgIsoIcon" d="M730.5,277.8L719.4,264v0l-11.1,13.8l11.1,10.2v0L730.5,277.8z M714.8,280l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L714.8,280z"></path>
-                                        <path class="svgIsoIcon" d="M675.1,332.8L664,319v0l-11.1,13.8L664,343v0L675.1,332.8z M659.5,335l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L659.5,335 z"></path>
-                                        <path class="svgIsoIcon" d="M577.1,297.9L566,284v0l-11.1,13.8L566,308v0L577.1,297.9z M561.5,300l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L561.5,300 z"></path>
-                                        <path class="svgIsoIcon" d="M552.1,297.9L541,284v0l-11.1,13.8L541,308v0L552.1,297.9z M536.5,300l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L536.5,300 z"></path>
-                                        <path class="svgIsoIcon" d="M493.1,343.2L482,329.4v0l-11.1,13.8l11.1,10.2v0L493.1,343.2z M477.5,345.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L477.5,345.4z"></path>
-                                        <path class="svgIsoIcon" d="M405.6,192.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L405.6,192.2z M390,194.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L390,194.4z"></path>
-                                        <path class="svgIsoIcon" d="M380.6,192.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L380.6,192.2z M365,194.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L365,194.4z"></path>
-                                        <path class="svgIsoIcon" d="M217.1,267.8L206,254v0l-11.1,13.8L206,278v0L217.1,267.8z M201.5,270l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L201.5,270 z"></path>
-                                        <path class="svgIsoIcon" d="M63.3,363l-11.1-13.8v0L41,362.9l11.1,10.2v0L63.3,363z M47.7,365.2l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L47.7,365.2z "></path>
-                                        <path class="svgIsoIcon" d="M63.3,572.6l-11.1-13.8v0L41,572.6l11.1,10.2v0L63.3,572.6z M47.7,574.8l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L47.7,574.8z"></path>
-                                        <path class="svgIsoIcon" d="M181,696.8L169.9,683v0l-11.1,13.8l11.1,10.2v0L181,696.8z M165.4,699l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L165.4,699 z"></path>
-                                        <path class="svgIsoIcon" d="M289.1,770.8L278,757v0l-11.1,13.8L278,781v0L289.1,770.8z M273.5,773l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L273.5,773 z"></path>
-                                        <path class="svgIsoIcon" d="M264.1,770.8L253,757v0l-11.1,13.8L253,781v0L264.1,770.8z M248.5,773l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L248.5,773 z"></path>
-                                        <path class="svgIsoIcon" d="M467.6,783.6l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L467.6,783.6z M452,785.8l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L452,785.8z"></path>
-                                        <path class="svgIsoIcon" d="M442.6,783.6l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L442.6,783.6z M427,785.8l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L427,785.8z"></path>
-                                        <path class="svgIsoIcon" d="M563.3,808.8L552.1,795v0L541,808.8l11.1,10.2v0L563.3,808.8z M547.6,811l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L547.6,811z"></path>
-                                        <path class="svgIsoIcon" d="M496.6,689.8L485.5,676v0l-11.1,13.8l11.1,10.2v0L496.6,689.8z M481,692l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L481,692 z"></path>
-                                        <path class="svgIsoIcon" d="M371.1,667.3L360,653.5v0l-11.1,13.8l11.1,10.2v0L371.1,667.3z M355.5,669.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L355.5,669.5z"></path>
-                                        <path class="svgIsoIcon" d="M509.1,504.8L497.9,491v0l-11.1,13.8l11.1,10.2v0L509.1,504.8z M493.4,507l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L493.4,507z"></path>
-                                        <path class="svgIsoIcon" d="M329.8,534.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L329.8,534.3z M314.1,536.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L314.1,536.5z"></path>
-                                        <path class="svgIsoIcon" d="M304.8,534.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L304.8,534.3z M289.1,536.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L289.1,536.5z"></path>
-                                        <path class="svgIsoIcon" d="M236.6,360.8L225.5,347v0l-11.1,13.8l11.1,10.2v0L236.6,360.8z M221,363l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L221,363 z"></path>
-                                        <path class="svgIsoIcon" d="M211.6,360.8L200.5,347v0l-11.1,13.8l11.1,10.2v0L211.6,360.8z M196,363l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L196,363 z"></path>
-                                        <path class="svgIsoIcon" d="M337.1,389.2L326,375.4v0l-11.1,13.8l11.1,10.2v0L337.1,389.2z M321.5,391.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L321.5,391.4z"></path>
-                                        <path class="svgIsoIcon" d="M397.6,325.9L386.5,312v0l-11.1,13.8l11.1,10.2v0L397.6,325.9z M382,328.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L382,328.1z"></path>
-                                        <path class="svgIsoIcon" d="M581.5,633.8L570.4,620v0l-11.1,13.8l11.1,10.2v0L581.5,633.8z M565.9,636l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L565.9,636z"></path>
-                                        <path class="svgIsoIcon" d="M606.5,633.8L595.4,620v0l-11.1,13.8l11.1,10.2v0L606.5,633.8z M590.9,636l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L590.9,636z"></path>
-                                        <path class="svgIsoIcon" d="M690.1,640.3L679,626.5v0l-11.1,13.8l11.1,10.2v0L690.1,640.3z M674.5,642.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L674.5,642.5z"></path>
-                                        <path class="svgIsoIcon" d="M743.2,610.6l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L743.2,610.6z M727.6,612.8l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L727.6,612.8z"></path>
-                                        <path class="svgIsoIcon" d="M840.9,738.8L829.8,725v0l-11.1,13.8l11.1,10.2v0L840.9,738.8z M825.3,741l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L825.3,741z"></path>
-                                        <path class="svgIsoIcon" d="M815.9,738.8L804.8,725v0l-11.1,13.8l11.1,10.2v0L815.9,738.8z M800.3,741l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L800.3,741z"></path>
-                                        <path class="svgIsoIcon" d="M842.8,661.5l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L842.8,661.5z M827.2,663.7l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L827.2,663.7z"></path>
-                                        <path class="svgIsoIcon" d="M525.1,924.8L514,911v0l-11.1,13.8L514,935v0L525.1,924.8z M509.5,927l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L509.5,927 z"></path>
-                                        <path class="svgIsoIcon" d="M550.1,924.8L539,911v0l-11.1,13.8L539,935v0L550.1,924.8z M534.5,927l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L534.5,927 z"></path>
-                                        <path class="svgIsoIcon" d="M682.1,937.8L671,924v0l-11.1,13.8L671,948v0L682.1,937.8z M666.5,940l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L666.5,940 z"></path>
-                                        <path class="svgIsoIcon" d="M683.1,872.8L672,859v0l-11.1,13.8L672,883v0L683.1,872.8z M667.5,875l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L667.5,875 z"></path>
-                                        <path class="svgIsoIcon" d="M685.1,786.3L674,772.5v0l-11.1,13.8l11.1,10.2v0L685.1,786.3z M669.5,788.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L669.5,788.5z"></path>
-                                        <path class="svgIsoIcon" d="M484.1,504.8L472.9,491v0l-11.1,13.8l11.1,10.2v0L484.1,504.8z M468.4,507l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L468.4,507z"></path>
-                                        <path class="svgIsoIcon" d="M404.1,540.8L393,527v0l-11.1,13.8L393,551v0L404.1,540.8z M388.5,543l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L388.5,543 z"></path>
-                                        <path class="svgIsoIcon" d="m210.8,602.3l-11.1-13.8h0l-11.1,13.8,11.1,10.2h0l11.1-10.2Zm-15.7,2.2l4.5-5.6h0l4.5,5.6-4.5,4.1h0l-4.5-4.1Z"></path>
-                                        <path class="svgIsoIcon" d="m185.8,602.3l-11.1-13.8h0l-11.1,13.8,11.1,10.2h0l11.1-10.2Zm-15.7,2.2l4.5-5.6h0l4.5,5.6-4.5,4.1h0l-4.5-4.1Z"></path>
+
+                                        <path class="svgIsoIcon"
+                                            d="M941.1,877.9L930,864v0l-11.1,13.8l11.1,10.2v0L941.1,877.9z M925.5,880.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L925.5,880.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M966.1,877.9L955,864v0l-11.1,13.8l11.1,10.2v0L966.1,877.9z M950.5,880.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L950.5,880.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M991.1,877.9L980,864v0l-11.1,13.8l11.1,10.2v0L991.1,877.9z M975.5,880.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L975.5,880.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M593.1,492.9L582,479v0l-11.1,13.8l11.1,10.2v0L593.1,492.9z M577.5,495.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L577.5,495.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M618.1,492.9L607,479v0l-11.1,13.8l11.1,10.2v0L618.1,492.9z M602.5,495.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L602.5,495.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M643.1,492.9L632,479v0l-11.1,13.8l11.1,10.2v0L643.1,492.9z M627.5,495.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L627.5,495.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1016.1,556.9L1005,543v0l-11.1,13.8l11.1,10.2v0L1016.1,556.9z M1000.5,559.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1000.5,559.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1041.1,556.9L1030,543v0l-11.1,13.8l11.1,10.2v0L1041.1,556.9z M1025.5,559.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1025.5,559.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1066.1,556.9L1055,543v0l-11.1,13.8l11.1,10.2v0L1066.1,556.9z M1050.5,559.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1050.5,559.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M546.1,144.9L535,131v0l-11.1,13.8l11.1,10.2v0L546.1,144.9z M530.5,147.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L530.5,147.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M571.1,144.9L560,131v0l-11.1,13.8l11.1,10.2v0L571.1,144.9z M555.5,147.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L555.5,147.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M596.1,144.9L585,131v0l-11.1,13.8l11.1,10.2v0L596.1,144.9z M580.5,147.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L580.5,147.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M167.1,473.9L156,460v0l-11.1,13.8l11.1,10.2v0L167.1,473.9z M151.5,476.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L151.5,476.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M192.1,473.9L181,460v0l-11.1,13.8l11.1,10.2v0L192.1,473.9z M176.5,476.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L176.5,476.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M217.1,473.9L206,460v0l-11.1,13.8l11.1,10.2v0L217.1,473.9z M201.5,476.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L201.5,476.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M339.1,893.9L328,880v0l-11.1,13.8l11.1,10.2v0L339.1,893.9z M323.5,896.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L323.5,896.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M364.1,893.9L353,880v0l-11.1,13.8l11.1,10.2v0L364.1,893.9z M348.5,896.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L348.5,896.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M389.1,893.9L378,880v0l-11.1,13.8l11.1,10.2v0L389.1,893.9z M373.5,896.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L373.5,896.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M804.4,865.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L804.4,865.2z M788.8,867.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L788.8,867.4z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M829.4,865.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L829.4,865.2z M813.8,867.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L813.8,867.4z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1101.1,860.8L1090,847v0l-11.1,13.8L1090,871v0L1101.1,860.8z M1085.5,863l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1085.5,863z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1126.1,860.8L1115,847v0l-11.1,13.8L1115,871v0L1126.1,860.8z M1110.5,863l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1110.5,863z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1246.7,825l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1246.7,825z M1231,827.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1231,827.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1182.7,784.8l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1182.7,784.8z M1167.1,787l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1167.1,787z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1262.1,681.5l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1262.1,681.5z M1246.5,683.7l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1246.5,683.7z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1315.8,762.8l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1315.8,762.8z M1300.1,765l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1300.1,765z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1331.4,587.8l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1331.4,587.8z M1315.8,590l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1315.8,590z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1181.4,570.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1181.4,570.3z M1165.7,572.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1165.7,572.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1206.4,570.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1206.4,570.3z M1190.7,572.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1190.7,572.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1133.1,681.5l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1133.1,681.5z M1117.5,683.7l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1117.5,683.7z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M1108.1,681.5l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L1108.1,681.5z M1092.5,683.7l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L1092.5,683.7z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M988.1,718.3L977,704.5v0l-11.1,13.8l11.1,10.2v0L988.1,718.3z M972.5,720.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L972.5,720.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M940.6,510.8L929.5,497v0l-11.1,13.8l11.1,10.2v0L940.6,510.8z M925,513l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L925,513 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M915.6,510.8L904.5,497v0l-11.1,13.8l11.1,10.2v0L915.6,510.8z M900,513l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L900,513 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M841.6,562.8L830.5,549v0l-11.1,13.8l11.1,10.2v0L841.6,562.8z M826,565l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L826,565 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M783.2,408.8L772.1,395v0l-11.1,13.8l11.1,10.2v0L783.2,408.8z M767.6,411l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L767.6,411z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M758.2,408.8L747.1,395v0l-11.1,13.8l11.1,10.2v0L758.2,408.8z M742.6,411l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L742.6,411z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M868.6,343.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L868.6,343.2z M853,345.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L853,345.4z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M919.3,225.7l-11.1-13.8v0L897,225.6l11.1,10.2v0L919.3,225.7z M903.6,227.9l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L903.6,227.9z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M879.8,94.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L879.8,94.3z M864.1,96.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L864.1,96.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M741.2,119.7l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L741.2,119.7z M725.6,121.9l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L725.6,121.9z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M716.2,119.7l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L716.2,119.7z M700.6,121.9l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L700.6,121.9z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M820.3,178.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L820.3,178.3z M804.7,180.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L804.7,180.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M730.5,277.8L719.4,264v0l-11.1,13.8l11.1,10.2v0L730.5,277.8z M714.8,280l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L714.8,280z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M675.1,332.8L664,319v0l-11.1,13.8L664,343v0L675.1,332.8z M659.5,335l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L659.5,335 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M577.1,297.9L566,284v0l-11.1,13.8L566,308v0L577.1,297.9z M561.5,300l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L561.5,300 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M552.1,297.9L541,284v0l-11.1,13.8L541,308v0L552.1,297.9z M536.5,300l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L536.5,300 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M493.1,343.2L482,329.4v0l-11.1,13.8l11.1,10.2v0L493.1,343.2z M477.5,345.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L477.5,345.4z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M405.6,192.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L405.6,192.2z M390,194.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L390,194.4z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M380.6,192.2l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L380.6,192.2z M365,194.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L365,194.4z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M217.1,267.8L206,254v0l-11.1,13.8L206,278v0L217.1,267.8z M201.5,270l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L201.5,270 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M63.3,363l-11.1-13.8v0L41,362.9l11.1,10.2v0L63.3,363z M47.7,365.2l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L47.7,365.2z ">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M63.3,572.6l-11.1-13.8v0L41,572.6l11.1,10.2v0L63.3,572.6z M47.7,574.8l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L47.7,574.8z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M181,696.8L169.9,683v0l-11.1,13.8l11.1,10.2v0L181,696.8z M165.4,699l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L165.4,699 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M289.1,770.8L278,757v0l-11.1,13.8L278,781v0L289.1,770.8z M273.5,773l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L273.5,773 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M264.1,770.8L253,757v0l-11.1,13.8L253,781v0L264.1,770.8z M248.5,773l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L248.5,773 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M467.6,783.6l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L467.6,783.6z M452,785.8l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L452,785.8z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M442.6,783.6l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L442.6,783.6z M427,785.8l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L427,785.8z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M563.3,808.8L552.1,795v0L541,808.8l11.1,10.2v0L563.3,808.8z M547.6,811l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L547.6,811z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M496.6,689.8L485.5,676v0l-11.1,13.8l11.1,10.2v0L496.6,689.8z M481,692l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L481,692 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M371.1,667.3L360,653.5v0l-11.1,13.8l11.1,10.2v0L371.1,667.3z M355.5,669.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L355.5,669.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M509.1,504.8L497.9,491v0l-11.1,13.8l11.1,10.2v0L509.1,504.8z M493.4,507l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L493.4,507z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M329.8,534.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L329.8,534.3z M314.1,536.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L314.1,536.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M304.8,534.3l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L304.8,534.3z M289.1,536.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L289.1,536.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M236.6,360.8L225.5,347v0l-11.1,13.8l11.1,10.2v0L236.6,360.8z M221,363l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L221,363 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M211.6,360.8L200.5,347v0l-11.1,13.8l11.1,10.2v0L211.6,360.8z M196,363l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L196,363 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M337.1,389.2L326,375.4v0l-11.1,13.8l11.1,10.2v0L337.1,389.2z M321.5,391.4l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L321.5,391.4z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M397.6,325.9L386.5,312v0l-11.1,13.8l11.1,10.2v0L397.6,325.9z M382,328.1l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L382,328.1z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M581.5,633.8L570.4,620v0l-11.1,13.8l11.1,10.2v0L581.5,633.8z M565.9,636l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L565.9,636z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M606.5,633.8L595.4,620v0l-11.1,13.8l11.1,10.2v0L606.5,633.8z M590.9,636l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L590.9,636z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M690.1,640.3L679,626.5v0l-11.1,13.8l11.1,10.2v0L690.1,640.3z M674.5,642.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L674.5,642.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M743.2,610.6l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L743.2,610.6z M727.6,612.8l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L727.6,612.8z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M840.9,738.8L829.8,725v0l-11.1,13.8l11.1,10.2v0L840.9,738.8z M825.3,741l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L825.3,741z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M815.9,738.8L804.8,725v0l-11.1,13.8l11.1,10.2v0L815.9,738.8z M800.3,741l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L800.3,741z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M842.8,661.5l-11.1-13.8v0l-11.1,13.8l11.1,10.2v0L842.8,661.5z M827.2,663.7l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L827.2,663.7z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M525.1,924.8L514,911v0l-11.1,13.8L514,935v0L525.1,924.8z M509.5,927l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L509.5,927 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M550.1,924.8L539,911v0l-11.1,13.8L539,935v0L550.1,924.8z M534.5,927l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L534.5,927 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M682.1,937.8L671,924v0l-11.1,13.8L671,948v0L682.1,937.8z M666.5,940l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L666.5,940 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M683.1,872.8L672,859v0l-11.1,13.8L672,883v0L683.1,872.8z M667.5,875l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L667.5,875 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M685.1,786.3L674,772.5v0l-11.1,13.8l11.1,10.2v0L685.1,786.3z M669.5,788.5l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L669.5,788.5z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M484.1,504.8L472.9,491v0l-11.1,13.8l11.1,10.2v0L484.1,504.8z M468.4,507l4.5-5.6v0l4.5,5.6l-4.5,4.1v0 L468.4,507z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="M404.1,540.8L393,527v0l-11.1,13.8L393,551v0L404.1,540.8z M388.5,543l4.5-5.6v0l4.5,5.6l-4.5,4.1v0L388.5,543 z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="m210.8,602.3l-11.1-13.8h0l-11.1,13.8,11.1,10.2h0l11.1-10.2Zm-15.7,2.2l4.5-5.6h0l4.5,5.6-4.5,4.1h0l-4.5-4.1Z">
+                                        </path>
+                                        <path class="svgIsoIcon"
+                                            d="m185.8,602.3l-11.1-13.8h0l-11.1,13.8,11.1,10.2h0l11.1-10.2Zm-15.7,2.2l4.5-5.6h0l4.5,5.6-4.5,4.1h0l-4.5-4.1Z">
+                                        </path>
                                     </svg>
                                 </div>
                             </div>
@@ -2689,4 +3124,5 @@
                 onclick="closeLightbox()">&times;</span>
         </div>
 </body>
+
 </html>
