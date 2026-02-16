@@ -2328,6 +2328,26 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1371 993.5"
                                         style="width: 100%; height: 900px; display: block;">
 
+                                        <defs>
+                                            <filter id="green-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                                <!-- Blur the shape's alpha -->
+                                                <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
+
+                                                <!-- Keep only the OUTER part of the blur (remove inside of shape) -->
+                                                <feComposite in="blur" in2="SourceAlpha" operator="out" result="outerGlow" />
+
+                                                <!-- Color that outer region green -->
+                                                <feFlood flood-color="#00ff00" result="green" />
+                                                <feComposite in="green" in2="outerGlow" operator="in" result="glow" />
+
+                                                <!-- IMPORTANT: glow first (bottom), SourceGraphic last (on top) -->
+                                                <feMerge>
+                                                <feMergeNode in="glow" />
+                                                <feMergeNode in="SourceGraphic" />
+                                                </feMerge>
+                                            </filter>
+                                        </defs>
+
                                         <!-- ### SNOW ###-->
                                         <!-- Adia -->
                                         <polygon id="75447996" class="svgSystem"
@@ -2458,33 +2478,33 @@
 
                                         <!-- ### BORG ### -->
                                         <!-- Corva -->
-                                        <polygon id="1766074547" class="svgSystem"
+                                        <polygon id="1766074547" class="svgSystem glow-system"
                                             points="969 638.16 969 455 1035.81 455 1107 526.15 1107 596.76 1014.04 682.24 969 638.16"
-                                            style="fill: #8A6C96;">
+                                            style="fill: #8157a9;">
                                             <title>Corva</title>
                                         </polygon>
                                         <!-- Crios -->
-                                        <polygon id="906166537" class="svgSystem"
+                                        <polygon id="906166537" class="svgSystem glow-system"
                                             points="903 637 903 539.12 825.18 468.19 843.64 455 965 455 965 637 903 637"
-                                            style="fill: #8A6C96;">
+                                            style="fill: #8157a9;">
                                             <title>Crios</title>
                                         </polygon>
                                         <!-- Roshar -->
-                                        <polygon id="558058285" class="svgSystem"
+                                        <polygon id="558058285" class="svgSystem glow-system"
                                             points="1016.88 685.07 1108.79 600.63 1129.28 629 1168 629 1168 726.14 1111.04 780.2 1016.88 685.07"
-                                            style="fill: #8A6C96;">
+                                            style="fill: #8157a9;">
                                             <title>Roshar</title>
                                         </polygon>
                                         <!-- Stilhe -->
-                                        <polygon id="1995161692" class="svgSystem"
+                                        <polygon id="1995161692" class="svgSystem glow-system"
                                             points="981.85 781 954.44 752.61 903 702.16 903 641 966.18 641 1012.6 686.43 1106.21 781 981.85 781"
-                                            style="fill: #8A6C96;">
+                                            style="fill: #8157a9;">
                                             <title>Stilhe</title>
                                         </polygon>
                                         <!-- Thaylen -->
-                                        <polygon id="233224244" class="svgSystem"
+                                        <polygon id="233224244" class="svgSystem glow-system"
                                             points="1113.87 783.04 1170.8 729 1204 729 1204 790.16 1162.02 831.19 1113.87 783.04"
-                                            style="fill: #8A6C96;">
+                                            style="fill: #8157a9;">
                                             <title>Thaylen</title>
                                         </polygon>
 

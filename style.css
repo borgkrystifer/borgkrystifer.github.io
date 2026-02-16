@@ -1170,3 +1170,19 @@ path {
     fill: rgb(0, 0, 0);
     fill-opacity: 0.4;
 }
+
+@keyframes pulse-glow {
+    0%, 100% {
+        stroke-opacity: 1;
+    }
+    50% {
+        stroke-opacity: 0.3;
+    }
+}
+
+.svgSystem.glow-system {
+    stroke: #00ff00;
+    stroke-width: 3;
+    filter: url(#green-glow);
+    animation: pulse-glow 1.5s ease-in-out infinite;
+}
