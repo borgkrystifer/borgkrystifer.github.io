@@ -191,8 +191,8 @@ function renderRoster(players) {
   }
 
   if (allTimeLeaversData && allTimeLeaversData.length > 0) {
-    const leaverPanel = document.createElement("div");
-    leaverPanel.style.cssText = `
+  const leaverPanel = document.createElement("div");
+  leaverPanel.style.cssText = `
 background: rgba(255, 68, 68, 0.15);
 border: 2px solid #ff4444;
 border-radius: 8px;
@@ -201,37 +201,70 @@ margin-bottom: 20px;
 color: #ff4444;
 font-weight: bold;
 font-family: 'Orbitron', sans-serif;
-    `;
-    
-    const leaverTitle = document.createElement("h3");
-    leaverTitle.textContent = `⚠️ Recent Name Changes/Departures (Last 90 Days): ${allTimeLeaversData.length}`;
-    leaverTitle.style.margin = "0 0 10px 0";
-    leaverTitle.style.color = "#ff4444";
-    leaverPanel.appendChild(leaverTitle);
-    
-    const leaverList = document.createElement("div");
-    leaverList.style.fontSize = "14px";
-    leaverList.style.lineHeight = "1.6";
-    leaverList.style.color = "#ffcccc";
-    
-    allTimeLeaversData.slice(0, 15).forEach(leaver => {
-      const entry = document.createElement("div");
-      const timestamp = new Date(leaver.timestamp).toLocaleDateString();
-      entry.textContent = `• ${leaver.name} (${leaver.rank}, Lvl ${leaver.level}) - Left or Changed Name: ${timestamp}`;
-      leaverList.appendChild(entry);
-    });
-    
-    if (allTimeLeaversData.length > 15) {
-      const more = document.createElement("div");
-      more.textContent = `... and ${allTimeLeaversData.length - 15} more`;
-      more.style.fontStyle = "italic";
-      more.style.marginTop = "10px";
-      leaverList.appendChild(more);
-    }
-    
-    leaverPanel.appendChild(leaverList);
-    container.appendChild(leaverPanel);
+`;
+
+  // Header row with title + collapse button
+  const headerRow = document.createElement("div");
+  headerRow.style.display = "flex";
+  headerRow.style.alignItems = "center";
+  headerRow.style.justifyContent = "space-between";
+  headerRow.style.gap = "10px";
+  headerRow.style.marginBottom = "10px";
+
+  const leaverTitle = document.createElement("h3");
+  leaverTitle.textContent = `⚠️ Recent Name Changes/Departures (Last 90 Days): ${allTimeLeaversData.length}`;
+  leaverTitle.style.margin = "0";
+  leaverTitle.style.color = "#ff4444";
+
+  const toggleBtn = document.createElement("button");
+  toggleBtn.textContent = "Hide";
+  toggleBtn.style.cssText = `
+background: transparent;
+border: 1px solid #ff4444;
+color: #ff4444;
+border-radius: 4px;
+padding: 2px 8px;
+cursor: pointer;
+font-size: 12px;
+font-family: 'Orbitron', sans-serif;
+text-transform: uppercase;
+`;
+
+  headerRow.appendChild(leaverTitle);
+  headerRow.appendChild(toggleBtn);
+  leaverPanel.appendChild(headerRow);
+
+  const leaverList = document.createElement("div");
+  leaverList.style.fontSize = "14px";
+  leaverList.style.lineHeight = "1.6";
+  leaverList.style.color = "#ffcccc";
+
+  allTimeLeaversData.slice(0, 15).forEach(leaver => {
+    const entry = document.createElement("div");
+    const timestamp = new Date(leaver.timestamp).toLocaleDateString();
+    entry.textContent = `• ${leaver.name} (${leaver.rank}, Lvl ${leaver.level}) - Left or Changed Name: ${timestamp}`;
+    leaverList.appendChild(entry);
+  });
+
+  if (allTimeLeaversData.length > 15) {
+    const more = document.createElement("div");
+    more.textContent = `... and ${allTimeLeaversData.length - 15} more`;
+    more.style.fontStyle = "italic";
+    more.style.marginTop = "10px";
+    leaverList.appendChild(more);
   }
+
+  // Collapse / expand behavior
+  let collapsed = false;
+  toggleBtn.addEventListener("click", () => {
+    collapsed = !collapsed;
+    leaverList.style.display = collapsed ? "none" : "";
+    toggleBtn.textContent = collapsed ? "Show" : "Hide";
+  });
+
+  leaverPanel.appendChild(leaverList);
+  container.appendChild(leaverPanel);
+}
 
   const toggleDiv = document.createElement("div");
   toggleDiv.className = "column-toggles";
