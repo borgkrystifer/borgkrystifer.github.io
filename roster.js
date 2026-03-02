@@ -193,15 +193,15 @@ function renderRoster(players) {
   if (allTimeLeaversData && allTimeLeaversData.length > 0) {
   const leaverPanel = document.createElement("div");
   leaverPanel.style.cssText = `
-background: rgba(255, 68, 68, 0.15);
-border: 2px solid #ff4444;
-border-radius: 8px;
-padding: 15px;
-margin-bottom: 20px;
-color: #ff4444;
-font-weight: bold;
-font-family: 'Orbitron', sans-serif;
-`;
+    background: rgba(255, 68, 68, 0.15);
+    border: 2px solid #ff4444;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #ff4444;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+  `;
 
   // Header row with title + collapse button
   const headerRow = document.createElement("div");
@@ -219,16 +219,16 @@ font-family: 'Orbitron', sans-serif;
   const toggleBtn = document.createElement("button");
   toggleBtn.textContent = "Hide";
   toggleBtn.style.cssText = `
-background: transparent;
-border: 1px solid #ff4444;
-color: #ff4444;
-border-radius: 4px;
-padding: 2px 8px;
-cursor: pointer;
-font-size: 12px;
-font-family: 'Orbitron', sans-serif;
-text-transform: uppercase;
-`;
+    background: transparent;
+    border: 1px solid #ff4444;
+    color: #ff4444;
+    border-radius: 4px;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+  `;
 
   headerRow.appendChild(leaverTitle);
   headerRow.appendChild(toggleBtn);
@@ -239,23 +239,43 @@ text-transform: uppercase;
   leaverList.style.lineHeight = "1.6";
   leaverList.style.color = "#ffcccc";
 
-  allTimeLeaversData.slice(0, 15).forEach(leaver => {
+  const MAX_VISIBLE_LEAVERS = 15;
+
+  allTimeLeaversData.slice(0, MAX_VISIBLE_LEAVERS).forEach(leaver => {
     const entry = document.createElement("div");
     const timestamp = new Date(leaver.timestamp).toLocaleDateString();
     entry.textContent = `• ${leaver.name} (${leaver.rank}, Lvl ${leaver.level}) - Left or Changed Name: ${timestamp}`;
     leaverList.appendChild(entry);
   });
 
-  if (allTimeLeaversData.length > 15) {
+  if (allTimeLeaversData.length > MAX_VISIBLE_LEAVERS) {
+    const remaining = allTimeLeaversData.slice(MAX_VISIBLE_LEAVERS);
+
     const more = document.createElement("div");
-    more.textContent = `... and ${allTimeLeaversData.length - 15} more`;
+    more.textContent = `... and ${remaining.length} more (click to expand)`;
     more.style.fontStyle = "italic";
     more.style.marginTop = "10px";
+    more.style.cursor = "pointer";
+    more.title = "Click to show all";
+    // leaverList.appendChild(more);
+    more.addEventListener("click", () => {
+      remaining.forEach(leaver => {
+        const entry = document.createElement("div");
+        const timestamp = new Date(leaver.timestamp).toLocaleDateString();
+        entry.textContent =  `• ${leaver.name} (${leaver.rank}, Lvl ${leaver.level}) - Left or Changed Name: ${timestamp}`;
+        leaverList.appendChild(entry);
+      });
+      more.remove();
+    });
+
     leaverList.appendChild(more);
   }
 
   // Collapse / expand behavior
-  let collapsed = false;
+  let collapsed = true;
+  leaverList.style.display = "none";
+  toggleBtn.textContent = "Show";
+  
   toggleBtn.addEventListener("click", () => {
     collapsed = !collapsed;
     leaverList.style.display = collapsed ? "none" : "";
