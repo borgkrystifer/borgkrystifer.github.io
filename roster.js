@@ -49,7 +49,7 @@ async function getAllianceData() {
     if (window.allianceRosterData.leavers && window.allianceRosterData.leavers.length > 0) {
       leaversData = window.allianceRosterData.leavers;
       console.log(`Current session leavers:`, leaversData.map(l => l.Name || l.name || l.Player));
-      showLeaverAlert(window.allianceRosterData.leavers);
+      // showLeaverAlert(window.allianceRosterData.leavers);
     }
     
     if (window.allianceRosterData.all_time_leavers && window.allianceRosterData.all_time_leavers.length > 0) {
@@ -70,7 +70,7 @@ async function getAllianceData() {
     if (data.leavers && data.leavers.length > 0) {
       leaversData = data.leavers;
       console.log(`${data.leavers.length} current session leavers detected:`, data.leavers.map(p => p.Name || p.name || p.Player));
-      showLeaverAlert(data.leavers);
+      // showLeaverAlert(data.leavers);
     }
 
     if (data.all_time_leavers && data.all_time_leavers.length > 0) {
@@ -381,22 +381,22 @@ function renderRoster(players) {
 
   players.forEach(player => {
     const row = document.createElement("tr");
-    const normalizedPlayerName = getNormalizedPlayerName(player);
+    // const normalizedPlayerName = getNormalizedPlayerName(player);
     
-    const isCurrentLeaver = leaversData.some(leaver => {
-      const normalizedLeaverName = getNormalizedLeaverName(leaver);
-      return normalizedPlayerName === normalizedLeaverName;
-    });
+    // const isCurrentLeaver = leaversData.some(leaver => {
+    //   const normalizedLeaverName = getNormalizedLeaverName(leaver);
+    //   return normalizedPlayerName === normalizedLeaverName;
+    // });
 
-    const isAllTimeLeaver = allTimeLeaversData.some(leaver => {
-      const normalizedLeaverName = normalizeNameForComparison(leaver.name);
-      return normalizedPlayerName === normalizedLeaverName;
-    });
+    // const isAllTimeLeaver = allTimeLeaversData.some(leaver => {
+    //   const normalizedLeaverName = normalizeNameForComparison(leaver.name);
+    //   return normalizedPlayerName === normalizedLeaverName;
+    // });
 
-    if (isCurrentLeaver || isAllTimeLeaver) {
-      row.classList.add('leaver-row');
-      console.log(`Highlighting ${normalizedPlayerName} as leaver`);
-    }
+    // if (isCurrentLeaver || isAllTimeLeaver) {
+    //   row.classList.add('leaver-row');
+    //   console.log(`Highlighting ${normalizedPlayerName} as leaver`);
+    // }
 
     Object.keys(players[0]).forEach(key => {
       const td = document.createElement("td");
